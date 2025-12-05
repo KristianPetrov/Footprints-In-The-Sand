@@ -1,0 +1,16 @@
+<svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="sunGradient" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#fff6d9"/>
+      <stop offset="45%" stop-color="#ffe5a3"/>
+      <stop offset="100%" stop-color="#f5c061" stop-opacity="0.25"/>
+    </radialGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#fff0c9" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f2af62" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="210" cy="210" r="120" fill="url(#sunGradient)"/>
+  <circle cx="210" cy="210" r="200" fill="url(#sunGlow)"/>
+</svg>
+
