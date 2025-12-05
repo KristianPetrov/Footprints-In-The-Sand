@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   applicationName: siteName,
+  themeColor: "#03171d",
   keywords: [
     "Footprints In The Sand",
     "addiction treatment",
