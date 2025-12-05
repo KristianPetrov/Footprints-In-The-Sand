@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroNav } from "./components/HeroNav";
 
 const anchorPromises = [
   {
@@ -138,23 +139,7 @@ const footerBlessing = "and let's map the next evidence-backed step together.";
 export default function Home() {
   return (
     <div className="beach-sky grain-overlay min-h-screen w-full overflow-hidden text-[#1f2a2e]">
-      <nav className="hero-nav">
-        <div className="hero-nav__inner">
-          <Link href="/" className="hero-nav__brand">
-            Footprints In The Sand
-            <span>Recovery Center</span>
-          </Link>
-          <div className="hero-nav__links">
-            <Link href="#program">Programs</Link>
-            <Link href="#treatment">What We Treat</Link>
-            <Link href="#mission">Mission</Link>
-            <Link href="#care">Care Journey</Link>
-          </div>
-          {/* <a href="mailto:care@footprintsinthesand.org" className="hero-nav__cta">
-            Email Intake
-          </a> */}
-        </div>
-      </nav>
+      <HeroNav />
       <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-16 pt-24 sm:px-8 lg:px-12 lg:pb-24 lg:pt-32">
         {/* <Image
           src="/sun-halo.svg"

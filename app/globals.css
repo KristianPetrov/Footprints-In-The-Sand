@@ -238,6 +238,22 @@ body {
   margin: 0 auto;
 }
 
+.hero-nav__menus {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-left: auto;
+}
+
+.hero-nav__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
 .hero-nav__brand {
   display: flex;
   flex-direction: column;
@@ -261,6 +277,47 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.hero-nav__hamburger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(27, 59, 68, 0.15);
+  background: rgba(255, 255, 255, 0.65);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.hero-nav__hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #1c5a6b;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.hero-nav__hamburger:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(27, 59, 68, 0.3);
+}
+
+.hero-nav__hamburger.is-active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hero-nav__hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hero-nav__hamburger.is-active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .hero-nav__links a {
@@ -320,19 +377,52 @@ body {
   box-shadow: 0 20px 45px rgba(13, 75, 90, 0.35);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hero-nav__inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .hero-nav__topline {
+    width: 100%;
   }
 
   .hero-nav__brand {
     letter-spacing: 0.3em;
   }
 
+  .hero-nav__menus {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 1px solid rgba(27, 59, 68, 0.1);
+    padding-top: 1rem;
+    display: none;
+    gap: 1rem;
+  }
+
+  .hero-nav__menus.is-open {
+    display: flex;
+  }
+
   .hero-nav__links {
     width: 100%;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .hero-nav__links a {
+    padding-left: 0;
+  }
+
+  .hero-nav__links a::after {
+    inset: auto 0 -4px;
+  }
+
+  .hero-nav__hamburger {
+    display: inline-flex;
   }
 
   .hero-nav__cta {
