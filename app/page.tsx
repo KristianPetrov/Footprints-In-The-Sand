@@ -205,15 +205,14 @@ const programHighlights = [
 
 const treatmentTracks = [
   {
-    category: "Substance Addictions",
+    category: "Depressant Addiction",
     items: [
       "Alcohol",
-      "Opioid",
-      "Meth",
-      "Cocaine",
       "Marijuana",
-      "Prescription Drugs",
-      "Synthetic Drug",
+      "Benzodiazepines",
+      "Barbiturates",
+      "GABAergics",
+      "Other Depressants",
     ],
   },
   {
@@ -221,12 +220,18 @@ const treatmentTracks = [
     items: ["Methamphetamine", "Cocaine", "MDMA", "Amphetamines"],
   },
   {
-    category: "Mental Health Disorders",
+    category: "Opiate Addiction",
     items: [
-      "PTSD",
-      "Depression & Major Depressive Disorder",
-      "Anxiety & Generalized Anxiety Disorder",
-      "Bipolar",
+      "Heroin",
+      "Fentanyl",
+      "Oxycodone",
+      "Hydrocodone",
+      "Morphine",
+      "Codeine",
+      "Buprenorphine",
+      "Methadone",
+      "Suboxone",
+
     ],
   },
 ];
