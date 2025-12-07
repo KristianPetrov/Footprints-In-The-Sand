@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HeroNav } from "./components/HeroNav";
+import { ProcessGroupsShowcase } from "./components/ProcessGroupsShowcase";
 
 const anchorPromises = [
   {
@@ -53,6 +54,124 @@ const careRhythms = [
   },
 ];
 
+const campLifeGallery = [
+  {
+    src: "/birds-eye-view-facility.jpg",
+    alt: "Aerial view of the Footprints In The Sand campus surrounded by trees.",
+    label: "The campus from above",
+  },
+  {
+    src: "/happy-client-sitting-on-staircase.jpg",
+    alt: "Client sitting on a sunlit staircase journaling quietly.",
+    label: "Quiet reflection",
+  },
+  {
+    src: "/happy-group-photo-in-nature.jpg",
+    alt: "Clients smiling together while standing in a lush natural setting.",
+    label: "Nature walks",
+  },
+  {
+    src: "/happy-group-picture-outside.jpg",
+    alt: "Large recovery group smiling outside the facility.",
+    label: "Community pride",
+  },
+  {
+    src: "/man-walking-outside-facility.jpg",
+    alt: "Client walking calmly along the exterior path of the facility.",
+    label: "Daily grounding",
+  },
+  {
+    src: "/nightime-campfire-toasted-marshmellow.jpg",
+    alt: "Client roasting a toasted marshmallow during a nighttime campfire.",
+    label: "Campfire rituals",
+  },
+  {
+    src: "/recovery-group-behind-couch.jpg",
+    alt: "Clients listening intently to a group session from behind a couch.",
+    label: "Listening hearts",
+  },
+  {
+    src: "/recovery-group-sunglasses-dudes.jpg",
+    alt: "Clients in sunglasses sitting together and talking outdoors.",
+    label: "Brotherhood moments",
+  },
+  {
+    src: "/recovery-group-woman-speaker.jpg",
+    alt: "Recovery group focused on a woman speaking at the center.",
+    label: "Voices that lead",
+  },
+  {
+    src: "/recovery-group.jpg",
+    alt: "Large circle of men engaged in a group session.",
+    label: "Deep work",
+  },
+  {
+    src: "/wholesome-hugging-couple.jpg",
+    alt: "Smiling couple hugging each other during an outdoor break.",
+    label: "Restored relationships",
+  },
+];
+
+const processGroupSlides = [
+  {
+    src: "/recovery-group.jpg",
+    alt: "Men lean into a circle, minds open as they listen intently.",
+    focus: "Accountability Rounds",
+    quote: "We surface the hard truths first so everyone can name triggers before they spiral.",
+    facilitator: "Lead Process Therapist",
+  },
+  {
+    src: "/recovery-group-woman-speaker.jpg",
+    alt: "A person facilitates the circle while the group locks eyes on their teaching points.",
+    focus: "Facilitated Skill Practice",
+    quote: "Every prompt ends with action steps so growth is felt outside the room.",
+    facilitator: "Clinical Director",
+  },
+  {
+    src: "/recovery-group-behind-couch.jpg",
+    alt: "Clients mindfuly listen during a group share.",
+    focus: "Somatic Check-ins",
+    quote: "We ask where tension lives in the body so coping plans are rooted in reality.",
+    facilitator: "Lauren — Somatic Therapist",
+  },
+  {
+    src: "/recovery-group-sunglasses-dudes.jpg",
+    alt: "Clients sharing and comparing notes.",
+    focus: "Peer Reflection",
+    quote: "Peers translate therapist language into real talk so feedback lands.",
+    facilitator: "Peer Recovery Coach",
+  },
+  {
+    src: "/happy-group-picture-outside.jpg",
+    alt: "Large outdoor circle celebrating a breakthrough.",
+    focus: "Celebration Fridays",
+    quote: "Wins get tracked publicly so courage becomes contagious.",
+    facilitator: "Community Manager",
+  },
+  {
+    src: "/happy-group-photo-in-nature.jpg",
+    alt: "Group pauses during a nature walk to reflect together among trees.",
+    focus: "Experiential Processing",
+    quote: "Movement plus reflection keeps nervous systems regulated and awake.",
+    facilitator: "Experiential Therapist",
+  },
+];
+
+const processGroupPillars = [
+  {
+    title: "Evidence-based facilitation",
+    detail: "Motivational interviewing, DBT coaching, and trauma-informed prompts guide every exchange.",
+  },
+  {
+    title: "Measurable homework",
+    detail: "Each member leaves with a written micro-goal, accountability partner, and check-in time.",
+  },
+  {
+    title: "Regulation-first pacing",
+    detail: "Breathwork, somatic grounding, and sensory resets keep the room safe for vulnerability.",
+  },
+];
+
 const programSchedule = [
   {
     level: "Partial Hospitalization (PHP)",
@@ -99,7 +218,7 @@ const treatmentTracks = [
   },
   {
     category: "Stimulant Addiction",
-    items: ["Xanax", "Fentanyl", "Inhalant"],
+    items: ["Methamphetamine", "Cocaine", "MDMA", "Amphetamines"],
   },
   {
     category: "Mental Health Disorders",
@@ -190,9 +309,7 @@ export default function Home() {
               Where Broken Roads Become Steady Ground
             </h1>
             <p className="text-lg leading-8 text-[#33545d] sm:text-xl">{heroSubheadline}</p>
-            <p className="text-base leading-7 text-[#33545d]">
-              A candlelit glow that reminds every guest their courage burns brighter than the chaos behind them.
-            </p>
+
           </div>
           <div className="flex flex-wrap justify-center gap-4 pt-6 sm:justify-start">
             <Link
@@ -355,6 +472,87 @@ export default function Home() {
             </p>
             <p className="text-lg leading-8 text-white/90">{whyWeExistStatement}</p>
           </article>
+        </section>
+
+        <section
+          id="process-groups"
+          className="relative z-10 flex flex-col gap-10 rounded-3xl bg-gradient-to-br from-[#0d2e3a] via-[#0b1f26] to-[#0a1417] p-8 text-white shadow-[0_25px_80px_rgba(4,20,32,0.45)]"
+        >
+          <div className="flex flex-col gap-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
+              Process Groups
+            </p>
+            <h2 className="text-3xl font-semibold sm:text-4xl">Where breakthroughs get rehearsed</h2>
+            <p className="text-base leading-7 text-white/80">
+              Our circles run multiple times a day—clinical, peer-led, and experiential—so every emotion and
+              relapse pattern gets processed in real time. Practice reps, facilitator coaching, and peer
+              accountability transform insights into muscle memory.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch">
+            <div className="flex flex-col gap-6">
+              <p className="text-sm uppercase tracking-[0.35em] text-white/70">What anchors each circle</p>
+              <ul className="flex flex-col gap-4">
+                {processGroupPillars.map((pillar) => (
+                  <li
+                    key={pillar.title}
+                    className="rounded-2xl border border-white/20 bg-white/5 p-5 backdrop-blur-sm"
+                  >
+                    <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#f7c99b]">
+                      {pillar.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/85">{pillar.detail}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <ProcessGroupsShowcase slides={processGroupSlides} />
+          </div>
+        </section>
+
+        <section
+          id="gallery"
+          className="relative z-10 flex flex-col gap-8 rounded-3xl bg-white/80 p-8 shadow-[0_25px_70px_rgba(17,45,58,0.15)]"
+        >
+          <div className="flex flex-col gap-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#1b3b44]">
+              Life On Campus
+            </p>
+            <h2 className="text-3xl font-semibold text-[#0f2f38] sm:text-4xl">
+              Moments that keep recovery human
+            </h2>
+            <p className="text-base leading-7 text-[#2e454c]">
+              From sunrise journaling to nighttime campfires, every gathering reinforces belonging. These scenes
+              capture the safety, accountability, and joy our community builds together every single day.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {campLifeGallery.map((scene) => (
+              <figure
+                key={scene.src}
+                className="group flex flex-col gap-3 rounded-3xl border border-[#e2ecef] bg-white p-3 shadow-sm"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#e3edf2]">
+                  <Image
+                    src={scene.src}
+                    alt={scene.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0f2f38]/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+                </div>
+                <figcaption className="flex flex-col gap-1 px-1 pb-3">
+                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#b87745]">
+                    {scene.label}
+                  </p>
+                  <p className="text-sm text-[#3b5259]">{scene.alt}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
 
         <section
