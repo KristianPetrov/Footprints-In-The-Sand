@@ -47,18 +47,15 @@ export function HeroNav() {
               </Link>
             ))}
           </div>
-          <a
-            href="mailto:care@footprintsinthesand.org"
-            className="hero-nav__cta"
-            onClick={closeMenu}
-          >
-            Email Intake
-          </a>
+          <Link href="#intake" className="hero-nav__cta" onClick={closeMenu}>
+            Start Intake
+          </Link>
         </div>
       </div>
     </nav>
   );
 }
+
 
 
 
