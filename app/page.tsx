@@ -58,8 +58,8 @@ const careRhythms = [
 const campLifeGallery = [
   {
     src: "/birds-eye-view-facility.jpg",
-    alt: "Aerial view of the Footprints In The Sand campus surrounded by trees.",
-    label: "The campus from above",
+    alt: "Outside view of the Footprints In The Sand campus surrounded by trees.",
+    label: "The Footprints In The Sand campus",
   },
   {
     src: "/happy-client-sitting-on-staircase.jpg",
@@ -96,11 +96,7 @@ const campLifeGallery = [
     alt: "Clients in sunglasses sitting together and talking outdoors.",
     label: "Brotherhood moments",
   },
-  {
-    src: "/recovery-group-woman-speaker.jpg",
-    alt: "Recovery group focused on a woman speaking at the center.",
-    label: "Voices that lead",
-  },
+
   {
     src: "/recovery-group.jpg",
     alt: "Large circle of men engaged in a group session.",
@@ -120,13 +116,6 @@ const processGroupSlides = [
     focus: "Accountability Rounds",
     quote: "We surface the hard truths first so everyone can name triggers before they spiral.",
     facilitator: "Lead Process Therapist",
-  },
-  {
-    src: "/recovery-group-woman-speaker.jpg",
-    alt: "A person facilitates the circle while the group locks eyes on their teaching points.",
-    focus: "Facilitated Skill Practice",
-    quote: "Every prompt ends with action steps so growth is felt outside the room.",
-    facilitator: "Clinical Director",
   },
   {
     src: "/recovery-group-behind-couch.jpg",
@@ -334,7 +323,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center gap-4 pt-6 sm:justify-start">
             <Link
-              href="#mission"
+              href="#intake"
               className="inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
             >
               Begin the Journey
@@ -345,6 +334,16 @@ export default function Home() {
             >
               Explore Our Path
             </Link>
+          </div>
+
+          <div className="mt-4 flex flex-col items-center gap-2 text-sm text-[#1b5a6d] sm:flex-row sm:justify-start sm:gap-4">
+            <a href="tel:9493501078" className="font-semibold text-[#0f2f38] hover:underline">
+              Call 9493501078
+            </a>
+            <span className="hidden text-[#b7c9cf] sm:inline">•</span>
+            <a href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#0f2f38] hover:underline">
+              info@footprintsrecovery.net
+            </a>
           </div>
 
           <div className="mt-10 grid gap-6 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm sm:grid-cols-3">
@@ -657,15 +656,29 @@ export default function Home() {
               ))}
             </div>
             <p className="text-sm text-white/70">
-              Prefer to start by phone? Call our front desk at <span className="font-semibold">555-0126</span> and
-              mention you&apos;ve begun this form so we can sync details.
+              Prefer to start live? Call{" "}
+              <a href="tel:9493501078" className="font-semibold text-white hover:underline">
+                9493501078
+              </a>{" "}
+              or email{" "}
+              <a href="mailto:info@footprintsrecovery.net" className="font-semibold text-white hover:underline">
+                info@footprintsrecovery.net
+              </a>{" "}
+              and mention you&apos;ve begun this form so we can sync details.
             </p>
           </div>
           <IntakeForm />
         </section>
 
         <footer className="relative z-10 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm text-[#4a5c60] shadow-inner">
-          Sustainable change is closer than you think. Share your intake above or call our front desk,{" "}
+          Sustainable change is closer than you think. Share your intake above, call{" "}
+          <a href="tel:9493501078" className="font-semibold text-[#1b5a6d]">
+            9493501078
+          </a>
+          , or email{" "}
+          <a href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#1b5a6d]">
+            info@footprintsrecovery.net
+          </a>{" "}
           {footerBlessing}
         </footer>
       </div>

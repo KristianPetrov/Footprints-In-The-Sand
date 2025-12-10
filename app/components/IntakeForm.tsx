@@ -9,6 +9,7 @@ type IntakeFormValues = {
   phone: string;
   preferredContact: "phone" | "email";
   insuranceCarrier: string;
+  insuranceMemberId: string;
   coverageNotes: string;
   supportFocus: string;
   notes: string;
@@ -21,6 +22,7 @@ const defaultValues: IntakeFormValues = {
   phone: "",
   preferredContact: "phone",
   insuranceCarrier: "",
+  insuranceMemberId: "",
   coverageNotes: "",
   supportFocus: "",
   notes: "",
@@ -144,6 +146,16 @@ export function IntakeForm() {
             className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
           />
         </label>
+        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
+          <span>Insurance member ID</span>
+          <input
+            type="text"
+            name="insuranceMemberId"
+            value={values.insuranceMemberId}
+            onChange={(event) => updateField("insuranceMemberId", event.target.value)}
+            className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+          />
+        </label>
       </div>
 
       <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
@@ -210,3 +222,6 @@ export function IntakeForm() {
     </form>
   );
 }
+
+
+
