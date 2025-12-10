@@ -58,12 +58,12 @@ const careRhythms = [
 const campLifeGallery = [
   {
     src: "/birds-eye-view-facility.jpg",
-    alt: "Outside view of the Footprints In The Sand campus surrounded by trees.",
+    alt: "Outside view of the Footprints In The Sand campus.",
     label: "The Footprints In The Sand campus",
   },
   {
     src: "/happy-client-sitting-on-staircase.jpg",
-    alt: "Client sitting on a sunlit staircase journaling quietly.",
+    alt: "Client sitting on a sunlit staircase.",
     label: "Quiet reflection",
   },
   {
@@ -88,7 +88,7 @@ const campLifeGallery = [
   },
   {
     src: "/recovery-group-behind-couch.jpg",
-    alt: "Clients listening intently to a group session from behind a couch.",
+    alt: "Clients listening intently to a group session.",
     label: "Listening hearts",
   },
   {
@@ -122,7 +122,7 @@ const processGroupSlides = [
     alt: "Clients mindfuly listen during a group share.",
     focus: "Somatic Check-ins",
     quote: "We ask where tension lives in the body so coping plans are rooted in reality.",
-    facilitator: "Lauren — Somatic Therapist",
+    facilitator: "Somatic Therapist",
   },
   {
     src: "/recovery-group-sunglasses-dudes.jpg",
