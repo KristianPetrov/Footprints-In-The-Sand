@@ -337,13 +337,13 @@ export default function Home() {
           </div>
 
           <div className="mt-4 flex flex-col items-center gap-2 text-sm text-[#1b5a6d] sm:flex-row sm:justify-start sm:gap-4">
-            <a href="tel:9493501078" className="font-semibold text-[#0f2f38] hover:underline">
+            <Link href="tel:9493501078" className="font-semibold text-[#0f2f38] hover:underline">
               Call 9493501078
-            </a>
+            </Link>
             <span className="hidden text-[#b7c9cf] sm:inline">•</span>
-            <a href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#0f2f38] hover:underline">
+            <Link href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#0f2f38] hover:underline">
               info@footprintsrecovery.net
-            </a>
+            </Link>
           </div>
 
           <div className="mt-10 grid gap-6 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm sm:grid-cols-3">
@@ -657,13 +657,13 @@ export default function Home() {
             </div>
             <p className="text-sm text-white/70">
               Prefer to start live? Call{" "}
-              <a href="tel:9493501078" className="font-semibold text-white hover:underline">
+              <Link href="tel:9493501078" className="font-semibold text-white hover:underline">
                 9493501078
-              </a>{" "}
+              </Link>{" "}
               or email{" "}
-              <a href="mailto:info@footprintsrecovery.net" className="font-semibold text-white hover:underline">
+              <Link href="mailto:info@footprintsrecovery.net" className="font-semibold text-white hover:underline">
                 info@footprintsrecovery.net
-              </a>{" "}
+              </Link>{" "}
               and mention you&apos;ve begun this form so we can sync details.
             </p>
           </div>
@@ -672,13 +672,13 @@ export default function Home() {
 
         <footer className="relative z-10 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm text-[#4a5c60] shadow-inner">
           Sustainable change is closer than you think. Share your intake above, call{" "}
-          <a href="tel:9493501078" className="font-semibold text-[#1b5a6d]">
+          <Link href="tel:9493501078" className="font-semibold text-[#1b5a6d]">
             9493501078
-          </a>
+          </Link>
           , or email{" "}
-          <a href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#1b5a6d]">
+          <Link href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#1b5a6d]">
             info@footprintsrecovery.net
-          </a>{" "}
+          </Link>{" "}
           {footerBlessing}
         </footer>
       </div>
