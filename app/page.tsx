@@ -22,23 +22,6 @@ const anchorPromises = [
   },
 ];
 
-const pathMarkers = [
-  {
-    label: "Wreckage",
-    detail:
-      "We sit with the rubble, name the pain, and strip away the shame that has silenced you for too long.",
-  },
-  {
-    label: "Healing",
-    detail:
-      "Daily practices, guided counseling, and nervous-system regulation help shake loose the chains and rebuild trust.",
-  },
-  {
-    label: "Rebirth",
-    detail:
-      "Step by step, footprint by footprint, we cultivate new rhythms, restored relationships, and a future full of hope.",
-  },
-];
 
 const careRhythms = [
   {
@@ -204,39 +187,47 @@ const clientSupport = [
 ];
 
 const programHighlights = [
-  "Low client-to-staff ratio so every story is seen and shepherded",
-  "Integrated care for both addiction recovery and mental health stability",
+  "Low client to staff ratio to assure individualized care",
+  "Convenient location across from Costa Mesa DMV",
+  "Staff aids clients in gaining access to community resources such as public transportation, food, eye care, dental care, and library access.",
 ];
 
 const treatmentTracks = [
   {
-    category: "Depressant Addiction",
+    category: "Substance Addictions",
     items: [
       "Alcohol",
+      "Opioids",
+      "Methamphetamine",
+      "Cocaine",
       "Marijuana",
-      "Benzodiazepines",
-      "Barbiturates",
-      "GABAergics",
-      "Other Depressants",
+      "Other Prescription Drugs",
+      "Synthetic Drugs",
+      "Other Stimulants (Ex. adderall)",
+      "Benzodiazepines (Ex. xanax)",
+      "Fentanyl",
+      "Inhalants",
     ],
   },
   {
-    category: "Stimulant Addiction",
-    items: ["Methamphetamine", "Cocaine", "MDMA", "Amphetamines"],
+    category: "Co-Occurring Process Addictions",
+    items: [
+      "Sex/ Porn",
+      "Gambling",
+      "Internet",
+      "Shopping",
+      "Work",
+    ],
   },
   {
-    category: "Opiate Addiction",
+    category: "Mental Health Disorders",
     items: [
-      "Heroin",
-      "Fentanyl",
-      "Oxycodone",
-      "Hydrocodone",
-      "Morphine",
-      "Codeine",
-      "Buprenorphine",
-      "Methadone",
-      "Suboxone",
-
+      "Substance Use Disorders",
+      "Post Traumatic Stress Disorder",
+      "Depressive Disorders",
+      "Bipolar Disorder",
+      "Anxiety Disorders",
+      "Personality Disorders",
     ],
   },
 ];
@@ -252,6 +243,21 @@ const therapyModalities = [
   "Individual Therapy",
   "MAT",
   "Motivational Interviewing",
+];
+
+const teamMembers = [
+  {
+    name: "Wade Stephens",
+    title: "Lead Case Manager",
+    image: "/wade-profile-photo.jpeg",
+    id: "wade-stephens",
+  },
+  {
+    name: "Tazia Shaw",
+    title: "Case Manager",
+    image: "/tazia-profile-photo.jpeg",
+    id: "tazia-shaw",
+  },
 ];
 
 const heroSubheadline =
@@ -346,20 +352,6 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-6 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm sm:grid-cols-3">
-            <div>
-              <p className="text-3xl font-semibold text-[#d08a4c]">20+</p>
-              <p className="text-[#5d6d70]">Guides, counselors, and medical providers</p>
-            </div>
-            <div>
-              <p className="text-3xl font-semibold text-[#1b5a6d]">3</p>
-              <p className="text-[#5d6d70]">Core stages: Wreckage, Healing, Rebirth</p>
-            </div>
-            <div>
-              <p className="text-3xl font-semibold text-[#d08a4c]">365</p>
-              <p className="text-[#5d6d70]">Days of coverage, coaching, and care each year</p>
-            </div>
-          </div>
         </header>
 
         <section
@@ -606,16 +598,6 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="grid gap-6 rounded-3xl bg-gradient-to-r from-[#e5f3f9] via-[#f9efe0] to-[#f7e1c2] p-6 sm:grid-cols-3">
-            {pathMarkers.map((marker) => (
-              <div key={marker.label} className="flex flex-col gap-2 rounded-2xl bg-white/70 p-5 shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#1b3b44]">
-                  {marker.label}
-                </p>
-                <p className="text-sm leading-6 text-[#355159]">{marker.detail}</p>
-              </div>
-            ))}
-          </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {careRhythms.map((rhythm) => (
@@ -668,6 +650,93 @@ export default function Home() {
             </p>
           </div>
           <IntakeForm />
+        </section>
+
+        <section
+          id="team"
+          className="relative z-10 flex flex-col gap-10 rounded-3xl bg-white/90 p-8 shadow-[0_20px_60px_rgba(14,49,63,0.12)]"
+        >
+          <div className="flex flex-col gap-3 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#1b3b44]">
+              Our Team
+            </p>
+            <h2 className="text-3xl font-semibold text-[#0f2f38] sm:text-4xl">
+              The People Who Walk With You
+            </h2>
+            <p className="text-base leading-7 text-[#2e454c]">
+              Meet the dedicated professionals committed to your recovery journey.
+            </p>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2 lg:max-w-2xl lg:mx-auto">
+            {teamMembers.map((member) => (
+              <Link
+                key={member.name}
+                href={`/team#${member.id}`}
+                className="group flex flex-col items-center gap-4 rounded-2xl border border-[#e3e9eb] bg-[#fefcf8] p-6 transition hover:border-[#b87745] hover:shadow-lg"
+              >
+                <div className="relative aspect-[2/3] w-48 overflow-hidden rounded-xl bg-[#e3edf2]">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.title}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 192px"
+                    className="object-contain object-top"
+                  />
+                </div>
+                <div className="flex flex-col items-center gap-1 text-center">
+                  <h3 className="text-lg font-semibold text-[#0f2f38] group-hover:text-[#b87745] transition">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-[#1b5a6d]">{member.title}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <Link
+              href="/team"
+              className="inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-6 py-2 text-sm font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
+            >
+              Learn More About Our Team
+            </Link>
+          </div>
+        </section>
+
+        <section className="relative z-10 flex flex-col items-center gap-6 rounded-3xl border border-white/60 bg-white/70 p-8 shadow-inner">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#1b3b44]">
+            Certifications & Accreditation
+          </p>
+          <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:gap-12">
+            <div className="flex flex-col items-center gap-3">
+              <Link
+                href="https://www.dhcs.ca.gov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src="/dhcs-logo.png"
+                  alt="DHCS Logo"
+                  width={120}
+                  height={120}
+                  className="h-auto w-auto"
+                />
+              </Link>
+              <p className="text-xs text-[#4a5c60]">
+                Certification Number:{" "}
+                <span className="font-semibold text-[#1b5a6d]">300751AP</span>
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <Image
+                src="/the-joint-comission-seal.png"
+                alt="The Joint Commission Logo"
+                width={120}
+                height={120}
+                className="h-auto w-auto"
+              />
+            </div>
+          </div>
         </section>
 
         <footer className="relative z-10 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm text-[#4a5c60] shadow-inner">
