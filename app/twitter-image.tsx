@@ -2,6 +2,7 @@ import { ImageResponse } from 'next/og'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
 
+export const runtime = 'nodejs'
 export const alt = 'Footprints In The Sand Recovery Center - Where Broken Roads Become Steady Ground'
 export const size = {
   width: 1200,

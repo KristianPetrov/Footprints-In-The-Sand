@@ -1,7 +1,8 @@
 import { ImageResponse } from 'next/og'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
-import Image from "next/image"
+
+export const runtime = 'nodejs'
 export const alt = 'Footprints In The Sand Recovery Center - Where Broken Roads Become Steady Ground'
 export const size = {
   width: 1200,
@@ -31,7 +32,7 @@ export default async function OGImage() {
       >
         {/* Logo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <Image
+        <img
           src={logoBase64}
           alt=""
           width={200}
