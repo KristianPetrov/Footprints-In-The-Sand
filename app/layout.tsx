@@ -1,15 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const siteName = "Footprints In The Sand Recovery Center";
@@ -17,6 +21,13 @@ const siteUrl = "https://footprintsinthesand.org";
 const siteDescription =
   "At Footprints In The Sand, our mission is to help people break free from the cycles that once controlled their lives with evidence-based PHP and IOP programming, relentless accountability, and multidisciplinary care.";
 const ogImagePath = "/footprints-in-the-sand-minimal-logo.png";
+
+export const viewport: Viewport = {
+  themeColor: "#03171d",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -26,7 +37,6 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   applicationName: siteName,
-  themeColor: "#03171d",
   keywords: [
     "Footprints In The Sand",
     "addiction treatment",
@@ -35,8 +45,12 @@ export const metadata: Metadata = {
     "dual diagnosis care",
     "trauma-informed therapy",
     "mental health recovery",
-    "coastal rehab",
+    "Costa Mesa rehab",
+    "Orange County addiction treatment",
     "evidence-based recovery",
+    "substance abuse treatment",
+    "alcohol addiction",
+    "drug rehabilitation",
   ],
   authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
@@ -57,7 +71,7 @@ export const metadata: Metadata = {
         url: ogImagePath,
         width: 1200,
         height: 630,
-        alt: "Footprints In The Sand minimal logo",
+        alt: "Footprints In The Sand Recovery Center - Where Broken Roads Become Steady Ground",
       },
     ],
   },
@@ -87,7 +101,71 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: true,
     email: true,
-    address: false,
+    address: true,
+  },
+  verification: {
+    // Add your verification tokens here when ready
+    // google: "your-google-verification-code",
+  },
+};
+
+// JSON-LD Structured Data for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: siteName,
+  description: siteDescription,
+  url: siteUrl,
+  logo: `${siteUrl}${ogImagePath}`,
+  image: `${siteUrl}${ogImagePath}`,
+  telephone: "+1-949-350-1078",
+  email: "info@footprintsrecovery.net",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "653 West 19th Street",
+    addressLocality: "Costa Mesa",
+    addressRegion: "CA",
+    postalCode: "92627",
+    addressCountry: "US",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 33.6461,
+    longitude: -117.9305,
+  },
+  openingHours: "Mo-Fr 09:30-16:00",
+  priceRange: "$$",
+  medicalSpecialty: [
+    "Addiction Medicine",
+    "Mental Health",
+    "Substance Abuse Treatment",
+  ],
+  availableService: [
+    {
+      "@type": "MedicalTherapy",
+      name: "Partial Hospitalization Program (PHP)",
+      description: "Intensive day treatment program for addiction and mental health recovery",
+    },
+    {
+      "@type": "MedicalTherapy",
+      name: "Intensive Outpatient Program (IOP)",
+      description: "Flexible outpatient treatment for addiction and mental health",
+    },
+    {
+      "@type": "MedicalTherapy",
+      name: "Dual Diagnosis Treatment",
+      description: "Integrated treatment for co-occurring mental health and substance use disorders",
+    },
+  ],
+  sameAs: [],
+  areaServed: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: 33.6461,
+      longitude: -117.9305,
+    },
+    geoRadius: "50000",
   },
 };
 
@@ -98,6 +176,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

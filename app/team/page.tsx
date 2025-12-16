@@ -1,9 +1,19 @@
-"use client";
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import { HeroNav } from "../components/HeroNav";
+import { ScrollToHash } from "../components/ScrollToHash";
+
+export const metadata: Metadata = {
+  title: "Our Team",
+  description:
+    "Meet the dedicated professionals at Footprints In The Sand Recovery Center. Our experienced counselors, case managers, and support staff bring expertise, compassion, and lived experience to support your recovery journey.",
+  openGraph: {
+    title: "Our Team | Footprints In The Sand Recovery Center",
+    description:
+      "Meet the dedicated professionals committed to your recovery journey at Footprints In The Sand.",
+  },
+};
 
 const teamMembers = [
   {
@@ -24,114 +34,133 @@ const teamMembers = [
   },
 ];
 
+// JSON-LD for team page
+const teamJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Footprints In The Sand Recovery Center Team",
+  description: "Our dedicated team of addiction and mental health professionals",
+  itemListElement: teamMembers.map((member, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Person",
+      name: member.name,
+      jobTitle: member.title,
+      description: member.bio.substring(0, 200) + "...",
+      worksFor: {
+        "@type": "Organization",
+        name: "Footprints In The Sand Recovery Center",
+      },
+    },
+  })),
+};
+
 export default function TeamPage() {
-  useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    if (hash) {
-      setTimeout(() => {
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, []);
-
   return (
-    <div className="beach-sky grain-overlay min-h-screen w-full overflow-hidden text-[#1f2a2e]">
-      <HeroNav />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-16 pt-24 sm:px-8 lg:px-12 lg:pb-24 lg:pt-32">
-        <Image
-          src="/footprints.svg"
-          alt="Footprints in the sand illustration"
-          width={200}
-          height={320}
-          className="pointer-events-none absolute -right-8 bottom-10 opacity-70"
-        />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(teamJsonLd) }}
+      />
+      <ScrollToHash />
+      <div className="beach-sky grain-overlay min-h-screen w-full overflow-hidden text-[#1f2a2e]">
+        <HeroNav />
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-16 pt-24 sm:px-8 lg:px-12 lg:pb-24 lg:pt-32">
+          <Image
+            src="/footprints.svg"
+            alt=""
+            width={200}
+            height={320}
+            className="pointer-events-none absolute -right-8 bottom-10 opacity-70"
+            aria-hidden="true"
+          />
 
-        <header className="hero-header glass-panel relative z-10 overflow-hidden p-8 sm:p-10 lg:p-14">
-          <div className="flex flex-col gap-6 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#b87745]">
-              Our Team
-            </p>
-            <h1 className="text-4xl font-semibold leading-tight text-[#0f2f38] sm:text-5xl lg:text-6xl">
-              The People Who Walk With You
-            </h1>
-            <p className="text-lg leading-8 text-[#33545d] sm:text-xl">
-              Meet the dedicated professionals committed to your recovery journey. Each member of our team brings
-              expertise, compassion, and lived experience to support you every step of the way.
-            </p>
-          </div>
-        </header>
+          <header className="hero-header glass-panel relative z-10 overflow-hidden p-8 sm:p-10 lg:p-14">
+            <div className="flex flex-col gap-6 text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#b87745]">
+                Our Team
+              </p>
+              <h1 className="text-4xl font-semibold leading-tight text-[#0f2f38] sm:text-5xl lg:text-6xl">
+                The People Who Walk With You
+              </h1>
+              <p className="text-lg leading-8 text-[#33545d] sm:text-xl">
+                Meet the dedicated professionals committed to your recovery journey. Each member of our team brings
+                expertise, compassion, and lived experience to support you every step of the way.
+              </p>
+            </div>
+          </header>
 
-        <section className="relative z-10 flex flex-col gap-12">
-          {teamMembers.map((member, index) => (
-            <article
-              key={member.name}
-              id={member.id}
-              className={`scroll-mt-24 flex flex-col gap-8 rounded-3xl bg-white/90 p-8 shadow-[0_20px_60px_rgba(14,49,63,0.12)] lg:flex-row ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
-              <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl bg-[#e3edf2] lg:w-80 lg:flex-shrink-0">
-                <Image
-                  src={member.image}
-                  alt={`${member.name} - ${member.title}`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 320px"
-                  className="object-contain object-top"
-                />
-              </div>
-              <div className="flex flex-1 flex-col gap-4">
-                <div>
-                  <h2 className="text-2xl font-semibold text-[#0f2f38] sm:text-3xl">{member.name}</h2>
-                  <p className="mt-1 text-base font-semibold text-[#b87745] sm:text-lg">
-                    {member.title}
-                  </p>
-                  <p className="mt-1 text-sm uppercase tracking-[0.2em] text-[#1b5a6d]">
-                    {member.credentials}
-                  </p>
+          <section className="relative z-10 flex flex-col gap-12" aria-label="Team members">
+            {teamMembers.map((member, index) => (
+              <article
+                key={member.name}
+                id={member.id}
+                className={`scroll-mt-24 flex flex-col gap-8 rounded-3xl bg-white/90 p-8 shadow-[0_20px_60px_rgba(14,49,63,0.12)] lg:flex-row ${
+                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                }`}
+              >
+                <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl bg-[#e3edf2] lg:w-80 lg:flex-shrink-0">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.title}`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 320px"
+                    className="object-contain object-top"
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
                 </div>
-                <div className="prose prose-sm max-w-none text-[#2e454c] sm:prose-base">
-                  <p className="leading-7">{member.bio}</p>
+                <div className="flex flex-1 flex-col gap-4">
+                  <div>
+                    <h2 className="text-2xl font-semibold text-[#0f2f38] sm:text-3xl">{member.name}</h2>
+                    <p className="mt-1 text-base font-semibold text-[#b87745] sm:text-lg">
+                      {member.title}
+                    </p>
+                    <p className="mt-1 text-sm uppercase tracking-[0.2em] text-[#1b5a6d]">
+                      {member.credentials}
+                    </p>
+                  </div>
+                  <div className="prose prose-sm max-w-none text-[#2e454c] sm:prose-base">
+                    <p className="leading-7">{member.bio}</p>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </section>
+              </article>
+            ))}
+          </section>
 
-        <section className="relative z-10 flex flex-col items-center gap-6 rounded-3xl border border-white/60 bg-white/70 p-8 shadow-inner">
-          <p className="text-center text-lg leading-8 text-[#2e454c]">
-            Ready to begin your journey? Our team is here to support you.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/#intake"
-              className="inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
-            >
-              Start Intake
-            </Link>
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
-            >
-              Back to Home
-            </Link>
-          </div>
-        </section>
+          <section className="relative z-10 flex flex-col items-center gap-6 rounded-3xl border border-white/60 bg-white/70 p-8 shadow-inner">
+            <p className="text-center text-lg leading-8 text-[#2e454c]">
+              Ready to begin your journey? Our team is here to support you.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/#intake"
+                className="inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
+              >
+                Start Intake
+              </Link>
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
+              >
+                Back to Home
+              </Link>
+            </div>
+          </section>
 
-        <footer className="relative z-10 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm text-[#4a5c60] shadow-inner">
-          Sustainable change is closer than you think. Call{" "}
-          <Link href="tel:9493501078" className="font-semibold text-[#1b5a6d]">
-            9493501078
-          </Link>
-          , or email{" "}
-          <Link href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#1b5a6d]">
-            info@footprintsrecovery.net
-          </Link>{" "}
-          and let&apos;s map the next evidence-backed step together.
-        </footer>
+          <footer className="relative z-10 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm text-[#4a5c60] shadow-inner">
+            Sustainable change is closer than you think. Call{" "}
+            <Link href="tel:9493501078" className="font-semibold text-[#1b5a6d]">
+              9493501078
+            </Link>
+            , or email{" "}
+            <Link href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#1b5a6d]">
+              info@footprintsrecovery.net
+            </Link>{" "}
+            and let&apos;s map the next evidence-backed step together.
+          </footer>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

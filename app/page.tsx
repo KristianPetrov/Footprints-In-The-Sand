@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { HeroNav } from "./components/HeroNav";
 import { IntakeForm } from "./components/IntakeForm";
 import { ProcessGroupsShowcase } from "./components/ProcessGroupsShowcase";
@@ -188,7 +189,7 @@ const clientSupport = [
 
 const programHighlights = [
   "Low client to staff ratio to assure individualized care",
-  "Convenient location across from Costa Mesa DMV",
+  "Minutes from the beach — 653 West 19th Street, Costa Mesa",
   "Staff aids clients in gaining access to community resources such as public transportation, food, eye care, dental care, and library access.",
 ];
 
@@ -293,10 +294,11 @@ export default function Home() {
         /> */}
         <Image
           src="/footprints.svg"
-          alt="Footprints in the sand illustration"
+          alt=""
           width={200}
           height={320}
           className="pointer-events-none absolute -right-8 bottom-10 opacity-70"
+          aria-hidden="true"
         />
 
         <div className="hero-logo-stage">
@@ -519,7 +521,9 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <ProcessGroupsShowcase slides={processGroupSlides} />
+            <Suspense fallback={<div className="flex h-full min-h-[400px] items-center justify-center rounded-3xl border border-[#e2ecef] bg-white/95"><p className="text-[#1b3b44]">Loading...</p></div>}>
+              <ProcessGroupsShowcase slides={processGroupSlides} />
+            </Suspense>
           </div>
         </section>
 
@@ -541,7 +545,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {campLifeGallery.map((scene) => (
+            {campLifeGallery.map((scene, index) => (
               <figure
                 key={scene.src}
                 className="group flex flex-col gap-3 rounded-3xl border border-[#e2ecef] bg-white p-3 shadow-sm"
@@ -553,6 +557,7 @@ export default function Home() {
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
+                    loading={index < 3 ? "eager" : "lazy"}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0f2f38]/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
                 </div>
@@ -649,7 +654,9 @@ export default function Home() {
               and mention you&apos;ve begun this form so we can sync details.
             </p>
           </div>
-          <IntakeForm />
+          <Suspense fallback={<div className="flex min-h-[400px] items-center justify-center rounded-3xl border border-white/15 bg-white/5"><p className="text-white/70">Loading form...</p></div>}>
+            <IntakeForm />
+          </Suspense>
         </section>
 
         <section
@@ -681,6 +688,7 @@ export default function Home() {
                     fill
                     sizes="(max-width: 640px) 100vw, 192px"
                     className="object-contain object-top"
+                    loading="lazy"
                   />
                 </div>
                 <div className="flex flex-col items-center gap-1 text-center">
@@ -702,6 +710,51 @@ export default function Home() {
           </div>
         </section>
 
+        <section
+          id="location"
+          className="relative z-10 grid gap-8 rounded-3xl bg-white/90 p-8 shadow-[0_20px_60px_rgba(14,49,63,0.12)] lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch"
+        >
+          <div className="flex flex-col gap-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#1b3b44]">
+              Location
+            </p>
+            <h2 className="text-3xl font-semibold text-[#0f2f38] sm:text-4xl">
+              Minutes from the beach in Costa Mesa
+            </h2>
+            <p className="text-base leading-7 text-[#2e454c]">
+              653 West 19th Street, Costa Mesa, CA
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                href="https://www.google.com/maps?q=653%20West%2019th%20Street%2C%20Costa%20Mesa%2C%20CA&output=embed"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-6 py-2 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.15)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
+              >
+                Open in Google Maps
+              </Link>
+              <Link
+                href="#intake"
+                className="inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-6 py-2 text-sm font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
+              >
+                Start Intake
+              </Link>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl border border-[#e3e9eb] bg-white shadow-sm">
+            <div className="relative aspect-[16/10] w-full">
+              <iframe
+                title="Footprints In The Sand location map"
+                src="https://www.google.com/maps?q=653%20West%2019th%20Street%2C%20Costa%20Mesa%2C%20CA&output=embed"
+                className="absolute inset-0 h-full w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </section>
+
         <section className="relative z-10 flex flex-col items-center gap-6 rounded-3xl border border-white/60 bg-white/70 p-8 shadow-inner">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#1b3b44]">
             Certifications & Accreditation
@@ -716,10 +769,11 @@ export default function Home() {
               >
                 <Image
                   src="/dhcs-logo.png"
-                  alt="DHCS Logo"
+                  alt="California Department of Health Care Services (DHCS) certification logo"
                   width={120}
                   height={120}
                   className="h-auto w-auto"
+                  loading="lazy"
                 />
               </Link>
               <p className="text-xs text-[#4a5c60]">
@@ -730,10 +784,11 @@ export default function Home() {
             <div className="flex flex-col items-center gap-3">
               <Image
                 src="/the-joint-comission-seal.png"
-                alt="The Joint Commission Logo"
+                alt="The Joint Commission accreditation seal"
                 width={120}
                 height={120}
                 className="h-auto w-auto"
+                loading="lazy"
               />
             </div>
           </div>
