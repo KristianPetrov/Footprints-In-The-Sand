@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroNav } from "../components/HeroNav";
 import { ScrollToHash } from "../components/ScrollToHash";
+import { time } from "console";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -31,7 +32,16 @@ const teamMembers = [
     image: "/tazia-profile-photo.jpeg",
     id: "tazia-shaw",
     bio: `Tazia is a vibrant, compassionate, and outgoing Registered Alcohol and Drug Abuse Counselor (CCAPP Credentialed) with five years of experience in the recovery world, including four years in treatment and nearly two years serving as a Case Manager and SUD Counselor. She completed her formal education through The Distance Learning Center for Addiction Studies and is currently working toward obtaining her CDAC-1, further strengthening her clinical knowledge and professional advancement. Tazia's hands-on experience includes substance use assessments, treatment planning, case management, relapse prevention, group facilitation, crisis intervention, and client advocacy. She approaches her work with empathy, positivity, and a strong solution-focused mindset. Collaborative by nature, she thrives in team environments where she can bring enthusiasm, adaptability, and heart. Whether she is supporting clients, connecting with peers, or showing up in the recovery community, Tazia is known for her unwavering commitment, contagious energy, and ability to make everyone around her feel uplifted and valued. Her dedication extends far beyond working hours—she consistently volunteers, attends community events, mentors others, and provides support in any way she can. Tazia is deeply rooted in the recovery world, not just as a clinician but as a passionate advocate who lives and breathes the values of connection, service, and growth. As a devoted mother, Tazia draws strength and motivation from her children, who inspire her to lead with integrity, resilience, and love. She brings heart, humor, and authenticity into every space she enters—showing up not only as a clinician, but as a genuine, caring human being dedicated to helping individuals find purpose, belonging, and long-term recovery.`,
-  },
+  },{
+   name: "Sandy Bekhit MS",
+   title: "Therapist",
+   credentials: "AMFT #154693, LPCC #19287",
+   image:"/sandy-bhekit-photo.jpeg",
+   id: "sandy-bekhit",
+   bio:`(Superviised by Alyssa Van Boxmeer, LMFT)
+Sandy Bekhit is an Associate Marriage & Family Therapist and Associate Professional Clinical Counselor with four years of clinical experience. She earned her B.A. in Psychology from Vanguard University of Southern California and her M.S. in Counseling Psychology from California Baptist University. Sandy has worked in both inpatient and outpatient settings, including over three years in substance use treatment, supporting individuals impacted by trauma, addiction, and co-occurring mental health disorders. During her clinical training, she provided school-based and teletherapy services within the Fullerton School District. She now works with adults, offering individual, group, and couples/family therapy, and specializes in substance use, trauma, mood, and personality disorders. Her eclectic, client-centered approach draws from CBT, DBT, and psychodynamic therapy, with an emphasis on attachment theory and individualized care. Outside the therapy room, Sandy is a fluent Arabic speaker, devoted animal lover, and proud maltipoo mom. She is also a passionate foodie and coffee/matcha enthusiast, enjoying the simple pleasures that bring connection and balance to everyday life.`
+
+  }
 ];
 
 // JSON-LD for team page
@@ -164,3 +174,4 @@ export default function TeamPage() {
     </>
   );
 }
+
