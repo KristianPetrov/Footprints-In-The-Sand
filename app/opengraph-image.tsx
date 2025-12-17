@@ -3,7 +3,7 @@ import { readFile } from 'fs/promises'
 import { join } from 'path'
 
 export const runtime = 'nodejs'
-export const alt = 'Footprints In The Sand Recovery Center - Where Broken Roads Become Steady Ground'
+export const alt = 'Footprints In The Sand 2 Recovery - Where Broken Roads Become Steady Ground'
 export const size = {
   width: 1200,
   height: 630,
@@ -55,7 +55,7 @@ export default async function OGImage() {
             marginBottom: 16,
           }}
         >
-          Footprints In The Sand
+          Footprints In The Sand 2 Recovery
         </div>
 
         {/* Tagline */}
@@ -109,3 +109,5 @@ export default async function OGImage() {
     }
   )
 }
+
+

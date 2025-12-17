@@ -42,8 +42,8 @@ const careRhythms = [
 const campLifeGallery = [
   {
     src: "/birds-eye-view-facility.jpg",
-    alt: "Outside view of the Footprints In The Sand campus.",
-    label: "The Footprints In The Sand campus",
+    alt: "Outside view of the Footprints In The Sand 2 Recovery campus.",
+    label: "The Footprints In The Sand 2 Recovery campus",
   },
   {
     src: "/happy-client-sitting-on-staircase.jpg",
@@ -270,11 +270,11 @@ const teamMembers = [
 const heroSubheadline =
   "We walk beside you through stabilization, skill-building, and sustainable recovery--step by step, footprint by footprint, powered by research-driven care and relentless encouragement.";
 
-const missionStatement = `At Footprints In The Sand, our mission is to help people break free from the cycles that once controlled their lives and step into a future they never thought possible. We’re here for the ones carrying heavy histories, the ones tired of running, and the ones ready to finally face the truth head-on. No judgment. No sugarcoating. Just real support, real accountability, and a team that refuses to let you quit on yourself. We walk with you through the fight, the healing, and the rebuilding—pushing you to rise stronger, stand taller, and reclaim every part of your life, one powerful step at a time.`;
+const missionStatement = `At Footprints In The Sand 2 Recovery, our mission is to help people break free from the cycles that once controlled their lives and step into a future they never thought possible. We’re here for the ones carrying heavy histories, the ones tired of running, and the ones ready to finally face the truth head-on. No judgment. No sugarcoating. Just real support, real accountability, and a team that refuses to let you quit on yourself. We walk with you through the fight, the healing, and the rebuilding—pushing you to rise stronger, stand taller, and reclaim every part of your life, one powerful step at a time.`;
 
 const ourHeartStatement = `Our work is fueled by watching people reclaim agency. We place multidisciplinary teams and trained peers beside you so detox, therapy, medication management, and skills practice stay connected. Every narrative matters. Every measurable gain is worth the effort. Each step forward is evidence that neurologic change is happening.`;
 
-const whyWeExistStatement = `We exist because life hits hard--and addiction collides with mental health in ways that are easy to hide. Too many people manage crises in silence, shame, and broken cycles. Footprints In The Sand interrupts that loop with transparent dialogue, validated interventions, and structured accountability. We offer space to own your story, address physiology and behavior together, and rebuild from the ground up. No pretending. No judgment. Just people doing the clinical work required to take their lives back.`;
+const whyWeExistStatement = `We exist because life hits hard--and addiction collides with mental health in ways that are easy to hide. Too many people manage crises in silence, shame, and broken cycles. Footprints In The Sand 2 Recovery interrupts that loop with transparent dialogue, validated interventions, and structured accountability. We offer space to own your story, address physiology and behavior together, and rebuild from the ground up. No pretending. No judgment. Just people doing the clinical work required to take their lives back.`;
 
 const footerBlessing = "and let's map the next evidence-backed step together.";
 
@@ -315,7 +315,7 @@ export default function Home() {
           </div>
           <Image
             src="/footprints-in-the-sand-minimal-logo.png"
-            alt="Footprints In The Sand minimal logo"
+            alt="Footprints In The Sand 2 Recovery minimal logo"
             width={420}
             height={420}
             priority
@@ -325,7 +325,7 @@ export default function Home() {
 
         <header className="hero-header glass-panel relative z-10 overflow-hidden p-8 sm:p-10 lg:p-14">
           <div className="flex flex-col gap-6 text-center sm:text-left">
-            <p className="tagline text-[#1b3b44]">Footprints In The Sand Recovery Center</p>
+            <p className="tagline text-[#1b3b44]">Footprints In The Sand 2 Recovery</p>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#b87745]">
               Light for every hard-won step
             </p>
@@ -391,7 +391,7 @@ export default function Home() {
             </article>
             <article className="rounded-3xl bg-white text-[#0f2f38] p-6 shadow-xl">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#b87745]">
-                Each Client Receives
+                Services Provided
               </p>
               <ul className="mt-4 flex flex-col gap-3 text-sm leading-6">
                 {clientSupport.map((item) => (
@@ -452,7 +452,7 @@ export default function Home() {
           <div className="overflow-hidden rounded-3xl border border-[#e3e9eb] bg-white shadow-sm">
             <div className="relative aspect-[16/10] w-full">
               <iframe
-                title="Footprints In The Sand location map"
+                title="Footprints In The Sand 2 Recovery location map"
                 src="https://www.google.com/maps?q=653%20West%2019th%20Street%2C%20Costa%20Mesa%2C%20CA&output=embed"
                 className="absolute inset-0 h-full w-full"
                 loading="lazy"
@@ -518,7 +518,7 @@ export default function Home() {
 
         <section
           id="mission"
-          className="relative z-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch"
+          className="relative z-10 grid gap-8  lg:items-stretch"
         >
           <article className="rounded-3xl bg-white/90 p-8 shadow-[0_25px_70px_rgba(20,52,66,0.12)]">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#1b3b44]">
@@ -526,15 +526,7 @@ export default function Home() {
             </p>
             <p className="mt-6 text-lg leading-8 text-[#2e454c]">{missionStatement}</p>
           </article>
-          <article className="wave-mask flex flex-col gap-6 rounded-3xl bg-gradient-to-br from-[#0d3e4f] via-[#0e596d] to-[#0b3a42] p-8 text-white shadow-[0_25px_70px_rgba(10,40,52,0.35)]">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Our Heart</p>
-            <p className="text-lg leading-8 text-white/90">{ourHeartStatement}</p>
-            <hr className="border-white/30" />
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-              Why We Exist
-            </p>
-            <p className="text-lg leading-8 text-white/90">{whyWeExistStatement}</p>
-          </article>
+
         </section>
 
         <section
@@ -545,16 +537,16 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
               Process Groups
             </p>
-            <h2 className="text-3xl font-semibold sm:text-4xl">Where breakthroughs get rehearsed</h2>
+            {/* <h2 className="text-3xl font-semibold sm:text-4xl">Where breakthroughs get rehearsed</h2>
             <p className="text-base leading-7 text-white/80">
               Our circles run multiple times a day—clinical, peer-led, and experiential—so every emotion and
               relapse pattern gets processed in real time. Practice reps, facilitator coaching, and peer
               accountability transform insights into muscle memory.
-            </p>
+            </p> */}
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch">
-            <div className="flex flex-col gap-6">
+            {/* <div className="flex flex-col gap-6">
               <p className="text-sm uppercase tracking-[0.35em] text-white/70">What anchors each circle</p>
               <ul className="flex flex-col gap-4">
                 {processGroupPillars.map((pillar) => (
@@ -569,7 +561,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
             <Suspense fallback={<div className="flex h-full min-h-[400px] items-center justify-center rounded-3xl border border-[#e2ecef] bg-white/95"><p className="text-[#1b3b44]">Loading...</p></div>}>
               <ProcessGroupsShowcase slides={processGroupSlides} />
             </Suspense>

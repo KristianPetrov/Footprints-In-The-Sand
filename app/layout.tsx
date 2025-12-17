@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
   preload: true,
 });
 
-const siteName = "Footprints In The Sand Recovery Center";
+const siteName = "Footprints In The Sand 2 Recovery Center";
 const siteUrl = "https://footprintsinthesand.org";
 const siteDescription =
-  "At Footprints In The Sand, our mission is to help people break free from the cycles that once controlled their lives with evidence-based PHP and IOP programming, relentless accountability, and multidisciplinary care.";
+  "At Footprints In The Sand 2 Recovery, our mission is to help people break free from the cycles that once controlled their lives with evidence-based PHP and IOP programming, relentless accountability, and multidisciplinary care.";
 
 export const viewport: Viewport = {
   themeColor: "#03171d",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   description: siteDescription,
   applicationName: siteName,
   keywords: [
-    "Footprints In The Sand",
+    "Footprints In The Sand 2 Recovery",
     "addiction treatment",
     "PHP program",
     "IOP program",

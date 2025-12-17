@@ -32,7 +32,7 @@ export function HeroNav() {
         <div className="hero-nav__topline">
           <Link href="/" className="hero-nav__brand" onClick={closeMenu}>
             Footprints In The Sand
-            <span>Recovery Center</span>
+            <span>2 Recovery</span>
           </Link>
           <button
             type="button"

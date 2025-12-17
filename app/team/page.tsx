@@ -8,11 +8,11 @@ import { time } from "console";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the dedicated professionals at Footprints In The Sand Recovery Center. Our experienced counselors, case managers, and support staff bring expertise, compassion, and lived experience to support your recovery journey.",
+    "Meet the dedicated professionals at Footprints In The Sand 2 Recovery. Our experienced counselors, case managers, and support staff bring expertise, compassion, and lived experience to support your recovery journey.",
   openGraph: {
-    title: "Our Team | Footprints In The Sand Recovery Center",
+    title: "Our Team | Footprints In The Sand 2 Recovery",
     description:
-      "Meet the dedicated professionals committed to your recovery journey at Footprints In The Sand.",
+      "Meet the dedicated professionals committed to your recovery journey at Footprints In The Sand 2 Recovery.",
   },
 };
 
@@ -48,7 +48,7 @@ Sandy Bekhit is an Associate Marriage & Family Therapist and Associate Professio
 const teamJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Footprints In The Sand Recovery Center Team",
+  name: "Footprints In The Sand 2 Recovery Team",
   description: "Our dedicated team of addiction and mental health professionals",
   itemListElement: teamMembers.map((member, index) => ({
     "@type": "ListItem",
@@ -60,7 +60,7 @@ const teamJsonLd = {
       description: member.bio.substring(0, 200) + "...",
       worksFor: {
         "@type": "Organization",
-        name: "Footprints In The Sand Recovery Center",
+        name: "Footprints In The Sand 2 Recovery",
       },
     },
   })),
@@ -100,7 +100,6 @@ export default function TeamPage() {
               </p>
             </div>
           </header>
-
           <section className="relative z-10 flex flex-col gap-12" aria-label="Team members">
             {teamMembers.map((member, index) => (
               <article
@@ -174,4 +173,6 @@ export default function TeamPage() {
     </>
   );
 }
+
+
 
