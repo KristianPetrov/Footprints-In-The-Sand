@@ -248,10 +248,10 @@ const therapyModalities = [
 
 const teamMembers = [
   {
-    name: "Tiffany Montesorro",
+    name: "Tiffany Monterroso",
     title:"Executive Director",
     image: "/tiffany-monterroso-photo-crop.png",
-    id:"tiffany-montesorro"
+    id:"tiffany-monterroso"
   },
   {
     name: "Wade Stephens",
