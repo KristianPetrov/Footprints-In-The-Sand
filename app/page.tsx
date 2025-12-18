@@ -320,7 +320,7 @@ export default function Home() {
           />
         </div>
 
-        <header className="hero-header glass-panel relative z-10 overflow-hidden p-8 sm:p-10 lg:p-14">
+        {/* <header className="hero-header glass-panel relative z-10 overflow-hidden p-8 sm:p-10 lg:p-14">
           <div className="flex flex-col gap-6 text-center sm:text-left">
             <p className="tagline text-[#1b3b44]">Footprints In The Sand 2 Recovery</p>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#b87745]">
@@ -357,7 +357,7 @@ export default function Home() {
             </Link>
           </div>
 
-        </header>
+        </header> */}
 
         {/* Get Started Today Banner */}
         <section className="relative z-10 overflow-hidden rounded-3xl bg-gradient-to-r from-[#b87745] via-[#d08a4c] to-[#c97a3a] p-8 shadow-[0_25px_60px_rgba(184,119,69,0.35)]">
