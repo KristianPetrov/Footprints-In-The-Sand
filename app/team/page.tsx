@@ -18,6 +18,17 @@ export const metadata: Metadata = {
 
 const teamMembers = [
   {
+    name: "Tiffany Montesorro",
+    title:"Executive Director",
+    credentials:"CADC-CAS, LVN",
+    image: "/tiffany-monterroso-photo-crop.png",
+    id:"tiffany-montesorro",
+    bio:`With over 13 years of experience in the substance use disorder treatment field, Tiffany serves as the Executive Director of Footprints in the Sand 2 Recovery. As a Licensed Vocational Nurse (LVN) and a Certified Alcohol and Drug Counselor  Specialist (CADC-CAS), Tiffany brings both clinical knowledge and compassionate leadership to every aspect of the program.
+Tiffany’s work is rooted in a genuine passion for helping individuals heal and rediscover hope. Her background in both medical and counseling settings allows her to take a whole-person approach to recovery—one that honors the physical, emotional, and behavioral challenges clients face. Throughout her career, she has worked across multiple levels of care, giving her a deep understanding of the complexities of addiction, mental health, and the courage it takes to pursue lasting change.
+As Executive Director, Tiffany is dedicated to creating a safe, supportive, and trauma-informed environment where clients feel seen, heard, and valued. She leads with empathy and integrity, ensuring high standards of care while fostering a culture of trust, accountability, and respect among both clients and staff. Her heart lies in empowering individuals and families, guiding them toward stability, resilience, and renewed purpose.
+Tiffany believes deeply that recovery is possible for everyone. She is committed to walking alongside clients as they take meaningful steps forward, helping them build healthier lives and leave lasting footprints of hope beyond substance use.`
+  },
+  {
     name: "Wade Stephens",
     title: "Lead Case Manager",
     credentials: "CADC II",
@@ -173,6 +184,7 @@ export default function TeamPage() {
     </>
   );
 }
+
 
 
 

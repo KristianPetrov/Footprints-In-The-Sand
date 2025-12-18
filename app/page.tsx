@@ -248,6 +248,12 @@ const therapyModalities = [
 
 const teamMembers = [
   {
+    name: "Tiffany Montesorro",
+    title:"Executive Director",
+    image: "/tiffany-monterroso-photo-crop.png",
+    id:"tiffany-montesorro"
+  },
+  {
     name: "Wade Stephens",
     title: "Lead Case Manager",
     image: "/wade-profile-photo.jpeg",
@@ -722,7 +728,7 @@ export default function Home() {
                 href={`/team#${member.id}`}
                 className="group flex flex-col items-center gap-4 rounded-2xl border border-[#e3e9eb] bg-[#fefcf8] p-6 transition hover:border-[#b87745] hover:shadow-lg"
               >
-                <div className="relative aspect-[2/3] w-48 overflow-hidden rounded-xl bg-[#e3edf2]">
+                <div className="relative aspect-[2/3] w-48 overflow-hidden rounded-xl ">
                   <Image
                     src={member.image}
                     alt={`${member.name} - ${member.title}`}
