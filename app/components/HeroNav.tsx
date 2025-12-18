@@ -8,7 +8,7 @@ const navItems = [
   { href: "/getting-started", label: "Getting Started" },
   { href: "#treatment", label: "What We Treat" },
   { href: "#mission", label: "Mission" },
-  { href: "#care", label: "Care Journey" },
+
   { href: "/team", label: "Our Team" },
 ];
 

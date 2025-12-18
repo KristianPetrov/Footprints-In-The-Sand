@@ -1,10 +1,12 @@
 "use client";
 
 import { IntakeForm } from "../components/IntakeForm";
+import { HeroNav } from "../components/HeroNav";
 
 export default function GettingStartedPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38]">
+    <main className="min-h-screen bg-gradient-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38] overflow-hidden">
+      <HeroNav />
       {/* Hero Section */}
       <section className="relative px-6 pb-16 pt-32 text-center">
         <h1 className="font-display text-4xl font-light tracking-wide text-white md:text-5xl">
@@ -86,7 +88,7 @@ export default function GettingStartedPage() {
             </div>
           </div>
         </div>
-      </section> 
+      </section>
 
       {/* Online Intake Section */}
       <section id="intake" className="px-6 py-16">
