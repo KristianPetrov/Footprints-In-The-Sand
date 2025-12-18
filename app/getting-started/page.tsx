@@ -75,9 +75,9 @@ export default function GettingStartedPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-              <h3 className="text-lg font-semibold text-[#f7c99b]">Days 2-3: Medical Stabilization</h3>
+              <h3 className="text-lg font-semibold text-[#f7c99b]">Days 2-3: Getting Settled</h3>
               <p className="mt-2 text-white/70">
-                Our medical team will monitor your health around the clock. If detox is needed, you'll receive compassionate, medically-supervised care to ensure your safety and comfort. You'll begin meeting with therapists to establish your treatment goals.
+                You'll begin meeting with your therapist to discuss your history and establish your treatment goals. This is also a time to adjust to the daily rhythm, connect with peers, and start building trust with staff.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
