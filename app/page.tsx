@@ -384,17 +384,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
-            <article className="rounded-3xl bg-white/10 p-6 backdrop-blur">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Schedule</p>
-              <div className="mt-4 flex flex-col gap-4">
-                {programSchedule.map((block) => (
-                  <div key={block.level} className="rounded-2xl border border-white/15 p-4">
-                    <p className="text-base font-semibold">{block.level}</p>
-                    <p className="text-sm text-white/80">{block.window}</p>
-                  </div>
-                ))}
-              </div>
-            </article>
+            
             <article className="rounded-3xl bg-white text-[#0f2f38] p-6 shadow-xl">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#b87745]">
                 Services Provided
@@ -408,19 +398,7 @@ export default function Home() {
                 ))}
               </ul>
             </article>
-            <article className="rounded-3xl border border-white/30 p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
-                Highlights
-              </p>
-              <ul className="mt-4 flex flex-col gap-4 text-base leading-7 text-white/85">
-                {programHighlights.map((highlight) => (
-                  <li key={highlight} className="flex gap-3">
-                    <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-white/70" />
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+
           </div>
         </section>
         <section
@@ -671,7 +649,7 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
               Intake Team
             </p>
-            <h2 className="text-3xl font-semibold sm:text-4xl">Tell us what hurts. We call back fast.</h2>
+            <h2 className="text-3xl font-semibold sm:text-4xl">Getting Started Today.</h2>
             <p className="text-base leading-7 text-white/80">
               Share the essentials below and a guide reaches out within hours to coordinate assessments,
               benefits, travel, and family updates. No pressure. Just grounded planning for the next right step.

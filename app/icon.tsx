@@ -4,8 +4,8 @@ import { join } from 'path'
 
 export const runtime = 'nodejs'
 export const size = {
-  width: 32,
-  height: 32,
+  width: 96,
+  height: 96,
 }
 export const contentType = 'image/png'
 
@@ -44,6 +44,7 @@ export default async function Icon() {
     }
   )
 }
+
 
 
 
