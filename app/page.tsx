@@ -184,7 +184,7 @@ const clientSupport = [
   "Individualized treatment planning",
   "Aftercare planning",
   "Daily transportation to and from program",
-  "Family therapy coverage",
+  "Family therapy ",
 ];
 
 const programHighlights = [

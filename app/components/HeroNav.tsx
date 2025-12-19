@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const navItems = [
   { href: "/getting-started", label: "Getting Started" },
-  { href: "#treatment", label: "What We Treat" },
+  { href: "/addiction-treatment", label: "Addiction Treatment" },
   { href: "#mission", label: "Mission" },
 
   { href: "/team", label: "Our Team" },
@@ -66,7 +66,6 @@ export function HeroNav() {
     </nav>
   );
 }
-
 
 
 
