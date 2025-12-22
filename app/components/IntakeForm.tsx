@@ -69,7 +69,7 @@ export function IntakeForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-5 rounded-3xl border border-white/15 bg-white/5 p-6 text-white shadow-[-10px_-10px_60px_rgba(8,20,24,0.4)] backdrop-blur"
+      className="flex w-full min-w-0 max-w-full flex-col gap-5 rounded-3xl border border-white/15 bg-white/5 p-6 text-white shadow-[-10px_-10px_60px_rgba(8,20,24,0.4)] backdrop-blur"
     >
       <div className="grid gap-5 md:grid-cols-2">
         <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">

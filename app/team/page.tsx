@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroNav } from "../components/HeroNav";
 import { ScrollToHash } from "../components/ScrollToHash";
-import { time } from "console";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -15,19 +14,7 @@ export const metadata: Metadata = {
       "Meet the dedicated professionals committed to your recovery journey at Footprints In The Sand 2 Recovery.",
   },
 };
-/* Alyssa Van Boxmeer, LMFT
-Clinical Director
 
-Alyssa Van Boxmeer is a Licensed Marriage and Family Therapist who takes pride in providing clinical leadership and oversight while fostering a safe, ethical, and trauma-informed treatment environment for both clients and staff. Alyssa earned a dual bachelors in Wellness Management and Psychology from State University of New York at Oswego and her masters in Marriage and Family Therapy from Pacific Oaks College. She has more than 10 years of experience working with individuals, couples, and families in community-based, residential treatment, and private practice settings. Her training includes Dialectic Behavioral Therapy, Yoga Philosophy, Tapping, Somatic Experiencing, and Cognitive Behavioral Therapy. She enjoys working with a wide range of issues including addiction, anxiety, communication, and codependency. Alyssa enjoys creating a safe space for her clients and employees to explore the inner workings of themselves with non-judgmental awareness, curiosity, and light-heartedness. In her spare time, you can find Alyssa spending time with her friends and family, golfing, playing guitar, and making people laugh.
-
-
-
-(Getting Headshot Wednesday)
-Jennifer Vasey
-Program Supervisor
-
-Jennifer Vasey is a dedicated treatment professional with extensive experience supporting adults in residential and outpatient substance use and mental health programs. Since beginning her career in 2019, she has worked across multiple levels of care, strengthening her skills in crisis intervention, client engagement, team leadership, and clinical operations. Jennifer currently serves as our Program Supervisor, overseeing the daily functioning of our outpatient program while supervising clients and guiding staff to ensure consistent, compassionate, and structured care. Her background as a Lead Behavioral Health Technician along with life experience has provided a strong foundation in safety monitoring, intake procedures, de-escalation, mentoring staff, and building meaningful therapeutic rapport. Jennifer’s treatment philosophy focuses on creating a supportive, organized, and client-centered environment that encourages stability, growth, and ongoing recovery. She holds her RADT certification through CCAPP, is CPR/AED/First Aid certified, and is proficient in KIPU EMR. On her off time, Jenn loves cheering for the 49ers, spending time with her family, and contributing to the sober community.
-*/
 const teamMembers = [
   {
     name: "Tiffany Monterroso",
@@ -46,13 +33,6 @@ Tiffany believes deeply that recovery is possible for everyone. She is committed
   image: "/alyssa-boxmeer-photo.png",
   id: "alyssa-van-boxmeer",
   bio: `Alyssa Van Boxmeer is a Licensed Marriage and Family Therapist who takes pride in providing clinical leadership and oversight while fostering a safe, ethical, and trauma-informed treatment environment for both clients and staff. Alyssa earned a dual bachelors in Wellness Management and Psychology from State University of New York at Oswego and her masters in Marriage and Family Therapy from Pacific Oaks College. She has more than 10 years of experience working with individuals, couples, and families in community-based, residential treatment, and private practice settings. Her training includes Dialectic Behavioral Therapy, Yoga Philosophy, Tapping, Somatic Experiencing, and Cognitive Behavioral Therapy. She enjoys working with a wide range of issues including addiction, anxiety, communication, and codependency. Alyssa enjoys creating a safe space for her clients and employees to explore the inner workings of themselves with non-judgmental awareness, curiosity, and light-heartedness. In her spare time, you can find Alyssa spending time with her friends and family, golfing, playing guitar, and making people laugh.`,
-},{
-  name: "Jennifer Vasey",
-  title: "Program Supervisor",
-  credentials: "RADT",
-  image: "/jenn-profile-photo.png",
-  id: "jennifer-vasey",
-  bio: `Jennifer Vasey is a dedicated treatment professional with extensive experience supporting adults in residential and outpatient substance use and mental health programs. Since beginning her career in 2019, she has worked across multiple levels of care, strengthening her skills in crisis intervention, client engagement, team leadership, and clinical operations. Jennifer currently serves as our Program Supervisor, overseeing the daily functioning of our outpatient program while supervising clients and guiding staff to ensure consistent, compassionate, and structured care. Her background as a Lead Behavioral Health Technician along with life experience has provided a strong foundation in safety monitoring, intake procedures, de-escalation, mentoring staff, and building meaningful therapeutic rapport. Jennifer’s treatment philosophy focuses on creating a supportive, organized, and client-centered environment that encourages stability, growth, and ongoing recovery. She holds her RADT certification through CCAPP, is CPR/AED/First Aid certified, and is proficient in KIPU EMR. On her off time, Jenn loves cheering for the 49ers, spending time with her family, and contributing to the sober community.`,
 },
   {
     name: "Wade Stephens",
