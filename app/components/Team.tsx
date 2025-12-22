@@ -6,7 +6,21 @@ const teamMembers = [
       title:"Executive Director",
       image: "/tiffany-monterroso-photo-crop.png",
       id:"tiffany-monterroso"
-    },
+    },{
+  name: "Alyssa Van Boxmeer",
+  title: "Clinical Director",
+  credentials: "LMFT",
+  image: "/alyssa-boxmeer-photo.png",
+  id: "alyssa-van-boxmeer",
+
+},{
+  name: "Jennifer Vasey",
+  title: "Program Supervisor",
+  credentials: "RADT",
+  image: "/jenn-profile-photo.png",
+  id: "jennifer-vasey",
+
+},
     {
       name: "Wade Stephens",
       title: "Lead Case Manager",
@@ -16,7 +30,7 @@ const teamMembers = [
     {
       name: "Tazia Shaw",
       title: "Case Manager",
-      image: "/tazia-profile-photo.jpeg",
+      image: "/tazia-profile-photo.png",
       id: "tazia-shaw",
     },
     {

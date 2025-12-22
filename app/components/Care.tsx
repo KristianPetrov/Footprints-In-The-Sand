@@ -32,10 +32,10 @@ const anchorPromises = [
     },
   ];
 export default function Care(){
-    return (  <section
+    return (
+    <section
         id="care"
-        className="relative z-10 flex flex-col gap-10 rounded-3xl bg-white/85 p-8 shadow-[0_20px_60px_rgba(20,52,66,0.09)]"
-      >
+        className="relative z-10 flex flex-col gap-10 rounded-3xl bg-white/85 p-8 shadow-[0_20px_60px_rgba(20,52,66,0.09)]">
         <div className="flex flex-col gap-4">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#1b3b44]">
             How We Walk With You
