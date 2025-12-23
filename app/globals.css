@@ -63,6 +63,31 @@ body {
   backdrop-filter: blur(28px);
 }
 
+.glass-panel-dark {
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(6, 30, 38, 0.55);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(26px);
+  backdrop-filter: blur(26px);
+}
+
+.topic-shell--mental {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(158, 216, 232, 0.38), transparent 58%),
+    radial-gradient(circle at 82% 6%, rgba(25, 177, 166, 0.22), transparent 54%),
+    radial-gradient(circle at 56% 88%, rgba(245, 194, 107, 0.16), transparent 62%),
+    linear-gradient(180deg, #031b20 0%, #05252b 55%, #020e11 100%);
+}
+
+.topic-shell--substance {
+  background:
+    radial-gradient(circle at 16% 14%, rgba(245, 194, 107, 0.38), transparent 58%),
+    radial-gradient(circle at 82% 10%, rgba(28, 90, 107, 0.3), transparent 56%),
+    radial-gradient(circle at 52% 88%, rgba(158, 216, 232, 0.18), transparent 62%),
+    linear-gradient(180deg, #03171d 0%, #041f24 45%, #020e11 100%);
+}
+
 .wave-mask {
   position: relative;
   overflow: hidden;
