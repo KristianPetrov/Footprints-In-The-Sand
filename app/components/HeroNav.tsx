@@ -14,8 +14,8 @@ const treatmentApproachMenu = [
   {
     title: "Treatment",
     items: [
-      { href: "/treatment-approach/cbt", label: "CBT" },
-      { href: "/treatment-approach/dbt", label: "DBT" },
+      { href: "/treatment-approach/cbt", label: "Cognitive Behavioral Therapy" },
+      { href: "/treatment-approach/dbt", label: "Dialectical Behavioral Therapy" },
       { href: "/treatment-approach/family-therapy", label: "Family Therapy" },
       { href: "/treatment-approach/group-therapy", label: "Group Therapy" },
       { href: "/treatment-approach/individual-therapy", label: "Individual Therapy" },
