@@ -51,9 +51,13 @@ const treatmentApproachMenu = [
 export function HeroNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [isTreatmentOpen, setIsTreatmentOpen] = useState(false);
+  const [treatmentPanelStyle, setTreatmentPanelStyle] = useState<
+    React.CSSProperties | undefined
+  >(undefined);
   const pathname = usePathname();
   const dropdownId = useId();
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const dropdownButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -105,6 +109,52 @@ export function HeroNav() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isTreatmentOpen) {
+      setTreatmentPanelStyle(undefined);
+      return;
+    }
+
+    const updatePosition = () => {
+      // On mobile we intentionally use the "accordion" style dropdown (static positioning).
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        setTreatmentPanelStyle(undefined);
+        return;
+      }
+
+      const button = dropdownButtonRef.current;
+      if (!button) return;
+
+      const rect = button.getBoundingClientRect();
+      const margin = 16; // keep a safe gutter to avoid touching the viewport edge
+      const maxWidth = 920;
+      const width = Math.min(maxWidth, window.innerWidth - margin * 2);
+      const top = rect.bottom + 14;
+
+      let left = rect.left + rect.width / 2 - width / 2;
+      left = Math.max(margin, Math.min(left, window.innerWidth - margin - width));
+
+      setTreatmentPanelStyle({
+        position: "fixed",
+        top,
+        left,
+        width,
+        transform: "none",
+      });
+    };
+
+    updatePosition();
+
+    window.addEventListener("resize", updatePosition);
+    // Capture scroll events from any scroll container so we stay aligned if layouts shift.
+    window.addEventListener("scroll", updatePosition, true);
+
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition, true);
+    };
+  }, [isTreatmentOpen]);
+
   return (
     <nav className="hero-nav">
       <div className="hero-nav__inner">
@@ -142,6 +192,7 @@ export function HeroNav() {
               className={`hero-nav__dropdown ${isTreatmentOpen ? "is-open" : ""}`}
             >
               <button
+                ref={dropdownButtonRef}
                 type="button"
                 className="hero-nav__dropdownButton"
                 aria-haspopup="menu"
@@ -153,7 +204,12 @@ export function HeroNav() {
                 <span className="hero-nav__chevron" aria-hidden="true" />
               </button>
 
-              <div id={dropdownId} className="hero-nav__dropdownPanel" role="menu">
+              <div
+                id={dropdownId}
+                className="hero-nav__dropdownPanel"
+                role="menu"
+                style={treatmentPanelStyle}
+              >
                 <div className="hero-nav__dropdownGrid">
                   {treatmentApproachMenu.map((section) => (
                     <div key={section.title} className="hero-nav__dropdownSection">

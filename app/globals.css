@@ -336,7 +336,7 @@ body {
 }
 
 .hero-nav__dropdown {
-  position: relative;
+  position: static;
   display: inline-flex;
   align-items: center;
 }
