@@ -58,7 +58,16 @@ Tiffany believes deeply that recovery is possible for everyone. She is committed
    bio:`(Superviised by Alyssa Van Boxmeer, LMFT)
 Sandy Bekhit is an Associate Marriage & Family Therapist and Associate Professional Clinical Counselor with four years of clinical experience. She earned her B.A. in Psychology from Vanguard University of Southern California and her M.S. in Counseling Psychology from California Baptist University. Sandy has worked in both inpatient and outpatient settings, including over three years in substance use treatment, supporting individuals impacted by trauma, addiction, and co-occurring mental health disorders. During her clinical training, she provided school-based and teletherapy services within the Fullerton School District. She now works with adults, offering individual, group, and couples/family therapy, and specializes in substance use, trauma, mood, and personality disorders. Her eclectic, client-centered approach draws from CBT, DBT, and psychodynamic therapy, with an emphasis on attachment theory and individualized care. Outside the therapy room, Sandy is a fluent Arabic speaker, devoted animal lover, and proud maltipoo mom. She is also a passionate foodie and coffee/matcha enthusiast, enjoying the simple pleasures that bring connection and balance to everyday life.`
 
-  }
+  },
+  {
+    name: "Jennifer Vasey",
+    title: "Program Supervisor",
+    credentials: "RADT",
+    image: "/jenn-profile-photo.png",
+    id: "jennifer-vasey",
+    bio:`Jennifer Vasey is a dedicated treatment professional with extensive experience supporting adults in residential and outpatient substance use and mental health programs. Since beginning her career in 2019, she has worked across multiple levels of care, strengthening her skills in crisis intervention, client engagement, team leadership, and clinical operations. Jennifer currently serves as our Program Supervisor, overseeing the daily functioning of our outpatient program while supervising clients and guiding staff to ensure consistent, compassionate, and structured care. Her background as a Lead Behavioral Health Technician along with life experience has provided a strong foundation in safety monitoring, intake procedures, de-escalation, mentoring staff, and building meaningful therapeutic rapport. Jennifer’s treatment philosophy focuses on creating a supportive, organized, and client-centered environment that encourages stability, growth, and ongoing recovery. She holds her RADT certification through CCAPP, is CPR/AED/First Aid certified, and is proficient in KIPU EMR. On her off time, Jenn loves cheering for the 49ers, spending time with her family, and contributing to the sober community.`
+
+  },
 ];
 
 // JSON-LD for team page
@@ -190,6 +199,7 @@ export default function TeamPage() {
     </>
   );
 }
+
 
 
 
