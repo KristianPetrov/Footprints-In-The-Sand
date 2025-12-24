@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export default function NotFound() {
+export default function NotFound ()
+{
   return (
     <div className="beach-sky grain-overlay flex min-h-screen w-full items-center justify-center px-6">
       <div className="flex max-w-md flex-col items-center gap-6 text-center">

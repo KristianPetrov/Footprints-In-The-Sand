@@ -15,16 +15,19 @@ type ProcessGroupsShowcaseProps = {
   slides: ProcessGroupSlide[];
 };
 
-export function ProcessGroupsShowcase({ slides }: ProcessGroupsShowcaseProps) {
+export function ProcessGroupsShowcase ({ slides }: ProcessGroupsShowcaseProps)
+{
   const [activeIndex, setActiveIndex] = useState(0);
   const totalSlides = slides.length;
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     if (totalSlides <= 1) {
       return;
     }
 
-    const timer = setInterval(() => {
+    const timer = setInterval(() =>
+    {
       setActiveIndex((prev) => (prev + 1) % totalSlides);
     }, 6000);
 
@@ -37,11 +40,13 @@ export function ProcessGroupsShowcase({ slides }: ProcessGroupsShowcaseProps) {
     return null;
   }
 
-  const goToPrevious = () => {
+  const goToPrevious = () =>
+  {
     setActiveIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
-  const goToNext = () => {
+  const goToNext = () =>
+  {
     setActiveIndex((prev) => (prev + 1) % totalSlides);
   };
 
@@ -57,7 +62,7 @@ export function ProcessGroupsShowcase({ slides }: ProcessGroupsShowcaseProps) {
           className="object-cover"
           priority
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071c22]/60 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#071c22]/60 via-transparent to-transparent" />
         <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-black/20 p-4 text-white backdrop-blur-sm">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
             {activeSlide.focus}
@@ -99,9 +104,8 @@ export function ProcessGroupsShowcase({ slides }: ProcessGroupsShowcaseProps) {
                 key={slide.src}
                 aria-label={`Go to slide ${index + 1}`}
                 onClick={() => setActiveIndex(index)}
-                className={`h-2.5 w-8 rounded-full transition ${
-                  activeIndex === index ? "bg-[#0f2f38]" : "bg-[#c8d7dc] hover:bg-[#9fb4bb]"
-                }`}
+                className={`h-2.5 w-8 rounded-full transition ${activeIndex === index ? "bg-[#0f2f38]" : "bg-[#c8d7dc] hover:bg-[#9fb4bb]"
+                  }`}
               />
             ))}
           </div>

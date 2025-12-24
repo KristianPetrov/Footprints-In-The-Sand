@@ -9,7 +9,8 @@ export const size = {
 }
 export const contentType = 'image/png'
 
-export default async function AppleIcon() {
+export default async function AppleIcon ()
+{
   const logoData = await readFile(
     join(process.cwd(), 'public', 'footprints-in-the-sand-minimal-logo.png')
   )

@@ -66,7 +66,7 @@ export default function Team ()
           href={`/team#${member.id}`}
           className="group flex flex-col items-center gap-4 rounded-2xl border border-[#e3e9eb] bg-[#fefcf8] p-6 transition hover:border-[#b87745] hover:shadow-lg"
         >
-          <div className="relative aspect-[2/3] w-48 overflow-hidden rounded-xl ">
+          <div className="relative aspect-2/3 w-48 overflow-hidden rounded-xl ">
             <Image
               src={member.image}
               alt={`${member.name} - ${member.title}`}

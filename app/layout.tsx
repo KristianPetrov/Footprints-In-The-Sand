@@ -157,11 +157,12 @@ const jsonLd = {
   },
 };
 
-export default function RootLayout({
+export default function RootLayout ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>)
+{
   return (
     <html lang="en">
       <head>

@@ -30,16 +30,19 @@ const defaultValues: IntakeFormValues = {
 
 type SubmissionStatus = "idle" | "sending" | "success" | "error";
 
-export function IntakeForm() {
+export function IntakeForm ()
+{
   const [values, setValues] = useState<IntakeFormValues>(defaultValues);
   const [status, setStatus] = useState<SubmissionStatus>("idle");
   const [message, setMessage] = useState("");
 
-  const updateField = (field: keyof IntakeFormValues, value: string) => {
+  const updateField = (field: keyof IntakeFormValues, value: string) =>
+  {
     setValues((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) =>
+  {
     event.preventDefault();
     setStatus("sending");
     setMessage("");
@@ -209,9 +212,8 @@ export function IntakeForm() {
         </button>
         {message && (
           <p
-            className={`text-sm ${
-              status === "success" ? "text-[#b9f4d3]" : status === "error" ? "text-[#ffb3b3]" : "text-white"
-            }`}
+            className={`text-sm ${status === "success" ? "text-[#b9f4d3]" : status === "error" ? "text-[#ffb3b3]" : "text-white"
+              }`}
             role="status"
             aria-live="polite"
           >

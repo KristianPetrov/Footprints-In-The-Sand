@@ -12,13 +12,14 @@ export type TopicPageContent = {
   sections: TopicSection[];
 };
 
-function build(
+function build (
   slug: string,
   title: string,
   description: string,
   kicker: string,
   sections: TopicSection[]
-): TopicPageContent {
+): TopicPageContent
+{
   return { slug, title, description, kicker, sections };
 }
 
@@ -266,7 +267,8 @@ export const treatmentApproachPages = Object.fromEntries(
 
 export const treatmentApproachSlugs = treatmentApproachList.map((p) => p.slug);
 
-export function getTreatmentApproachPage(slug: string) {
+export function getTreatmentApproachPage (slug: string)
+{
   return treatmentApproachPages[slug] ?? null;
 }
 
@@ -527,7 +529,8 @@ export const mentalHealthPages = Object.fromEntries(
 
 export const mentalHealthSlugs = mentalHealthList.map((p) => p.slug);
 
-export function getMentalHealthPage(slug: string) {
+export function getMentalHealthPage (slug: string)
+{
   return mentalHealthPages[slug] ?? null;
 }
 
@@ -947,7 +950,8 @@ export const substanceAbusePages = Object.fromEntries(
 
 export const substanceAbuseSlugs = substanceAbuseList.map((p) => p.slug);
 
-export function getSubstanceAbusePage(slug: string) {
+export function getSubstanceAbusePage (slug: string)
+{
   return substanceAbusePages[slug] ?? null;
 }
 

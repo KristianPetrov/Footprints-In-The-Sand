@@ -32,7 +32,7 @@ export default function Home ()
           aria-hidden="true"
         />
 
-        <Header/>
+        <Header />
         <GetStartedBanner />
         <Program />
         <Location />

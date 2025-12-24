@@ -36,7 +36,7 @@ export function TopicPageShell ({ content }: Props)
             ? "topic-shell--mental min-h-screen w-full overflow-hidden text-white"
             : isSubstanceAbuse
               ? "topic-shell--substance min-h-screen w-full overflow-hidden text-white"
-              : "min-h-screen overflow-hidden bg-gradient-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38] text-white"
+              : "min-h-screen overflow-hidden bg-linear-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38] text-white"
       }
     >
       <HeroNav />
@@ -92,9 +92,9 @@ export function TopicPageShell ({ content }: Props)
                   isTreatmentApproach
                     ? "inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
                     : isMentalHealth
-                      ? "inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#0f6f84] to-[#19b1a6] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(16,111,132,0.35)] transition hover:-translate-y-0.5 hover:brightness-110"
+                      ? "inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#0f6f84] to-[#19b1a6] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(16,111,132,0.35)] transition hover:-translate-y-0.5 hover:brightness-110"
                       : isSubstanceAbuse
-                        ? "inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#b87745] to-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(184,119,69,0.28)] transition hover:-translate-y-0.5 hover:brightness-110"
+                        ? "inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#b87745] to-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(184,119,69,0.28)] transition hover:-translate-y-0.5 hover:brightness-110"
                         : "inline-flex items-center justify-center rounded-full bg-[#f7c99b] px-8 py-3 text-base font-semibold text-[#1f2a2e] transition hover:-translate-y-0.5 hover:bg-[#f2b87e]"
                 }
               >
@@ -127,7 +127,7 @@ export function TopicPageShell ({ content }: Props)
                     isTreatmentApproach
                       ? "scroll-mt-28 rounded-3xl border border-white/60 bg-white/90 p-8 shadow-[0_20px_60px_rgba(14,49,63,0.12)]"
                       : isColorizedDark
-                        ? "scroll-mt-28 rounded-3xl border border-white/15 bg-gradient-to-br from-white/12 via-white/6 to-white/2 p-8 backdrop-blur"
+                        ? "scroll-mt-28 rounded-3xl border border-white/15 bg-linear-to-br from-white/12 via-white/6 to-white/2 p-8 backdrop-blur"
                         : "scroll-mt-28 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur"
                   }
                 >
@@ -180,7 +180,7 @@ export function TopicPageShell ({ content }: Props)
                   isTreatmentApproach
                     ? "rounded-3xl border border-white/60 bg-white/70 p-8 shadow-inner"
                     : isColorizedDark
-                      ? "rounded-3xl border border-white/15 bg-gradient-to-br from-white/12 via-white/6 to-white/2 p-8 backdrop-blur"
+                      ? "rounded-3xl border border-white/15 bg-linear-to-br from-white/12 via-white/6 to-white/2 p-8 backdrop-blur"
                       : "rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur"
                 }
               >
@@ -247,7 +247,7 @@ export function TopicPageShell ({ content }: Props)
                   isTreatmentApproach
                     ? "rounded-3xl border border-white/60 bg-white/70 p-6 shadow-inner"
                     : isColorizedDark
-                      ? "rounded-3xl border border-white/15 bg-gradient-to-br from-white/12 via-white/6 to-white/2 p-6 backdrop-blur"
+                      ? "rounded-3xl border border-white/15 bg-linear-to-br from-white/12 via-white/6 to-white/2 p-6 backdrop-blur"
                       : "rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
                 }
               >

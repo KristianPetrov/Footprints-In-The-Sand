@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AddictionTreatmentPage() {
+export default function AddictionTreatmentPage ()
+{
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38] overflow-hidden">
       <HeroNav />

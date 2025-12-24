@@ -48,7 +48,8 @@ const treatmentApproachMenu = [
   },
 ];
 
-export function HeroNav() {
+export function HeroNav ()
+{
   const [isOpen, setIsOpen] = useState(false);
   const [isTreatmentOpen, setIsTreatmentOpen] = useState(false);
   const [treatmentPanelStyle, setTreatmentPanelStyle] = useState<
@@ -59,18 +60,21 @@ export function HeroNav() {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const dropdownButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  const closeMenu = () => {
+  const closeMenu = () =>
+  {
     setIsOpen(false);
     setIsTreatmentOpen(false);
   };
 
   const closeTreatment = () => setIsTreatmentOpen(false);
 
-  const handleNavigate = () => {
+  const handleNavigate = () =>
+  {
     closeMenu();
   };
 
-  const getHref = (href: string) => {
+  const getHref = (href: string) =>
+  {
     // If it's an anchor link and we're not on the home page, prepend "/"
     if (href.startsWith("#") && pathname !== "/") {
       return `/${href}`;
@@ -78,13 +82,16 @@ export function HeroNav() {
     return href;
   };
 
-  const menuButtonLabel = useMemo(() => {
+  const menuButtonLabel = useMemo(() =>
+  {
     // Keeps the label stable for screen readers (and gives us a single place to rename it later).
     return "Treatment Approach";
   }, []);
 
-  useEffect(() => {
-    const onPointerDown = (event: MouseEvent | TouchEvent) => {
+  useEffect(() =>
+  {
+    const onPointerDown = (event: MouseEvent | TouchEvent) =>
+    {
       const target = event.target as Node | null;
       if (!target) return;
       if (!dropdownRef.current?.contains(target)) {
@@ -92,7 +99,8 @@ export function HeroNav() {
       }
     };
 
-    const onKeyDown = (event: KeyboardEvent) => {
+    const onKeyDown = (event: KeyboardEvent) =>
+    {
       if (event.key === "Escape") {
         closeTreatment();
       }
@@ -102,20 +110,23 @@ export function HeroNav() {
     document.addEventListener("touchstart", onPointerDown, { passive: true });
     document.addEventListener("keydown", onKeyDown);
 
-    return () => {
+    return () =>
+    {
       document.removeEventListener("mousedown", onPointerDown);
       document.removeEventListener("touchstart", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
     };
   }, []);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     if (!isTreatmentOpen) {
       setTreatmentPanelStyle(undefined);
       return;
     }
 
-    const updatePosition = () => {
+    const updatePosition = () =>
+    {
       // On mobile we intentionally use the "accordion" style dropdown (static positioning).
       if (window.matchMedia("(max-width: 768px)").matches) {
         setTreatmentPanelStyle(undefined);
@@ -149,7 +160,8 @@ export function HeroNav() {
     // Capture scroll events from any scroll container so we stay aligned if layouts shift.
     window.addEventListener("scroll", updatePosition, true);
 
-    return () => {
+    return () =>
+    {
       window.removeEventListener("resize", updatePosition);
       window.removeEventListener("scroll", updatePosition, true);
     };

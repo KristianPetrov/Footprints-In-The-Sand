@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TopicPageShell } from "../../components/TopicPageShell";
-import {
-  getSubstanceAbusePage,
-  substanceAbuseSlugs,
-} from "../../lib/topicContent";
+import
+  {
+    getSubstanceAbusePage,
+    substanceAbuseSlugs,
+  } from "../../lib/topicContent";
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
+export function generateStaticParams ()
+{
   return substanceAbuseSlugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
+export async function generateMetadata ({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}): Promise<Metadata>
+{
   const { slug } = await params;
   const content = getSubstanceAbusePage(slug);
   if (!content) return {};
@@ -30,11 +33,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function SubstanceAbuseTopicPage({
+export default async function SubstanceAbuseTopicPage ({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+})
+{
   const { slug } = await params;
   const content = getSubstanceAbusePage(slug);
   if (!content) notFound();

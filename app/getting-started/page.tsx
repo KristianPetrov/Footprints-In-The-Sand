@@ -3,9 +3,10 @@
 import { IntakeForm } from "../components/IntakeForm";
 import { HeroNav } from "../components/HeroNav";
 
-export default function GettingStartedPage() {
+export default function GettingStartedPage ()
+{
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38] overflow-hidden">
+    <main className="min-h-screen bg-linear-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38] overflow-hidden">
       <HeroNav />
       {/* Hero Section */}
       <section className="relative px-6 pb-16 pt-32 text-center">

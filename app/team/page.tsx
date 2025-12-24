@@ -18,28 +18,28 @@ export const metadata: Metadata = {
 const teamMembers = [
   {
     name: "Tiffany Monterroso",
-    title:"Executive Director",
-    credentials:"CADC-CAS, LVN",
+    title: "Executive Director",
+    credentials: "CADC-CAS, LVN",
     image: "/tiffany-monterroso-photo-crop.png",
-    id:"tiffany-monterroso",
-    bio:`With over 13 years of experience in the substance use disorder treatment field, Tiffany serves as the Executive Director of Footprints in the Sand 2 Recovery. As a Licensed Vocational Nurse (LVN) and a Certified Alcohol and Drug Counselor  Specialist (CADC-CAS), Tiffany brings both clinical knowledge and compassionate leadership to every aspect of the program.
+    id: "tiffany-monterroso",
+    bio: `With over 13 years of experience in the substance use disorder treatment field, Tiffany serves as the Executive Director of Footprints in the Sand 2 Recovery. As a Licensed Vocational Nurse (LVN) and a Certified Alcohol and Drug Counselor  Specialist (CADC-CAS), Tiffany brings both clinical knowledge and compassionate leadership to every aspect of the program.
 Tiffany’s work is rooted in a genuine passion for helping individuals heal and rediscover hope. Her background in both medical and counseling settings allows her to take a whole-person approach to recovery—one that honors the physical, emotional, and behavioral challenges clients face. Throughout her career, she has worked across multiple levels of care, giving her a deep understanding of the complexities of addiction, mental health, and the courage it takes to pursue lasting change.
 As Executive Director, Tiffany is dedicated to creating a safe, supportive, and trauma-informed environment where clients feel seen, heard, and valued. She leads with empathy and integrity, ensuring high standards of care while fostering a culture of trust, accountability, and respect among both clients and staff. Her heart lies in empowering individuals and families, guiding them toward stability, resilience, and renewed purpose.
 Tiffany believes deeply that recovery is possible for everyone. She is committed to walking alongside clients as they take meaningful steps forward, helping them build healthier lives and leave lasting footprints of hope beyond substance use.`
-  },{
-  name: "Alyssa Van Boxmeer",
-  title: "Clinical Director",
-  credentials: "LMFT",
-  image: "/alyssa-boxmeer-photo.png",
-  id: "alyssa-van-boxmeer",
-  bio: `Alyssa Van Boxmeer is a Licensed Marriage and Family Therapist who takes pride in providing clinical leadership and oversight while fostering a safe, ethical, and trauma-informed treatment environment for both clients and staff. Alyssa earned a dual bachelors in Wellness Management and Psychology from State University of New York at Oswego and her masters in Marriage and Family Therapy from Pacific Oaks College. She has more than 10 years of experience working with individuals, couples, and families in community-based, residential treatment, and private practice settings. Her training includes Dialectic Behavioral Therapy, Yoga Philosophy, Tapping, Somatic Experiencing, and Cognitive Behavioral Therapy. She enjoys working with a wide range of issues including addiction, anxiety, communication, and codependency. Alyssa enjoys creating a safe space for her clients and employees to explore the inner workings of themselves with non-judgmental awareness, curiosity, and light-heartedness. In her spare time, you can find Alyssa spending time with her friends and family, golfing, playing guitar, and making people laugh.`,
-}, {
+  }, {
+    name: "Alyssa Van Boxmeer",
+    title: "Clinical Director",
+    credentials: "LMFT",
+    image: "/alyssa-boxmeer-photo.png",
+    id: "alyssa-van-boxmeer",
+    bio: `Alyssa Van Boxmeer is a Licensed Marriage and Family Therapist who takes pride in providing clinical leadership and oversight while fostering a safe, ethical, and trauma-informed treatment environment for both clients and staff. Alyssa earned a dual bachelors in Wellness Management and Psychology from State University of New York at Oswego and her masters in Marriage and Family Therapy from Pacific Oaks College. She has more than 10 years of experience working with individuals, couples, and families in community-based, residential treatment, and private practice settings. Her training includes Dialectic Behavioral Therapy, Yoga Philosophy, Tapping, Somatic Experiencing, and Cognitive Behavioral Therapy. She enjoys working with a wide range of issues including addiction, anxiety, communication, and codependency. Alyssa enjoys creating a safe space for her clients and employees to explore the inner workings of themselves with non-judgmental awareness, curiosity, and light-heartedness. In her spare time, you can find Alyssa spending time with her friends and family, golfing, playing guitar, and making people laugh.`,
+  }, {
     name: "Jennifer Vasey",
     title: "Program Supervisor",
     credentials: "RADT",
     image: "/jenn-profile-photo.png",
     id: "jennifer-vasey",
-    bio:`Jennifer Vasey is a dedicated treatment professional with extensive experience supporting adults in residential and outpatient substance use and mental health programs. Since beginning her career in 2019, she has worked across multiple levels of care, strengthening her skills in crisis intervention, client engagement, team leadership, and clinical operations. Jennifer currently serves as our Program Supervisor, overseeing the daily functioning of our outpatient program while supervising clients and guiding staff to ensure consistent, compassionate, and structured care. Her background as a Lead Behavioral Health Technician along with life experience has provided a strong foundation in safety monitoring, intake procedures, de-escalation, mentoring staff, and building meaningful therapeutic rapport. Jennifer’s treatment philosophy focuses on creating a supportive, organized, and client-centered environment that encourages stability, growth, and ongoing recovery. She holds her RADT certification through CCAPP, is CPR/AED/First Aid certified, and is proficient in KIPU EMR. On her off time, Jenn loves cheering for the 49ers, spending time with her family, and contributing to the sober community.`
+    bio: `Jennifer Vasey is a dedicated treatment professional with extensive experience supporting adults in residential and outpatient substance use and mental health programs. Since beginning her career in 2019, she has worked across multiple levels of care, strengthening her skills in crisis intervention, client engagement, team leadership, and clinical operations. Jennifer currently serves as our Program Supervisor, overseeing the daily functioning of our outpatient program while supervising clients and guiding staff to ensure consistent, compassionate, and structured care. Her background as a Lead Behavioral Health Technician along with life experience has provided a strong foundation in safety monitoring, intake procedures, de-escalation, mentoring staff, and building meaningful therapeutic rapport. Jennifer’s treatment philosophy focuses on creating a supportive, organized, and client-centered environment that encourages stability, growth, and ongoing recovery. She holds her RADT certification through CCAPP, is CPR/AED/First Aid certified, and is proficient in KIPU EMR. On her off time, Jenn loves cheering for the 49ers, spending time with her family, and contributing to the sober community.`
 
   },
   {
@@ -57,13 +57,13 @@ Tiffany believes deeply that recovery is possible for everyone. She is committed
     image: "/tazia-profile-photo.png",
     id: "tazia-shaw",
     bio: `Tazia is a vibrant, compassionate, and outgoing Registered Alcohol and Drug Abuse Counselor (CCAPP Credentialed) with five years of experience in the recovery world, including four years in treatment and nearly two years serving as a Case Manager and SUD Counselor. She completed her formal education through The Distance Learning Center for Addiction Studies and is currently working toward obtaining her CDAC-1, further strengthening her clinical knowledge and professional advancement. Tazia's hands-on experience includes substance use assessments, treatment planning, case management, relapse prevention, group facilitation, crisis intervention, and client advocacy. She approaches her work with empathy, positivity, and a strong solution-focused mindset. Collaborative by nature, she thrives in team environments where she can bring enthusiasm, adaptability, and heart. Whether she is supporting clients, connecting with peers, or showing up in the recovery community, Tazia is known for her unwavering commitment, contagious energy, and ability to make everyone around her feel uplifted and valued. Her dedication extends far beyond working hours—she consistently volunteers, attends community events, mentors others, and provides support in any way she can. Tazia is deeply rooted in the recovery world, not just as a clinician but as a passionate advocate who lives and breathes the values of connection, service, and growth. As a devoted mother, Tazia draws strength and motivation from her children, who inspire her to lead with integrity, resilience, and love. She brings heart, humor, and authenticity into every space she enters—showing up not only as a clinician, but as a genuine, caring human being dedicated to helping individuals find purpose, belonging, and long-term recovery.`,
-  },{
-   name: "Sandy Bekhit MS",
-   title: "Therapist",
-   credentials: "AMFT #154693, LPCC #19287",
-   image:"/sandy-bhekit-photo.jpeg",
-   id: "sandy-bekhit",
-   bio:`(Superviised by Alyssa Van Boxmeer, LMFT)
+  }, {
+    name: "Sandy Bekhit MS",
+    title: "Therapist",
+    credentials: "AMFT #154693, LPCC #19287",
+    image: "/sandy-bhekit-photo.jpeg",
+    id: "sandy-bekhit",
+    bio: `(Superviised by Alyssa Van Boxmeer, LMFT)
 Sandy Bekhit is an Associate Marriage & Family Therapist and Associate Professional Clinical Counselor with four years of clinical experience. She earned her B.A. in Psychology from Vanguard University of Southern California and her M.S. in Counseling Psychology from California Baptist University. Sandy has worked in both inpatient and outpatient settings, including over three years in substance use treatment, supporting individuals impacted by trauma, addiction, and co-occurring mental health disorders. During her clinical training, she provided school-based and teletherapy services within the Fullerton School District. She now works with adults, offering individual, group, and couples/family therapy, and specializes in substance use, trauma, mood, and personality disorders. Her eclectic, client-centered approach draws from CBT, DBT, and psychodynamic therapy, with an emphasis on attachment theory and individualized care. Outside the therapy room, Sandy is a fluent Arabic speaker, devoted animal lover, and proud maltipoo mom. She is also a passionate foodie and coffee/matcha enthusiast, enjoying the simple pleasures that bring connection and balance to everyday life.`
 
   },
@@ -92,7 +92,8 @@ const teamJsonLd = {
   })),
 };
 
-export default function TeamPage() {
+export default function TeamPage ()
+{
   return (
     <>
       <script
@@ -131,11 +132,10 @@ export default function TeamPage() {
               <article
                 key={member.name}
                 id={member.id}
-                className={`scroll-mt-24 flex flex-col gap-8 rounded-3xl bg-white/90 p-8 shadow-[0_20px_60px_rgba(14,49,63,0.12)] lg:flex-row ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`scroll-mt-24 flex flex-col gap-8 rounded-3xl bg-white/90 p-8 shadow-[0_20px_60px_rgba(14,49,63,0.12)] lg:flex-row ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  }`}
               >
-                <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl bg-[#e3edf2] lg:w-80 lg:flex-shrink-0">
+                <div className="relative aspect-2/3 w-full overflow-hidden rounded-2xl bg-[#e3edf2] lg:w-80 lg:shrink-0">
                   <Image
                     src={member.image}
                     alt={`${member.name} - ${member.title}`}

@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TopicPageShell } from "../../components/TopicPageShell";
-import {
-  getTreatmentApproachPage,
-  treatmentApproachSlugs,
-} from "../../lib/topicContent";
+import
+  {
+    getTreatmentApproachPage,
+    treatmentApproachSlugs,
+  } from "../../lib/topicContent";
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
+export function generateStaticParams ()
+{
   return treatmentApproachSlugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
+export async function generateMetadata ({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}): Promise<Metadata>
+{
   const { slug } = await params;
   const content = getTreatmentApproachPage(slug);
   if (!content) return {};
@@ -30,11 +33,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function TreatmentApproachTopicPage({
+export default async function TreatmentApproachTopicPage ({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+})
+{
   const { slug } = await params;
   const content = getTreatmentApproachPage(slug);
   if (!content) notFound();
