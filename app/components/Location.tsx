@@ -34,7 +34,7 @@ export default function Location ()
     </div>
 
     <div className="overflow-hidden rounded-3xl border border-[#e3e9eb] bg-white shadow-sm">
-      <div className="relative aspect-[16/10] w-full">
+      <div className="relative aspect-16/10 w-full">
         <iframe
           title="Footprints In The Sand 2 Recovery location map"
           src="https://www.google.com/maps?q=653%20West%2019th%20Street%2C%20Costa%20Mesa%2C%20CA&output=embed"

@@ -41,7 +41,7 @@ export default function ProcessGroups ()
 {
   return (<section
     id="process-groups"
-    className="relative z-10 flex flex-col gap-10 rounded-3xl bg-gradient-to-br from-[#0d2e3a] via-[#0b1f26] to-[#0a1417] p-8 text-white shadow-[0_25px_80px_rgba(4,20,32,0.45)]"
+    className="relative z-10 flex flex-col gap-10 rounded-3xl bg-linear-to-br from-[#0d2e3a] via-[#0b1f26] to-[#0a1417] p-8 text-white shadow-[0_25px_80px_rgba(4,20,32,0.45)]"
   >
     <div className="flex flex-col gap-4">
       <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">

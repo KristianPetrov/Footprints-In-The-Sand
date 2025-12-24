@@ -20,7 +20,7 @@ export default function Intake ()
 {
   return (<section
     id="intake"
-    className="relative z-10 grid grid-cols-1 gap-10 rounded-3xl bg-gradient-to-br from-[#01090d] via-[#03141c] to-[#051f29] p-8 text-white shadow-[0_30px_80px_rgba(2,12,20,0.65)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start"
+    className="relative z-10 grid grid-cols-1 gap-10 rounded-3xl bg-linear-to-br from-[#01090d] via-[#03141c] to-[#051f29] p-8 text-white shadow-[0_30px_80px_rgba(2,12,20,0.65)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start"
   >
     <div className="min-w-0 flex flex-col gap-6">
       <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
@@ -44,7 +44,7 @@ export default function Intake ()
           </article>
         ))}
       </div>
-      <p className="break-words text-sm text-white/70">
+      <p className="wrap-break-word text-sm text-white/70">
         Prefer to start live? Call{" "}
         <Link href="tel:9493501078" className="break-all font-semibold text-white hover:underline">
           9493501078

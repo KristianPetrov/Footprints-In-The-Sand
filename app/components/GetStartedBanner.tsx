@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function GetStartedBanner ()
 {
-  return (<section className="relative z-10 overflow-hidden rounded-3xl bg-gradient-to-r from-[#b87745] via-[#d08a4c] to-[#c97a3a] p-8 shadow-[0_25px_60px_rgba(184,119,69,0.35)]">
+  return (<section className="relative z-10 overflow-hidden rounded-3xl bg-linear-to-r from-[#b87745] via-[#d08a4c] to-[#c97a3a] p-8 shadow-[0_25px_60px_rgba(184,119,69,0.35)]">
     <div className="pointer-events-none absolute inset-0">
       <div className="absolute -left-16 -top-16 h-48 w-48 rounded-full bg-white/20 blur-3xl" />
       <div className="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-[#0f2f38]/20 blur-3xl" />
