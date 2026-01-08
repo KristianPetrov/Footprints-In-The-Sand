@@ -7,6 +7,7 @@ import Program from "./components/Program";
 import Treatment from "./components/Treatment";
 import Mission from "./components/Mission";
 import Gallery from "./components/Gallery";
+import FacilityTour from "./components/FacilityTour";
 import ProcessGroups from "./components/ProcessGroups";
 import Intake from "./components/Intake";
 import Care from "./components/Care"
@@ -39,6 +40,7 @@ export default function Home ()
         <Treatment />
         <Mission />
         <ProcessGroups />
+        <FacilityTour />
         <Gallery />
         <Care />
         <RecoveryModalities />
