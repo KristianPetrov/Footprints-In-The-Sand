@@ -28,7 +28,7 @@ export default function Services ()
       <div className="grid gap-6 lg:grid-cols-2">
         <article className="group flex h-full flex-col gap-5 rounded-2xl border border-[#e3e9eb] bg-[#fefcf8] p-6 transition hover:-translate-y-0.5 hover:border-[#b87745]/40 hover:shadow-lg">
           <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0f2f38] text-white shadow-sm">
+            <div className="flex h-12 w-16 items-center justify-center rounded-2xl bg-[#0f2f38] text-white shadow-sm">
               <svg
                 width="22"
                 height="22"
@@ -95,7 +95,7 @@ export default function Services ()
 
         <article className="group flex h-full flex-col gap-5 rounded-2xl border border-[#e3e9eb] bg-[#fefcf8] p-6 transition hover:-translate-y-0.5 hover:border-[#b87745]/40 hover:shadow-lg">
           <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0f2f38] text-white shadow-sm">
+            <div className="flex h-12 w-16 items-center justify-center rounded-2xl bg-[#0f2f38] text-white shadow-sm">
               <svg
                 width="22"
                 height="22"
