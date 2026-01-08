@@ -34,6 +34,19 @@ Tiffany believes deeply that recovery is possible for everyone. She is committed
     id: "alyssa-van-boxmeer",
     bio: `Alyssa Van Boxmeer is a Licensed Marriage and Family Therapist who takes pride in providing clinical leadership and oversight while fostering a safe, ethical, and trauma-informed treatment environment for both clients and staff. Alyssa earned a dual bachelors in Wellness Management and Psychology from State University of New York at Oswego and her masters in Marriage and Family Therapy from Pacific Oaks College. She has more than 10 years of experience working with individuals, couples, and families in community-based, residential treatment, and private practice settings. Her training includes Dialectic Behavioral Therapy, Yoga Philosophy, Tapping, Somatic Experiencing, and Cognitive Behavioral Therapy. She enjoys working with a wide range of issues including addiction, anxiety, communication, and codependency. Alyssa enjoys creating a safe space for her clients and employees to explore the inner workings of themselves with non-judgmental awareness, curiosity, and light-heartedness. In her spare time, you can find Alyssa spending time with her friends and family, golfing, playing guitar, and making people laugh.`,
   }, {
+    name: "Megan Burrage",
+    title: "Program Director",
+    credentials: "CADC-I",
+    image: "/megan-burrage-portrait.jpeg",
+    id: "megan-burrage",
+    bio:`Megan Burrage is a dedicated behavioral health professional with a strong passion for helping individuals heal and rebuild their lives. She has been working in the substance use and mental health field since 2019 and completed her education at the Los Angeles Training Institute, to become Certified Drug and Alcohol Counselor. As Program Director at Footprints in the Sand 2 Recovery, Megan provides leadership, guidance, and oversight to ensure clients receive compassionate, ethical, and high-quality care.
+
+As a person in long-term recovery, Megan brings lived experience into her work, allowing her to connect with clients in an authentic and meaningful way. Her recovery journey has shaped her belief that change is possible when individuals are supported, understood, and given the right tools. She is deeply committed to meeting clients where they are and helping them build confidence, accountability, and hope for the future.
+
+Megan’s treatment philosophy focuses on creating a safe, structured, and supportive environment where individuals feel empowered to grow. She is known for her approachable leadership style, empathy, and dedication to fostering strong therapeutic relationships within the program.
+
+Outside of work, Megan values balance and self-care and enjoys spending time outdoors, especially in nature. Her compassion, resilience, and commitment to recovery continue to inspire both the clients she serves and the teams she leads.`
+  },{
     name: "Jennifer Vasey",
     title: "Program Supervisor",
     credentials: "RADT",
@@ -167,16 +180,16 @@ export default function TeamPage ()
             <p className="text-center text-lg leading-8 text-[#2e454c]">
               Ready to begin your journey? Our team is here to support you.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col items-stretch justify-center gap-4 md:flex-row md:items-center">
               <Link
                 href="/#intake"
-                className="inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
+                className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652] md:w-auto"
               >
                 Start Intake
               </Link>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
+                className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60 md:w-auto"
               >
                 Back to Home
               </Link>
@@ -199,6 +212,11 @@ export default function TeamPage ()
     </>
   );
 }
+
+
+
+
+
 
 
 

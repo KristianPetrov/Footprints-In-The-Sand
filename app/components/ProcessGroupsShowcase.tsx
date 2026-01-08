@@ -67,7 +67,6 @@ export function ProcessGroupsShowcase ({ slides }: ProcessGroupsShowcaseProps)
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
             {activeSlide.focus}
           </p>
-          <p className="mt-2 text-base leading-6 text-white">{activeSlide.alt}</p>
         </div>
         {totalSlides > 1 && (
           <>
@@ -75,7 +74,7 @@ export function ProcessGroupsShowcase ({ slides }: ProcessGroupsShowcaseProps)
               type="button"
               aria-label="Previous slide"
               onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 px-3 py-2 text-sm font-semibold text-[#0f2f38] shadow-md transition hover:bg-white"
+              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 px-4 py-3 text-sm font-semibold text-[#0f2f38] shadow-md transition hover:bg-white min-h-[44px] min-w-[44px]"
             >
               Prev
             </button>
@@ -83,7 +82,7 @@ export function ProcessGroupsShowcase ({ slides }: ProcessGroupsShowcaseProps)
               type="button"
               aria-label="Next slide"
               onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 px-3 py-2 text-sm font-semibold text-[#0f2f38] shadow-md transition hover:bg-white"
+              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 px-4 py-3 text-sm font-semibold text-[#0f2f38] shadow-md transition hover:bg-white min-h-[44px] min-w-[44px]"
             >
               Next
             </button>
@@ -114,6 +113,9 @@ export function ProcessGroupsShowcase ({ slides }: ProcessGroupsShowcaseProps)
     </div>
   );
 }
+
+
+
 
 
 

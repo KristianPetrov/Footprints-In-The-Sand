@@ -83,7 +83,7 @@ export function IntakeForm ()
             required
             value={values.firstName}
             onChange={(event) => updateField("firstName", event.target.value)}
-            className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
           />
         </label>
         <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
@@ -94,7 +94,7 @@ export function IntakeForm ()
             required
             value={values.lastName}
             onChange={(event) => updateField("lastName", event.target.value)}
-            className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
           />
         </label>
       </div>
@@ -108,7 +108,7 @@ export function IntakeForm ()
             required
             value={values.email}
             onChange={(event) => updateField("email", event.target.value)}
-            className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
           />
         </label>
         <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
@@ -119,7 +119,7 @@ export function IntakeForm ()
             required
             value={values.phone}
             onChange={(event) => updateField("phone", event.target.value)}
-            className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
           />
         </label>
       </div>
@@ -133,7 +133,7 @@ export function IntakeForm ()
             onChange={(event) =>
               updateField("preferredContact", event.target.value as IntakeFormValues["preferredContact"])
             }
-            className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
           >
             <option value="phone">Phone call</option>
             <option value="email">Email response</option>
@@ -146,7 +146,7 @@ export function IntakeForm ()
             name="insuranceCarrier"
             value={values.insuranceCarrier}
             onChange={(event) => updateField("insuranceCarrier", event.target.value)}
-            className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
           />
         </label>
         <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
@@ -156,7 +156,7 @@ export function IntakeForm ()
             name="insuranceMemberId"
             value={values.insuranceMemberId}
             onChange={(event) => updateField("insuranceMemberId", event.target.value)}
-            className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
           />
         </label>
       </div>
@@ -179,7 +179,7 @@ export function IntakeForm ()
           required
           value={values.supportFocus}
           onChange={(event) => updateField("supportFocus", event.target.value)}
-          className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+          className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
         >
           <option value="">Select one</option>
           <option value="detox-support">Detox or stabilization</option>
@@ -206,7 +206,7 @@ export function IntakeForm ()
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-full bg-[#f7c99b] px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-[#1b2e35] transition hover:bg-[#f9d9b8] disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#f7c99b] px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-[#1b2e35] transition hover:bg-[#f9d9b8] disabled:cursor-not-allowed disabled:opacity-70 md:w-auto"
         >
           {status === "sending" ? "Submitting..." : "Send Intake"}
         </button>

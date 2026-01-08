@@ -17,9 +17,15 @@ const nextConfig: NextConfig = {
   // Optimize for production
   poweredByHeader: false,
 
-  // Experimental features for better performance
+  /**
+   * NOTE:
+   * `experimental.optimizeCss` requires the `critters` package at runtime.
+   * If `critters` isn't installed, Next will crash with "Cannot find module 'critters'".
+   *
+   * Keep this disabled unless you explicitly add `critters` to dependencies.
+   */
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false,
   },
 };
 

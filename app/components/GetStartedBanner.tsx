@@ -18,10 +18,10 @@ export default function GetStartedBanner ()
           Recovery begins with a single step. Reach out now and let us walk beside you on your journey to lasting change.
         </p>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <div className="flex w-full flex-col items-stretch justify-center gap-4 md:flex-row md:items-center">
         <Link
           href="mailto:info@footprintsrecovery.net"
-          className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-[#b87745] shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+          className="group inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-[#b87745] shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl md:w-auto"
         >
           <svg
             className="h-5 w-5 transition group-hover:scale-110"
@@ -41,7 +41,7 @@ export default function GetStartedBanner ()
         </Link>
         <Link
           href="tel:9493501078"
-          className="group inline-flex items-center gap-2 rounded-full bg-[#0f2f38] px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#1c5a6b] hover:shadow-xl"
+          className="group inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-[#0f2f38] px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#1c5a6b] hover:shadow-xl md:w-auto"
         >
           <svg
             className="h-5 w-5 transition group-hover:scale-110"
@@ -61,7 +61,7 @@ export default function GetStartedBanner ()
         </Link>
         <Link
           href="#intake"
-          className="group inline-flex items-center gap-2 rounded-full border-2 border-white bg-transparent px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-white hover:text-[#b87745] hover:shadow-xl"
+          className="group inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full border-2 border-white bg-transparent px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-white hover:text-[#b87745] hover:shadow-xl md:w-auto"
         >
           <svg
             className="h-5 w-5 transition group-hover:scale-110"

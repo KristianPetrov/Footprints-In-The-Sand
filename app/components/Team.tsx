@@ -14,6 +14,12 @@ const teamMembers = [
     image: "/alyssa-boxmeer-photo.png",
     id: "alyssa-van-boxmeer",
 
+  },{
+    name:"Megan Burrage",
+    title:"Program Director",
+    credentials:"CADC-I",
+    image:"/megan-burrage-portrait.jpeg",
+    id:"megan-burrage"
   },
   {
     name: "Jennifer Vasey",

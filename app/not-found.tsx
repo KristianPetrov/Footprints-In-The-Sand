@@ -11,16 +11,16 @@ export default function NotFound ()
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
           Let&apos;s get you back on the path to recovery.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex w-full flex-col items-stretch justify-center gap-4 md:flex-row md:items-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
+            className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652] md:w-auto"
           >
             Return Home
           </Link>
           <Link
             href="/#intake"
-            className="inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
+            className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60 md:w-auto"
           >
             Start Intake
           </Link>
@@ -35,6 +35,11 @@ export default function NotFound ()
     </div>
   );
 }
+
+
+
+
+
 
 
 

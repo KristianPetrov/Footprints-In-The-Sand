@@ -85,17 +85,17 @@ export function TopicPageShell ({ content }: Props)
             >
               {content.description}
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <div className="mt-8 flex flex-col items-stretch justify-center gap-4 md:flex-row md:items-center">
               <Link
                 href="/#intake"
                 className={
                   isTreatmentApproach
-                    ? "inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
+                    ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.2)] transition hover:-translate-y-0.5 hover:bg-[#174652] md:w-auto"
                     : isMentalHealth
-                      ? "inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#0f6f84] to-[#19b1a6] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(16,111,132,0.35)] transition hover:-translate-y-0.5 hover:brightness-110"
+                      ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-linear-to-r from-[#0f6f84] to-[#19b1a6] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(16,111,132,0.35)] transition hover:-translate-y-0.5 hover:brightness-110 md:w-auto"
                       : isSubstanceAbuse
-                        ? "inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#b87745] to-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(184,119,69,0.28)] transition hover:-translate-y-0.5 hover:brightness-110"
-                        : "inline-flex items-center justify-center rounded-full bg-[#f7c99b] px-8 py-3 text-base font-semibold text-[#1f2a2e] transition hover:-translate-y-0.5 hover:bg-[#f2b87e]"
+                        ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-linear-to-r from-[#b87745] to-[#1c5a6b] px-8 py-3 text-base font-semibold text-white shadow-[0_18px_35px_rgba(184,119,69,0.28)] transition hover:-translate-y-0.5 hover:brightness-110 md:w-auto"
+                        : "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#f7c99b] px-8 py-3 text-base font-semibold text-[#1f2a2e] transition hover:-translate-y-0.5 hover:bg-[#f2b87e] md:w-auto"
                 }
               >
                 Start Intake
@@ -104,8 +104,8 @@ export function TopicPageShell ({ content }: Props)
                 href="/getting-started"
                 className={
                   isTreatmentApproach
-                    ? "inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
-                    : "inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-3 text-base font-semibold text-white transition hover:border-white/60 hover:bg-white/10"
+                    ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60 md:w-auto"
+                    : "inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-white/30 px-8 py-3 text-base font-semibold text-white transition hover:border-white/60 hover:bg-white/10 md:w-auto"
                 }
               >
                 Admissions &amp; What to Expect
@@ -188,15 +188,15 @@ export function TopicPageShell ({ content }: Props)
                   If you or someone you love needs help, we can walk you through next steps and build a plan
                   that fits your situation.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-4">
+                <div className="mt-6 flex flex-col items-stretch gap-4 md:flex-row md:items-center">
                   <Link
                     href="tel:9493501078"
                     className={
                       isTreatmentApproach
-                        ? "inline-flex items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:bg-white"
+                        ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:bg-white md:w-auto"
                         : isColorizedDark
-                          ? "inline-flex items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                          : "inline-flex items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
+                          ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15 md:w-auto"
+                          : "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15 md:w-auto"
                     }
                   >
                     Call 949-350-1078
@@ -205,10 +205,10 @@ export function TopicPageShell ({ content }: Props)
                     href="mailto:info@footprintsrecovery.net"
                     className={
                       isTreatmentApproach
-                        ? "inline-flex items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:bg-white"
+                        ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:bg-white md:w-auto"
                         : isColorizedDark
-                          ? "inline-flex items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                          : "inline-flex items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
+                          ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15 md:w-auto"
+                          : "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15 md:w-auto"
                     }
                   >
                     Email info@footprintsrecovery.net
@@ -217,8 +217,8 @@ export function TopicPageShell ({ content }: Props)
                     href="/"
                     className={
                       isTreatmentApproach
-                        ? "inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
-                        : "inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/10"
+                        ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[#1c5a6b33] px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60 md:w-auto"
+                        : "inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/10 md:w-auto"
                     }
                   >
                     Back to Home
@@ -227,8 +227,8 @@ export function TopicPageShell ({ content }: Props)
                     href={`#${toc[0]?.id ?? ""}`}
                     className={
                       isTreatmentApproach
-                        ? "inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
-                        : "inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/10"
+                        ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[#1c5a6b33] px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60 md:w-auto"
+                        : "inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/10 md:w-auto"
                     }
                   >
                     Back to top

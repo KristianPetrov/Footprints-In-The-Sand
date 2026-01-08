@@ -93,7 +93,6 @@ export default function Gallery ()
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#b87745]">
               {scene.label}
             </p>
-            <p className="text-sm text-[#3b5259]">{scene.alt}</p>
           </figcaption>
         </figure>
       ))}

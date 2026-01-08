@@ -102,16 +102,16 @@ export default function AddictionTreatmentPage ()
             Our admissions team will walk you through options, verify insurance, and build a plan that matches
             your clinical needs and schedule.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-col items-stretch justify-center gap-4 md:flex-row md:items-center">
             <Link
               href="/#intake"
-              className="inline-flex items-center justify-center rounded-full bg-[#f7c99b] px-8 py-3 text-base font-semibold text-[#1f2a2e] transition hover:-translate-y-0.5 hover:bg-[#f2b87e]"
+              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#f7c99b] px-8 py-3 text-base font-semibold text-[#1f2a2e] transition hover:-translate-y-0.5 hover:bg-[#f2b87e] md:w-auto"
             >
               Start Intake
             </Link>
             <Link
               href="/getting-started"
-              className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-3 text-base font-semibold text-white transition hover:border-white/60 hover:bg-white/10"
+              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-white/30 px-8 py-3 text-base font-semibold text-white transition hover:border-white/60 hover:bg-white/10 md:w-auto"
             >
               Learn About Admissions
             </Link>

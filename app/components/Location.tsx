@@ -15,18 +15,18 @@ export default function Location ()
       <p className="text-base leading-7 text-[#2e454c]">
         653 West 19th Street, Costa Mesa, CA
       </p>
-      <div className="flex flex-wrap gap-3 pt-2">
+      <div className="flex flex-col gap-3 pt-2 md:flex-row">
         <Link
           href="https://www.google.com/maps?q=653%20West%2019th%20Street%2C%20Costa%20Mesa%2C%20CA&output=embed"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-[#1c5a6b] px-6 py-2 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.15)] transition hover:-translate-y-0.5 hover:bg-[#174652]"
+          className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#1c5a6b] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(28,90,107,0.15)] transition hover:-translate-y-0.5 hover:bg-[#174652] md:w-auto"
         >
           Open in Google Maps
         </Link>
         <Link
           href="#intake"
-          className="inline-flex items-center justify-center rounded-full border border-[#1c5a6b33] px-6 py-2 text-sm font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60"
+          className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[#1c5a6b33] px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60 md:w-auto"
         >
           Start Intake
         </Link>

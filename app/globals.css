@@ -31,6 +31,19 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
 .beach-sky {
   background:
     radial-gradient(circle at 20% 15%, rgba(30, 104, 128, 0.35), transparent 55%),
@@ -188,14 +201,17 @@ body {
   transform: translateY(32%);
 }
 
-.hero-logo-img {
+.hero-logo-imgWrap {
   position: relative;
   width: 82%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 25px 35px rgba(7, 21, 27, 0.35));
+  height: 82%;
   z-index: 2;
   pointer-events: auto;
+}
+
+.hero-logo-img {
+  object-fit: contain;
+  filter: drop-shadow(0 25px 35px rgba(7, 21, 27, 0.35));
 }
 
 @keyframes candleFlicker {
@@ -263,6 +279,13 @@ body {
   margin: 0 auto;
 }
 
+.hero-nav__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
 .hero-nav__menus {
   display: flex;
   align-items: center;
@@ -306,8 +329,8 @@ body {
 
 .hero-nav__hamburger {
   display: none;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   border: 1px solid rgba(27, 59, 68, 0.15);
   background: rgba(255, 255, 255, 0.65);
@@ -350,7 +373,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.35rem 0.6rem;
+  min-height: 44px;
+  padding: 0.45rem 0.75rem;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -372,7 +396,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  padding: 0.35rem 0.6rem;
+  min-height: 44px;
+  padding: 0.45rem 0.75rem;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -382,6 +407,30 @@ body {
   border: 0;
   cursor: pointer;
   transition: color 200ms ease, transform 200ms ease;
+}
+
+.hero-nav__call {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: rgba(15, 47, 56, 0.92);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(15, 47, 56, 0.2);
+  transition: transform 200ms ease, filter 200ms ease;
+  white-space: nowrap;
+}
+
+.hero-nav__call:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
 }
 
 .hero-nav__dropdownButton::after {
@@ -479,6 +528,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
   padding: 0.4rem 0.5rem;
   border-radius: 12px;
   font-size: 0.83rem;
@@ -524,6 +574,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
   padding: 0.65rem 1.35rem;
   border-radius: 999px;
   background: linear-gradient(130deg, #0f6f84, #19b1a6);
@@ -542,7 +593,7 @@ body {
   box-shadow: 0 20px 45px rgba(13, 75, 90, 0.35);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-nav__inner {
     flex-direction: column;
     align-items: flex-start;
@@ -551,10 +602,15 @@ body {
 
   .hero-nav__topline {
     width: 100%;
+    flex-wrap: nowrap;
   }
 
   .hero-nav__brand {
     letter-spacing: 0.3em;
+  }
+
+  .hero-nav__call {
+    display: inline-flex;
   }
 
   .hero-nav__menus {
@@ -571,6 +627,11 @@ body {
     display: flex;
   }
 
+  .hero-nav__cta--mobile {
+    width: 100%;
+    justify-content: center;
+  }
+
   .hero-nav__links {
     width: 100%;
     flex-direction: column;
@@ -579,7 +640,10 @@ body {
   }
 
   .hero-nav__links a {
+    width: 100%;
+    justify-content: space-between;
     padding-left: 0;
+    padding-right: 0;
   }
 
   .hero-nav__links a::after {
@@ -587,34 +651,57 @@ body {
   }
 
   .hero-nav__dropdown {
+    display: none;
+  }
+
+  .hero-nav__mobileAccordions {
     width: 100%;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    gap: 0.5rem;
   }
 
-  .hero-nav__dropdownButton {
+  .hero-nav__mobileAccordion {
     width: 100%;
-    justify-content: space-between;
-    padding-left: 0;
-  }
-
-  .hero-nav__dropdownButton::after {
-    inset: auto 0 -4px;
-  }
-
-  .hero-nav__dropdownPanel {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin-top: 0.5rem;
     border-radius: 18px;
-    padding: 0.75rem;
-    box-shadow: none;
-    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(27, 59, 68, 0.1);
+    background: rgba(255, 255, 255, 0.6);
+    overflow: hidden;
   }
 
-  .hero-nav__dropdownGrid {
-    grid-template-columns: 1fr;
+  .hero-nav__mobileAccordionButton {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #1c5a6b;
+    text-transform: uppercase;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .hero-nav__mobileAccordionPanel {
+    display: none;
+    flex-direction: column;
+    padding: 0.25rem 0.5rem 0.75rem;
+    gap: 0.25rem;
+  }
+
+  .hero-nav__mobileAccordion.is-open .hero-nav__mobileAccordionPanel {
+    display: flex;
+  }
+
+  .hero-nav__mobileAccordion .hero-nav__dropdownLink {
+    justify-content: flex-start;
+    text-align: left;
+    border-radius: 12px;
+    padding: 0.65rem 0.75rem;
   }
 
   .hero-nav__hamburger {

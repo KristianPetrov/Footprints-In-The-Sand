@@ -51,7 +51,9 @@ const treatmentApproachMenu = [
 export function HeroNav ()
 {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileNav, setIsMobileNav] = useState(false);
   const [isTreatmentOpen, setIsTreatmentOpen] = useState(false);
+  const [mobileAccordions, setMobileAccordions] = useState<Record<string, boolean>>({});
   const [treatmentPanelStyle, setTreatmentPanelStyle] = useState<
     React.CSSProperties | undefined
   >(undefined);
@@ -64,6 +66,7 @@ export function HeroNav ()
   {
     setIsOpen(false);
     setIsTreatmentOpen(false);
+    setMobileAccordions({});
   };
 
   const closeTreatment = () => setIsTreatmentOpen(false);
@@ -86,6 +89,37 @@ export function HeroNav ()
   {
     // Keeps the label stable for screen readers (and gives us a single place to rename it later).
     return "Treatment Approach";
+  }, []);
+
+  useEffect(() =>
+  {
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
+
+    const sync = () =>
+    {
+      setIsMobileNav(mediaQuery.matches);
+      if (!mediaQuery.matches) {
+        // Reset mobile-only UI when returning to desktop.
+        setIsOpen(false);
+        setMobileAccordions({});
+      } else {
+        // Ensure desktop dropdown doesn't stay open in mobile layout.
+        setIsTreatmentOpen(false);
+      }
+    };
+
+    sync();
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", sync);
+      return () => mediaQuery.removeEventListener("change", sync);
+    }
+
+    // Safari fallback
+    // eslint-disable-next-line deprecation/deprecation
+    mediaQuery.addListener(sync);
+    // eslint-disable-next-line deprecation/deprecation
+    return () => mediaQuery.removeListener(sync);
   }, []);
 
   useEffect(() =>
@@ -128,7 +162,7 @@ export function HeroNav ()
     const updatePosition = () =>
     {
       // On mobile we intentionally use the "accordion" style dropdown (static positioning).
-      if (window.matchMedia("(max-width: 768px)").matches) {
+      if (window.matchMedia("(max-width: 1024px)").matches) {
         setTreatmentPanelStyle(undefined);
         return;
       }
@@ -167,6 +201,11 @@ export function HeroNav ()
     };
   }, [isTreatmentOpen]);
 
+  const toggleMobileAccordion = (title: string) =>
+  {
+    setMobileAccordions((prev) => ({ ...prev, [title]: !prev[title] }));
+  };
+
   return (
     <nav className="hero-nav">
       <div className="hero-nav__inner">
@@ -175,23 +214,37 @@ export function HeroNav ()
             Footprints In The Sand
             <span>2 Recovery</span>
           </Link>
-          <button
-            type="button"
-            className={`hero-nav__hamburger ${isOpen ? "is-active" : ""}`}
-            aria-label="Toggle navigation menu"
-            aria-controls="hero-nav-menu"
-            aria-expanded={isOpen}
-            onClick={() => setIsOpen((prev) => !prev)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          <div className="hero-nav__actions">
+            <Link href="tel:9493501078" className="hero-nav__call" onClick={closeMenu}>
+              Call Now
+            </Link>
+            <button
+              type="button"
+              className={`hero-nav__hamburger ${isOpen ? "is-active" : ""}`}
+              aria-label="Toggle navigation menu"
+              aria-controls="hero-nav-menu"
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
         <div
           id="hero-nav-menu"
           className={`hero-nav__menus ${isOpen ? "is-open" : ""}`}
         >
+          {isMobileNav && (
+            <Link
+              href={getHref("#intake")}
+              className="hero-nav__cta hero-nav__cta--mobile"
+              onClick={handleNavigate}
+            >
+              Start Intake
+            </Link>
+          )}
           <div className="hero-nav__links">
             {navItems.slice(0, 2).map((item) => (
               <Link key={item.href} href={getHref(item.href)} onClick={handleNavigate}>
@@ -199,51 +252,88 @@ export function HeroNav ()
               </Link>
             ))}
 
-            <div
-              ref={dropdownRef}
-              className={`hero-nav__dropdown ${isTreatmentOpen ? "is-open" : ""}`}
-            >
-              <button
-                ref={dropdownButtonRef}
-                type="button"
-                className="hero-nav__dropdownButton"
-                aria-haspopup="menu"
-                aria-expanded={isTreatmentOpen}
-                aria-controls={dropdownId}
-                onClick={() => setIsTreatmentOpen((prev) => !prev)}
-              >
-                {menuButtonLabel}
-                <span className="hero-nav__chevron" aria-hidden="true" />
-              </button>
+            {isMobileNav ? (
+              <div className="hero-nav__mobileAccordions">
+                {treatmentApproachMenu.map((section) =>
+                {
+                  const open = Boolean(mobileAccordions[section.title]);
+                  const sectionId = `${dropdownId}-${section.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
-              <div
-                id={dropdownId}
-                className="hero-nav__dropdownPanel"
-                role="menu"
-                style={treatmentPanelStyle}
-              >
-                <div className="hero-nav__dropdownGrid">
-                  {treatmentApproachMenu.map((section) => (
-                    <div key={section.title} className="hero-nav__dropdownSection">
-                      <p className="hero-nav__dropdownTitle">{section.title}</p>
-                      <div className="hero-nav__dropdownLinks" role="none">
+                  return (
+                    <div key={section.title} className={`hero-nav__mobileAccordion ${open ? "is-open" : ""}`}>
+                      <button
+                        type="button"
+                        className="hero-nav__mobileAccordionButton"
+                        aria-expanded={open}
+                        aria-controls={sectionId}
+                        onClick={() => toggleMobileAccordion(section.title)}
+                      >
+                        {section.title}
+                        <span className="hero-nav__chevron" aria-hidden="true" />
+                      </button>
+                      <div id={sectionId} className="hero-nav__mobileAccordionPanel">
                         {section.items.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
                             className="hero-nav__dropdownLink"
                             onClick={handleNavigate}
-                            role="menuitem"
                           >
                             {item.label}
                           </Link>
                         ))}
                       </div>
                     </div>
-                  ))}
+                  );
+                })}
+              </div>
+            ) : (
+              <div
+                ref={dropdownRef}
+                className={`hero-nav__dropdown ${isTreatmentOpen ? "is-open" : ""}`}
+              >
+                <button
+                  ref={dropdownButtonRef}
+                  type="button"
+                  className="hero-nav__dropdownButton"
+                  aria-haspopup="menu"
+                  aria-expanded={isTreatmentOpen}
+                  aria-controls={dropdownId}
+                  onClick={() => setIsTreatmentOpen((prev) => !prev)}
+                >
+                  {menuButtonLabel}
+                  <span className="hero-nav__chevron" aria-hidden="true" />
+                </button>
+
+                <div
+                  id={dropdownId}
+                  className="hero-nav__dropdownPanel"
+                  role="menu"
+                  style={treatmentPanelStyle}
+                >
+                  <div className="hero-nav__dropdownGrid">
+                    {treatmentApproachMenu.map((section) => (
+                      <div key={section.title} className="hero-nav__dropdownSection">
+                        <p className="hero-nav__dropdownTitle">{section.title}</p>
+                        <div className="hero-nav__dropdownLinks" role="none">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="hero-nav__dropdownLink"
+                              onClick={handleNavigate}
+                              role="menuitem"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {navItems.slice(2).map((item) => (
               <Link key={item.href} href={getHref(item.href)} onClick={handleNavigate}>
@@ -251,9 +341,11 @@ export function HeroNav ()
               </Link>
             ))}
           </div>
-          <Link href={getHref("#intake")} className="hero-nav__cta" onClick={handleNavigate}>
-            Start Intake
-          </Link>
+          {!isMobileNav && (
+            <Link href={getHref("#intake")} className="hero-nav__cta" onClick={handleNavigate}>
+              Start Intake
+            </Link>
+          )}
         </div>
       </div>
     </nav>
