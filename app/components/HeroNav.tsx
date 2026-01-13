@@ -236,15 +236,15 @@ export function HeroNav ()
           id="hero-nav-menu"
           className={`hero-nav__menus ${isOpen ? "is-open" : ""}`}
         >
-          {isMobileNav && (
-            <Link
-              href={getHref("#intake")}
-              className="hero-nav__cta hero-nav__cta--mobile"
-              onClick={handleNavigate}
-            >
-              Start Intake
-            </Link>
-          )}
+          {/* {isMobileNav && (
+            // <Link
+            //   href={getHref("#intake")}
+            //   className="hero-nav__cta hero-nav__cta--mobile"
+            //   onClick={handleNavigate}
+            // >
+            //   Start Intake
+            // </Link>
+          )} */}
           <div className="hero-nav__links">
             {navItems.slice(0, 2).map((item) => (
               <Link key={item.href} href={getHref(item.href)} onClick={handleNavigate}>

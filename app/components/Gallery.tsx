@@ -89,11 +89,11 @@ export default function Gallery ()
             />
             <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#0f2f38]/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
           </div>
-          <figcaption className="flex flex-col gap-1 px-1 pb-3">
+          {/* <figcaption className="flex flex-col gap-1 px-1 pb-3">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#b87745]">
               {scene.label}
             </p>
-          </figcaption>
+          </figcaption> */}
         </figure>
       ))}
     </div>
