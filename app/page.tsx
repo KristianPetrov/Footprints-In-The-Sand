@@ -39,7 +39,7 @@ export default function Home ()
         <Location />
         <Treatment />
         <Mission />
-        <ProcessGroups />
+        {/* <ProcessGroups /> */}
         <FacilityTour />
         <Gallery />
         <Care />
