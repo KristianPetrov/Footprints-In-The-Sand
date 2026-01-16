@@ -41,7 +41,7 @@ export default function Error ({
         <p className="text-sm text-[#4a5c60]">
           Need immediate help? Call{" "}
           <Link href="tel:9493501078" className="font-semibold text-[#1b5a6d] hover:underline">
-            949-350-1078
+            (949)-350-1078
           </Link>
         </p>
       </div>

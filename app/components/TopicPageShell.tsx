@@ -199,7 +199,7 @@ export function TopicPageShell ({ content }: Props)
                           : "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15 md:w-auto"
                     }
                   >
-                    Call 949-350-1078
+                    Call (949)-350-1078
                   </Link>
                   <Link
                     href="mailto:info@footprintsrecovery.net"

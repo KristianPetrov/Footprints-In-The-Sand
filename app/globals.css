@@ -44,6 +44,15 @@ iframe {
   max-width: 100%;
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .beach-sky {
   background:
     radial-gradient(circle at 20% 15%, rgba(30, 104, 128, 0.35), transparent 55%),
