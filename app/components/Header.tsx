@@ -9,7 +9,7 @@ export default function Header ()
       </div>
       <div className="hero-logo-imgWrap">
         <Image
-          src="/footprints-new-logo-oval.png"
+          src="/new-logo-2-transparent-lg-border.png"
           alt="Footprints In The Sand 2 Recovery minimal logo"
           fill
           sizes="(max-width: 640px) 75vw, (max-width: 1024px) 60vw, 420px"

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 
 const facilityTourGallery = [
   {
@@ -38,8 +41,34 @@ const facilityTourGallery = [
   },
 ];
 
-export default function FacilityTour ()
-{
+export default function FacilityTour() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const totalSlides = facilityTourGallery.length;
+  const activeSlide = useMemo(
+    () => facilityTourGallery[activeIndex],
+    [activeIndex]
+  );
+
+  useEffect(() => {
+    if (isPaused) {
+      return undefined;
+    }
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % totalSlides);
+    }, 8000);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused, totalSlides]);
+
+  const handlePrevious = () => {
+    setActiveIndex((current) => (current - 1 + totalSlides) % totalSlides);
+  };
+
+  const handleNext = () => {
+    setActiveIndex((current) => (current + 1) % totalSlides);
+  };
+
   return (
     <section
       id="facility-tour"
@@ -58,30 +87,110 @@ export default function FacilityTour ()
         </p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {facilityTourGallery.map((scene, index) => (
-          <figure
-            key={scene.src}
-            className="group flex flex-col gap-3 rounded-3xl border border-[#e2ecef] bg-white p-3 shadow-sm"
-          >
-            <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-[#e3edf2]">
-              <Image
-                src={scene.src}
-                alt={scene.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition duration-500 group-hover:scale-105"
-                loading={index < 3 ? "eager" : "lazy"}
-              />
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#0f2f38]/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-            </div>
-            {/* <figcaption className="flex flex-col gap-1 px-1 pb-3">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#b87745]">
-                {scene.label}
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+        <div
+
+        >
+          <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-[#e2ecef] bg-[#e3edf2]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocusCapture={() => setIsPaused(true)}
+          onBlurCapture={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}>
+            {facilityTourGallery.map((scene, index) => {
+              const isActive = index === activeIndex;
+              const isLounge = scene.src === "/facility-lounge-area.jpeg";
+              return (
+                <div
+                  key={scene.src}
+                  className={`absolute inset-0 transition duration-900 ease-out ${
+                    isActive ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                  }`}
+                  aria-hidden={!isActive}
+                >
+                  <Image
+                    src={scene.src}
+                    alt={scene.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-cover"
+                    priority={index === 0}
+                    loading={isLounge ? "eager" : undefined}
+                    unoptimized={isLounge}
+                  />
+                </div>
+              );
+            })}
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#0f2f38]/35 via-transparent to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 px-4 pb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/90">
+                {activeSlide.label}
               </p>
-            </figcaption> */}
-          </figure>
-        ))}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handlePrevious}
+                  aria-label="Previous facility photo"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  aria-label="Next facility photo"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
+            {facilityTourGallery.map((scene, index) => {
+              const isActive = index === activeIndex;
+              return (
+                <button
+                  key={scene.src}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  className={`group relative aspect-4/3 overflow-hidden rounded-2xl border ${
+                    isActive
+                      ? "border-[#0f2f38] ring-2 ring-[#0f2f38]/30"
+                      : "border-[#e2ecef]"
+                  }`}
+                  aria-label={`View ${scene.label}`}
+                >
+                  <Image
+                    src={scene.src}
+                    alt={scene.alt}
+                    fill
+                    sizes="(max-width: 640px) 30vw, (max-width: 1024px) 20vw, 12vw"
+                    className={`object-cover transition duration-300 ${
+                      isActive ? "scale-100" : "group-hover:scale-105"
+                    }`}
+                    loading="lazy"
+                  />
+                  <span
+                    className={`absolute inset-0 bg-[#0f2f38]/40 transition ${
+                      isActive ? "opacity-0" : "opacity-0 group-hover:opacity-20"
+                    }`}
+                  />
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        {/* <div className="rounded-3xl border border-[#e2ecef] bg-white p-6 text-sm leading-6 text-[#2e454c] shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#b87745]">
+            Explore The Campus
+          </p>
+          <p className="mt-4 text-base leading-7 text-[#2e454c]">
+            Scroll through highlighted spaces to get a feel for daily life at Footprints In The Sand 2
+            Recovery. Tap a thumbnail to jump to a specific view or use the arrows for a guided tour.
+          </p>
+        </div> */}
       </div>
     </section>
   );

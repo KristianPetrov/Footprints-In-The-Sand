@@ -36,11 +36,11 @@ export default function Home ()
         <Header />
         <GetStartedBanner />
         <Program />
-        <Location />
+        <Location /> <FacilityTour />
         <Treatment />
         <Mission />
         {/* <ProcessGroups /> */}
-        <FacilityTour />
+
         <Gallery />
         <Care />
         <RecoveryModalities />
