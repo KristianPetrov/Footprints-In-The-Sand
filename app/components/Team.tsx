@@ -19,7 +19,7 @@ const teamMembers = [
     name:"Megan Burrage",
     title:"Program Director",
     credentials:"CADC-I",
-    image:"/megan-burrage-portrait.jpeg",
+    image:"/megan-burrage-portrait.PNG",
     id:"megan-burrage"
   },
   {

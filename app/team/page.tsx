@@ -37,7 +37,7 @@ Tiffany believes deeply that recovery is possible for everyone. She is committed
     name: "Megan Burrage",
     title: "Program Director",
     credentials: "CADC-I",
-    image: "/megan-burrage-portrait.jpeg",
+    image: "/megan-burrage-portrait.PNG",
     id: "megan-burrage",
     bio:`Megan Burrage is a dedicated behavioral health professional with a strong passion for helping individuals heal and rebuild their lives. She has been working in the substance use and mental health field since 2019 and completed her education at the Los Angeles Training Institute, to become Certified Drug and Alcohol Counselor. As Program Director at Footprints in the Sand 2 Recovery, Megan provides leadership, guidance, and oversight to ensure clients receive compassionate, ethical, and high-quality care.
 
