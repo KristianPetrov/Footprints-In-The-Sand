@@ -41,7 +41,8 @@ const facilityTourGallery = [
   },
 ];
 
-export default function FacilityTour() {
+export default function FacilityTour ()
+{
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const totalSlides = facilityTourGallery.length;
@@ -50,22 +51,26 @@ export default function FacilityTour() {
     [activeIndex]
   );
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     if (isPaused) {
       return undefined;
     }
-    const interval = window.setInterval(() => {
+    const interval = window.setInterval(() =>
+    {
       setActiveIndex((current) => (current + 1) % totalSlides);
     }, 8000);
 
     return () => window.clearInterval(interval);
   }, [isPaused, totalSlides]);
 
-  const handlePrevious = () => {
+  const handlePrevious = () =>
+  {
     setActiveIndex((current) => (current - 1 + totalSlides) % totalSlides);
   };
 
-  const handleNext = () => {
+  const handleNext = () =>
+  {
     setActiveIndex((current) => (current + 1) % totalSlides);
   };
 
@@ -87,26 +92,24 @@ export default function FacilityTour() {
         </p>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-        <div
-
-        >
+      <div className="flex flex-col items-center gap-6">
+        <div className="w-full max-w-6xl">
           <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-[#e2ecef] bg-[#e3edf2]"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onFocusCapture={() => setIsPaused(true)}
-          onBlurCapture={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setIsPaused(false)}>
-            {facilityTourGallery.map((scene, index) => {
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onFocusCapture={() => setIsPaused(true)}
+            onBlurCapture={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}>
+            {facilityTourGallery.map((scene, index) =>
+            {
               const isActive = index === activeIndex;
               const isLounge = scene.src === "/facility-lounge-area.jpeg";
               return (
                 <div
                   key={scene.src}
-                  className={`absolute inset-0 transition duration-900 ease-out ${
-                    isActive ? "opacity-100 scale-100" : "opacity-0 scale-105"
-                  }`}
+                  className={`absolute inset-0 transition duration-900 ease-out ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                    }`}
                   aria-hidden={!isActive}
                 >
                   <Image
@@ -148,18 +151,18 @@ export default function FacilityTour() {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
-            {facilityTourGallery.map((scene, index) => {
+            {facilityTourGallery.map((scene, index) =>
+            {
               const isActive = index === activeIndex;
               return (
                 <button
                   key={scene.src}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`group relative aspect-4/3 overflow-hidden rounded-2xl border ${
-                    isActive
+                  className={`group relative aspect-4/3 overflow-hidden rounded-2xl border ${isActive
                       ? "border-[#0f2f38] ring-2 ring-[#0f2f38]/30"
                       : "border-[#e2ecef]"
-                  }`}
+                    }`}
                   aria-label={`View ${scene.label}`}
                 >
                   <Image
@@ -167,15 +170,13 @@ export default function FacilityTour() {
                     alt={scene.alt}
                     fill
                     sizes="(max-width: 640px) 30vw, (max-width: 1024px) 20vw, 12vw"
-                    className={`object-cover transition duration-300 ${
-                      isActive ? "scale-100" : "group-hover:scale-105"
-                    }`}
+                    className={`object-cover transition duration-300 ${isActive ? "scale-100" : "group-hover:scale-105"
+                      }`}
                     loading="lazy"
                   />
                   <span
-                    className={`absolute inset-0 bg-[#0f2f38]/40 transition ${
-                      isActive ? "opacity-0" : "opacity-0 group-hover:opacity-20"
-                    }`}
+                    className={`absolute inset-0 bg-[#0f2f38]/40 transition ${isActive ? "opacity-0" : "opacity-0 group-hover:opacity-20"
+                      }`}
                   />
                 </button>
               );
