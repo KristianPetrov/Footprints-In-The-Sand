@@ -104,7 +104,7 @@ const jsonLd = {
   name: siteName,
   description: siteDescription,
   url: siteUrl,
-  logo: `${siteUrl}/footprints-in-the-sand-minimal-logo.png`,
+  logo: `${siteUrl}/footprints-new-logo-oval.png`,
   image: `${siteUrl}/opengraph-image`,
   telephone: "+1-949-350-1078",
   email: "info@footprintsrecovery.net",

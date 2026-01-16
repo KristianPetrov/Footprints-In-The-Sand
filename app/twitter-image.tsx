@@ -13,7 +13,7 @@ export const contentType = 'image/png'
 export default async function TwitterImage ()
 {
   const logoData = await readFile(
-    join(process.cwd(), 'public', 'footprints-in-the-sand-minimal-logo.png')
+    join(process.cwd(), 'public', 'footprints-new-logo-oval.png')
   )
   const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`
 
