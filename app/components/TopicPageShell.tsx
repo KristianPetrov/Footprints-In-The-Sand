@@ -101,7 +101,7 @@ export function TopicPageShell ({ content }: Props)
                 Start Intake
               </Link>
               <Link
-                href="/getting-started"
+                href="/admissions"
                 className={
                   isTreatmentApproach
                     ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[#1c5a6b33] px-8 py-3 text-base font-semibold text-[#1c5a6b] transition hover:border-[#1c5a6b] hover:bg-white/60 md:w-auto"

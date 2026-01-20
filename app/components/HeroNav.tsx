@@ -5,9 +5,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 
 const navItems = [
-  { href: "/getting-started", label: "Getting Started" },
-  { href: "/addiction-treatment", label: "Addiction Treatment" },
-  { href: "/team", label: "Our Team" },
+  { href: "/admissions", label: "Admissions" },
+  { href: "/programs", label: "Programs" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/team", label: "Team" },
 ];
 
 const treatmentApproachMenu = [
@@ -116,9 +118,7 @@ export function HeroNav ()
     }
 
     // Safari fallback
-    // eslint-disable-next-line deprecation/deprecation
     mediaQuery.addListener(sync);
-    // eslint-disable-next-line deprecation/deprecation
     return () => mediaQuery.removeListener(sync);
   }, []);
 
@@ -154,10 +154,7 @@ export function HeroNav ()
 
   useEffect(() =>
   {
-    if (!isTreatmentOpen) {
-      setTreatmentPanelStyle(undefined);
-      return;
-    }
+    if (!isTreatmentOpen) return;
 
     const updatePosition = () =>
     {
@@ -309,7 +306,7 @@ export function HeroNav ()
                   id={dropdownId}
                   className="hero-nav__dropdownPanel"
                   role="menu"
-                  style={treatmentPanelStyle}
+                  style={isTreatmentOpen ? treatmentPanelStyle : undefined}
                 >
                   <div className="hero-nav__dropdownGrid">
                     {treatmentApproachMenu.map((section) => (

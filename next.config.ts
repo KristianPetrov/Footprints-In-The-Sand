@@ -27,6 +27,22 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: false,
   },
+
+  async redirects ()
+  {
+    return [
+      {
+        source: "/getting-started",
+        destination: "/admissions",
+        permanent: true,
+      },
+      {
+        source: "/addiction-treatment",
+        destination: "/programs",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -3,16 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroNav } from "../components/HeroNav";
 import { ScrollToHash } from "../components/ScrollToHash";
+import { buildPageMetadata } from "../lib/seo";
 
 export const metadata: Metadata = {
-  title: "Our Team",
-  description:
-    "Meet the dedicated professionals at Footprints In The Sand 2 Recovery. Our experienced counselors, case managers, and support staff bring expertise, compassion, and lived experience to support your recovery journey.",
-  openGraph: {
-    title: "Our Team | Footprints In The Sand 2 Recovery",
+  ...buildPageMetadata({
+    title: "Team | Footprints",
     description:
-      "Meet the dedicated professionals committed to your recovery journey at Footprints In The Sand 2 Recovery.",
-  },
+      "Meet the clinicians and staff behind Footprints’ PHP and IOP outpatient programs in Costa Mesa. View roles, bios, and credentials.",
+    path: "/team",
+  }),
 };
 
 const teamMembers = [

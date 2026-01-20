@@ -63,7 +63,7 @@ export function IntakeForm ()
       setValues(defaultValues);
       setStatus("success");
       setMessage("We received your intake. A guide will reach out shortly.");
-    } catch (error) {
+    } catch {
       setStatus("error");
       setMessage("We could not process that submission. Please try again.");
     }

@@ -28,7 +28,6 @@ export default async function Icon ()
           background: 'transparent',
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={logoBase64}
           alt=""

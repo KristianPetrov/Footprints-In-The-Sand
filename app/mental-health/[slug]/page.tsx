@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TopicPageShell } from "../../components/TopicPageShell";
 import { getMentalHealthPage, mentalHealthSlugs } from "../../lib/topicContent";
+import { buildPageMetadata, SITE_NAME } from "../../lib/seo";
 
 export const dynamicParams = false;
 
@@ -19,14 +20,12 @@ export async function generateMetadata ({
   const { slug } = await params;
   const content = getMentalHealthPage(slug);
   if (!content) return {};
-  return {
-    title: content.title,
+  return buildPageMetadata({
+    title: `${content.title} | ${SITE_NAME}`,
     description: content.description,
-    openGraph: {
-      title: `${content.title} | Footprints In The Sand 2 Recovery`,
-      description: content.description,
-    },
-  };
+    path: `/mental-health/${slug}`,
+    ogType: "article",
+  });
 }
 
 export default async function MentalHealthTopicPage ({

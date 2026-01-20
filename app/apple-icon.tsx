@@ -29,7 +29,6 @@ export default async function AppleIcon ()
           borderRadius: 32,
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={logoBase64}
           alt=""

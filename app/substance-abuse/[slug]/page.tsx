@@ -6,6 +6,7 @@ import
     getSubstanceAbusePage,
     substanceAbuseSlugs,
   } from "../../lib/topicContent";
+import { buildPageMetadata, SITE_NAME } from "../../lib/seo";
 
 export const dynamicParams = false;
 
@@ -23,14 +24,12 @@ export async function generateMetadata ({
   const { slug } = await params;
   const content = getSubstanceAbusePage(slug);
   if (!content) return {};
-  return {
-    title: content.title,
+  return buildPageMetadata({
+    title: `${content.title} | ${SITE_NAME}`,
     description: content.description,
-    openGraph: {
-      title: `${content.title} | Footprints In The Sand 2 Recovery`,
-      description: content.description,
-    },
-  };
+    path: `/substance-abuse/${slug}`,
+    ogType: "article",
+  });
 }
 
 export default async function SubstanceAbuseTopicPage ({

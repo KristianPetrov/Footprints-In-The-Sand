@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { HeroNav } from "./components/HeroNav";
 import Location from "./components/Location";
@@ -8,7 +9,6 @@ import Treatment from "./components/Treatment";
 import Mission from "./components/Mission";
 import Gallery from "./components/Gallery";
 import FacilityTour from "./components/FacilityTour";
-import ProcessGroups from "./components/ProcessGroups";
 import Intake from "./components/Intake";
 import Care from "./components/Care"
 import Team from "./components/Team";
@@ -16,6 +16,15 @@ import Footer from "./components/Footer";
 import Certifications from "./components/Certifications";
 import Header from "./components/Header";
 import { RecoveryModalities } from "./components/RecoveryModalities";
+import { buildPageMetadata } from "./lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Outpatient PHP & IOP in Costa Mesa | Live Clean & Focused",
+  description:
+    "An elevated approach to living clean and focused. PHP and IOP outpatient programs in Costa Mesa for adults ready to move forward with clarity.",
+  path: "/",
+  ogType: "website",
+});
 
 
 export default function Home ()
