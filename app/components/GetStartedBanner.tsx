@@ -8,13 +8,13 @@ export default function GetStartedBanner ()
     </div>
     <div className="relative flex flex-col items-center gap-6 text-center">
       <div className="flex flex-col gap-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+        <p className="text-xs font-bold uppercase tracking-[0.35em] text-white/80">
           An Elevated Approach to Living Clean and Focused
         </p>
         <h2 className="text-3xl font-bold text-white sm:text-4xl">
           Get Started Today
         </h2>
-        <p className="mx-auto max-w-2xl text-base leading-7 text-white/90">
+        <p className="mx-auto max-w-2xl font-bold text-base leading-7 text-white/90">
           Structured outpatient support for adults ready to move forward with clarity.
         </p>
       </div>
