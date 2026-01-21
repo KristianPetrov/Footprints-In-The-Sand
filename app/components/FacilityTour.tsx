@@ -84,11 +84,11 @@ export default function FacilityTour ()
           Tour The Facility
         </p>
         <h2 className="text-3xl font-semibold text-[#0f2f38] sm:text-4xl">
-          A space built for calm, connection, and consistency
+          A calm, clean space designed for focus and reset.
         </h2>
         <p className="text-base leading-7 text-[#2e454c]">
-          Take a look around the campus—comfortable common areas, places to gather, and outdoor spaces
-          designed to support steady routines and real recovery.
+          {/* Take a look around the campus—comfortable common areas, places to gather, and outdoor spaces
+          designed to support steady routines and real recovery. */}
         </p>
       </div>
 

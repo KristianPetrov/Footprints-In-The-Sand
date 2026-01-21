@@ -9,13 +9,13 @@ export default function GetStartedBanner ()
     <div className="relative flex flex-col items-center gap-6 text-center">
       <div className="flex flex-col gap-2">
         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
-          Take The First Step
+          An Elevated Approach to Living Clean and Focused
         </p>
         <h2 className="text-3xl font-bold text-white sm:text-4xl">
           Get Started Today
         </h2>
         <p className="mx-auto max-w-2xl text-base leading-7 text-white/90">
-          Recovery begins with a single step. Reach out now and let us walk beside you on your journey to lasting change.
+          Structured outpatient support for adults ready to move forward with clarity.
         </p>
       </div>
       <div className="flex w-full flex-col items-stretch justify-center gap-4 md:flex-row md:items-center">

@@ -47,7 +47,7 @@ export default function ContactPage ()
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
             <h2 className="text-lg font-semibold text-white">Location</h2>
             <p className="mt-3 text-white/75">
-              Costa Mesa, CA
+              653 West 19th Street, Costa Mesa, CA
             </p>
           </div>
         </div>

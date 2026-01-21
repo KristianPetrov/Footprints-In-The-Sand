@@ -15,6 +15,7 @@ import Team from "./components/Team";
 import Footer from "./components/Footer";
 import Certifications from "./components/Certifications";
 import Header from "./components/Header";
+import WhoWhy from "./components/WhoWhy";
 import { RecoveryModalities } from "./components/RecoveryModalities";
 import { buildPageMetadata } from "./lib/seo";
 
@@ -44,6 +45,7 @@ export default function Home ()
 
         <Header />
         <GetStartedBanner />
+        <WhoWhy />
         <Program />
         <Location /> <FacilityTour />
         <Treatment />
