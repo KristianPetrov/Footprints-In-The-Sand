@@ -5,6 +5,7 @@ type IntakeSubmission = {
   lastName: string;
   email: string;
   phone: string;
+  dateOfBirth?: string;
   preferredContact?: string;
   insuranceCarrier?: string;
   insuranceMemberId?: string;
@@ -39,6 +40,7 @@ export async function POST (request: Request)
       lastName: submission.lastName,
       phone: submission.phone,
       email: submission.email,
+      dateOfBirth: submission.dateOfBirth || "",
       preferredContact: submission.preferredContact || "",
       insuranceCarrier: submission.insuranceCarrier || "",
       insuranceMemberId: submission.insuranceMemberId || "",

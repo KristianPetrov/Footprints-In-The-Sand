@@ -2,17 +2,29 @@
 
 import { FormEvent, useState } from "react";
 
+type InsuranceCarrierOption =
+  | ""
+  | "Blue Shield of California"
+  | "Blue Cross Blue Shield"
+  | "Anthem Blue Cross"
+  | "HMSA (Hawaii Medical Service Association)"
+  | "Aetna"
+  | "Magellan Health"
+  | "Cigna"
+  | "Health Net"
+  | "UnitedHealthcare"
+  | "Centene Corporation"
+  | "Other";
+
 type IntakeFormValues = {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
-  preferredContact: "phone" | "email";
-  insuranceCarrier: string;
-  insuranceMemberId: string;
+  dateOfBirth: string;
+  insuranceCarrierChoice: InsuranceCarrierOption;
+  insuranceCarrierOther: string;
   coverageNotes: string;
-  supportFocus: string;
-  notes: string;
 };
 
 const defaultValues: IntakeFormValues = {
@@ -20,12 +32,10 @@ const defaultValues: IntakeFormValues = {
   lastName: "",
   email: "",
   phone: "",
-  preferredContact: "phone",
-  insuranceCarrier: "",
-  insuranceMemberId: "",
+  dateOfBirth: "",
+  insuranceCarrierChoice: "",
+  insuranceCarrierOther: "",
   coverageNotes: "",
-  supportFocus: "",
-  notes: "",
 };
 
 type SubmissionStatus = "idle" | "sending" | "success" | "error";
@@ -48,12 +58,27 @@ export function IntakeForm ()
     setMessage("");
 
     try {
+      const insuranceCarrier =
+        values.insuranceCarrierChoice === "Other"
+          ? values.insuranceCarrierOther.trim()
+          : values.insuranceCarrierChoice;
+
+      const payload = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        phone: values.phone,
+        dateOfBirth: values.dateOfBirth,
+        insuranceCarrier,
+        coverageNotes: values.coverageNotes,
+      };
+
       const response = await fetch("/api/intake", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -126,40 +151,58 @@ export function IntakeForm ()
 
       <div className="grid gap-5 md:grid-cols-2">
         <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
-          <span>Preferred contact method *</span>
-          <select
-            name="preferredContact"
-            value={values.preferredContact}
-            onChange={(event) =>
-              updateField("preferredContact", event.target.value as IntakeFormValues["preferredContact"])
-            }
+          <span>Date of birth</span>
+          <input
+            type="date"
+            name="dateOfBirth"
+            value={values.dateOfBirth}
+            onChange={(event) => updateField("dateOfBirth", event.target.value)}
             className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
-          >
-            <option value="phone">Phone call</option>
-            <option value="email">Email response</option>
-          </select>
+          />
         </label>
         <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
           <span>Insurance carrier</span>
-          <input
-            type="text"
-            name="insuranceCarrier"
-            value={values.insuranceCarrier}
-            onChange={(event) => updateField("insuranceCarrier", event.target.value)}
+          <select
+            name="insuranceCarrierChoice"
+            value={values.insuranceCarrierChoice}
+            onChange={(event) => {
+              const nextValue = event.target.value as InsuranceCarrierOption;
+              setValues((prev) => ({
+                ...prev,
+                insuranceCarrierChoice: nextValue,
+                insuranceCarrierOther: nextValue === "Other" ? prev.insuranceCarrierOther : "",
+              }));
+            }}
             className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
-          />
-        </label>
-        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
-          <span>Insurance member ID</span>
-          <input
-            type="text"
-            name="insuranceMemberId"
-            value={values.insuranceMemberId}
-            onChange={(event) => updateField("insuranceMemberId", event.target.value)}
-            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
-          />
+          >
+            <option value="">Select one</option>
+            <option value="Blue Shield of California">Blue Shield of California</option>
+            <option value="Blue Cross Blue Shield">Blue Cross Blue Shield</option>
+            <option value="Anthem Blue Cross">Anthem Blue Cross</option>
+            <option value="HMSA (Hawaii Medical Service Association)">HMSA (Hawaii Medical Service Association)</option>
+            <option value="Aetna">Aetna</option>
+            <option value="Magellan Health">Magellan Health</option>
+            <option value="Cigna">Cigna</option>
+            <option value="Health Net">Health Net</option>
+            <option value="UnitedHealthcare">UnitedHealthcare</option>
+            <option value="Centene Corporation">Centene Corporation</option>
+            <option value="Other">Other</option>
+          </select>
         </label>
       </div>
+
+      {values.insuranceCarrierChoice === "Other" && (
+        <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
+          <span>Other insurance carrier</span>
+          <input
+            type="text"
+            name="insuranceCarrierOther"
+            value={values.insuranceCarrierOther}
+            onChange={(event) => updateField("insuranceCarrierOther", event.target.value)}
+            className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
+          />
+        </label>
+      )}
 
       <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
         <span>Insurance / coverage notes</span>
@@ -168,36 +211,6 @@ export function IntakeForm ()
           rows={3}
           value={values.coverageNotes}
           onChange={(event) => updateField("coverageNotes", event.target.value)}
-          className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
-        />
-      </label>
-
-      <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
-        <span>Primary support focus *</span>
-        <select
-          name="supportFocus"
-          required
-          value={values.supportFocus}
-          onChange={(event) => updateField("supportFocus", event.target.value)}
-          className="min-h-[44px] rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
-        >
-          <option value="">Select one</option>
-          <option value="detox-support">Detox or stabilization</option>
-          <option value="dual-diagnosis">Dual-diagnosis treatment</option>
-          <option value="trauma-therapy">Trauma & process groups</option>
-          <option value="family-support">Family support</option>
-          <option value="aftercare">Aftercare planning</option>
-          <option value="other">Something else</option>
-        </select>
-      </label>
-
-      <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
-        <span>What should we know?</span>
-        <textarea
-          name="notes"
-          rows={4}
-          value={values.notes}
-          onChange={(event) => updateField("notes", event.target.value)}
           className="rounded-2xl border border-white/20 bg-white/95 px-4 py-3 text-base font-normal normal-case text-[#0f2f38] focus:border-[#f7c99b] focus:outline-none"
         />
       </label>
