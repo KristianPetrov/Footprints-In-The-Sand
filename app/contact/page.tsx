@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroNav } from "../components/HeroNav";
 import { IntakeForm } from "../components/IntakeForm";
+import { PHONE_DISPLAY, PHONE_TEL } from "../lib/contact";
 import { buildPageMetadata } from "../lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -31,8 +32,8 @@ export default function ContactPage ()
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
             <h2 className="text-lg font-semibold text-white">Call</h2>
             <p className="mt-3 text-white/75">
-              <Link href="tel:9493501078" className="font-semibold text-[#f7c99b]">
-                (949) 350-1078
+              <Link href={PHONE_TEL} className="font-semibold text-[#f7c99b]">
+                {PHONE_DISPLAY}
               </Link>
             </p>
           </div>

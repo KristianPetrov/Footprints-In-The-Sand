@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { PHONE_TEL } from "../lib/contact";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 
@@ -212,7 +213,7 @@ export function HeroNav ()
             <span>2 Recovery</span>
           </Link>
           <div className="hero-nav__actions">
-            <Link href="tel:9493501078" className="hero-nav__call" onClick={closeMenu}>
+            <Link href={PHONE_TEL} className="hero-nav__call" onClick={closeMenu}>
               Call Now
             </Link>
             <button

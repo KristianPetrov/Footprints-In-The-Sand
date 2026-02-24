@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { PHONE_DISPLAY, PHONE_TEL } from "./lib/contact";
 import { useEffect } from "react";
 
 export default function Error ({
@@ -40,8 +41,8 @@ export default function Error ({
         </div>
         <p className="text-sm text-[#4a5c60]">
           Need immediate help? Call{" "}
-          <Link href="tel:9493501078" className="font-semibold text-[#1b5a6d] hover:underline">
-            (949)-350-1078
+          <Link href={PHONE_TEL} className="font-semibold text-[#1b5a6d] hover:underline">
+            {PHONE_DISPLAY}
           </Link>
         </p>
       </div>

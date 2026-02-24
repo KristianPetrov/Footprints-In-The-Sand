@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PHONE_TEL } from "../lib/contact";
 export default function GetStartedBanner ()
 {
   return (<section className="relative z-10 overflow-hidden rounded-3xl bg-linear-to-r from-[#b87745] via-[#d08a4c] to-[#c97a3a] p-8 shadow-[0_25px_60px_rgba(184,119,69,0.35)]">
@@ -40,7 +41,7 @@ export default function GetStartedBanner ()
           Email Us
         </Link>
         <Link
-          href="tel:9493501078"
+          href={PHONE_TEL}
           className="group inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-[#0f2f38] px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#1c5a6b] hover:shadow-xl md:w-auto"
         >
           <svg

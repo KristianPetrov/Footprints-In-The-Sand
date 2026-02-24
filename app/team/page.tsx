@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroNav } from "../components/HeroNav";
 import { ScrollToHash } from "../components/ScrollToHash";
+import { PHONE_DISPLAY, PHONE_TEL } from "../lib/contact";
 import { buildPageMetadata } from "../lib/seo";
 
 export const metadata: Metadata = {
@@ -197,8 +198,8 @@ export default function TeamPage ()
 
           <footer className="relative z-10 rounded-3xl border border-white/60 bg-white/70 p-6 text-sm text-[#4a5c60] shadow-inner">
             Sustainable change is closer than you think. Call{" "}
-            <Link href="tel:9493501078" className="font-semibold text-[#1b5a6d]">
-              (949)-350-1078
+            <Link href={PHONE_TEL} className="font-semibold text-[#1b5a6d]">
+              {PHONE_DISPLAY}
             </Link>
             , or email{" "}
             <Link href="mailto:info@footprintsrecovery.net" className="font-semibold text-[#1b5a6d]">

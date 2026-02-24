@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { PHONE_E164 } from "./lib/contact";
 import { absoluteUrl, LEGAL_NAME, SITE_NAME, SITE_URL } from "./lib/seo";
 
 const geistSans = Geist({
@@ -88,7 +89,7 @@ const jsonLd = {
   url: SITE_URL,
   logo: absoluteUrl("/footprints-logo-no-back.png"),
   image: absoluteUrl("/opengraph-image"),
-  telephone: "+1-949-350-1078",
+  telephone: PHONE_E164,
   email: "info@footprintsrecovery.net",
   address: {
     "@type": "PostalAddress",

@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
+import { PHONE_HYPHENATED } from './lib/contact'
 
 export const runtime = 'nodejs'
 export const alt = 'Footprints In The Sand 2 Recovery - Where Broken Roads Become Steady Ground'
@@ -98,7 +99,7 @@ export default async function OGImage ()
             color: 'rgba(255, 255, 255, 0.7)',
           }}
         >
-          <span>📞 949-350-1078</span>
+          <span>📞 {PHONE_HYPHENATED}</span>
           <span>📍 Costa Mesa, CA</span>
           <span>✉️ info@footprintsrecovery.net</span>
         </div>

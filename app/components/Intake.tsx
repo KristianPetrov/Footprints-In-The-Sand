@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { IntakeForm } from "./IntakeForm";
 import Link from "next/link";
+import { PHONE_DISPLAY, PHONE_TEL } from "../lib/contact";
 
 const intakePromises = [
   {
@@ -47,8 +48,8 @@ export default function Intake ()
         </div>
         <p className="wrap-break-word text-sm text-white/70">
           Prefer to start live? Call{" "}
-          <Link href="tel:9493501078" className="break-all font-semibold text-white hover:underline">
-            (949)-350-1078
+          <Link href={PHONE_TEL} className="break-all font-semibold text-white hover:underline">
+            {PHONE_DISPLAY}
           </Link>{" "}
           or email{" "}
           <Link href="mailto:info@footprintsrecovery.net" className="break-all font-semibold text-white hover:underline">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeroNav } from "./HeroNav";
+import { PHONE_DISPLAY, PHONE_TEL } from "../lib/contact";
 import type { TopicPageContent } from "../lib/topicContent";
 
 type Props = {
@@ -190,7 +191,7 @@ export function TopicPageShell ({ content }: Props)
                 </p>
                 <div className="mt-6 flex flex-col items-stretch gap-4 md:flex-row md:items-center">
                   <Link
-                    href="tel:9493501078"
+                    href={PHONE_TEL}
                     className={
                       isTreatmentApproach
                         ? "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-[#1c5a6b] transition hover:bg-white md:w-auto"
@@ -199,7 +200,7 @@ export function TopicPageShell ({ content }: Props)
                           : "inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15 md:w-auto"
                     }
                   >
-                    Call (949)-350-1078
+                    Call {PHONE_DISPLAY}
                   </Link>
                   <Link
                     href="mailto:info@footprintsrecovery.net"

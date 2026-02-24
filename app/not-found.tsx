@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PHONE_DISPLAY, PHONE_TEL } from "./lib/contact";
 
 export default function NotFound ()
 {
@@ -27,8 +28,8 @@ export default function NotFound ()
         </div>
         <p className="text-sm text-[#4a5c60]">
           Need help? Call{" "}
-          <Link href="tel:9493501078" className="font-semibold text-[#1b5a6d] hover:underline">
-            (949)-350-1078
+          <Link href={PHONE_TEL} className="font-semibold text-[#1b5a6d] hover:underline">
+            {PHONE_DISPLAY}
           </Link>
         </p>
       </div>
