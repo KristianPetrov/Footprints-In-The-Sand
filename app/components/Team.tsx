@@ -7,14 +7,14 @@ const teamMembers = [
     image: "/tiffany-monterroso-photo-crop.png",
     id: "tiffany-monterroso"
   },
-  {
-    name: "Alyssa Van Boxmeer",
-    title: "Clinical Director",
-    credentials: "LMFT",
-    image: "/alyssa-boxmeer-photo.png",
-    id: "alyssa-van-boxmeer",
+  // {
+  //   name: "Alyssa Van Boxmeer",
+  //   title: "Clinical Director",
+  //   credentials: "LMFT",
+  //   image: "/alyssa-boxmeer-photo.png",
+  //   id: "alyssa-van-boxmeer",
 
-  },
+  // },
   {
     name:"Megan Burrage",
     title:"Program Director",

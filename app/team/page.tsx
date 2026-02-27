@@ -26,14 +26,16 @@ const teamMembers = [
 Tiffany’s work is rooted in a genuine passion for helping individuals heal and rediscover hope. Her background in both medical and counseling settings allows her to take a whole-person approach to recovery—one that honors the physical, emotional, and behavioral challenges clients face. Throughout her career, she has worked across multiple levels of care, giving her a deep understanding of the complexities of addiction, mental health, and the courage it takes to pursue lasting change.
 As Executive Director, Tiffany is dedicated to creating a safe, supportive, and trauma-informed environment where clients feel seen, heard, and valued. She leads with empathy and integrity, ensuring high standards of care while fostering a culture of trust, accountability, and respect among both clients and staff. Her heart lies in empowering individuals and families, guiding them toward stability, resilience, and renewed purpose.
 Tiffany believes deeply that recovery is possible for everyone. She is committed to walking alongside clients as they take meaningful steps forward, helping them build healthier lives and leave lasting footprints of hope beyond substance use.`
-  }, {
-    name: "Alyssa Van Boxmeer",
-    title: "Clinical Director",
-    credentials: "LMFT",
-    image: "/alyssa-boxmeer-photo.png",
-    id: "alyssa-van-boxmeer",
-    bio: `Alyssa Van Boxmeer is a Licensed Marriage and Family Therapist who takes pride in providing clinical leadership and oversight while fostering a safe, ethical, and trauma-informed treatment environment for both clients and staff. Alyssa earned a dual bachelors in Wellness Management and Psychology from State University of New York at Oswego and her masters in Marriage and Family Therapy from Pacific Oaks College. She has more than 10 years of experience working with individuals, couples, and families in community-based, residential treatment, and private practice settings. Her training includes Dialectic Behavioral Therapy, Yoga Philosophy, Tapping, Somatic Experiencing, and Cognitive Behavioral Therapy. She enjoys working with a wide range of issues including addiction, anxiety, communication, and codependency. Alyssa enjoys creating a safe space for her clients and employees to explore the inner workings of themselves with non-judgmental awareness, curiosity, and light-heartedness. In her spare time, you can find Alyssa spending time with her friends and family, golfing, playing guitar, and making people laugh.`,
-  }, {
+   },
+  //{
+  //   name: "Alyssa Van Boxmeer",
+  //   title: "Clinical Director",
+  //   credentials: "LMFT",
+  //   image: "/alyssa-boxmeer-photo.png",
+  //   id: "alyssa-van-boxmeer",
+  //   bio: `Alyssa Van Boxmeer is a Licensed Marriage and Family Therapist who takes pride in providing clinical leadership and oversight while fostering a safe, ethical, and trauma-informed treatment environment for both clients and staff. Alyssa earned a dual bachelors in Wellness Management and Psychology from State University of New York at Oswego and her masters in Marriage and Family Therapy from Pacific Oaks College. She has more than 10 years of experience working with individuals, couples, and families in community-based, residential treatment, and private practice settings. Her training includes Dialectic Behavioral Therapy, Yoga Philosophy, Tapping, Somatic Experiencing, and Cognitive Behavioral Therapy. She enjoys working with a wide range of issues including addiction, anxiety, communication, and codependency. Alyssa enjoys creating a safe space for her clients and employees to explore the inner workings of themselves with non-judgmental awareness, curiosity, and light-heartedness. In her spare time, you can find Alyssa spending time with her friends and family, golfing, playing guitar, and making people laugh.`,
+  // },
+  {
     name: "Megan Burrage",
     title: "Program Director",
     credentials: "CADC-I",
