@@ -10,7 +10,7 @@ export default function Header ()
       <div className="hero-logo-imgWrap">
         <Image
           src="/footprints-logo-no-back.png"
-          alt="Footprints In The Sand 2 Recovery minimal logo"
+          alt="Footprints In The Sand 2 Recovery"
           fill
           sizes="(max-width: 640px) 75vw, (max-width: 1024px) 60vw, 420px"
           priority
