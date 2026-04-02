@@ -47,11 +47,11 @@ export default function Home ()
         <GetStartedBanner />
         <WhoWhy />
         <Program />
-        <Location /> <FacilityTour />
+        <Location />
+        <FacilityTour />
         <Treatment />
         <Mission />
         {/* <ProcessGroups /> */}
-
         <Gallery />
         <Care />
         <RecoveryModalities />

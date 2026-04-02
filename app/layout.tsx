@@ -152,6 +152,23 @@ export default function RootLayout ({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {process.env.NODE_ENV === "production" ? (
+          <>
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-DCQLWRH2CZ"
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html:
+                  "window.dataLayer = window.dataLayer || [];\n" +
+                  "function gtag(){dataLayer.push(arguments);}\n" +
+                  "gtag('js', new Date());\n" +
+                  "gtag('config', 'G-DCQLWRH2CZ');\n",
+              }}
+            />
+          </>
+        ) : null}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
