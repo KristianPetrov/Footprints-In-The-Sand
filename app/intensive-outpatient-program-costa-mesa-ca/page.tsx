@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroNav } from "../components/HeroNav";
-import { buildPageMetadata } from "../lib/seo";
+import { buildPageMetadata, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Partial Hospitalization Program (PHP) | Costa Mesa",
+  title: `Intensive Outpatient Program In Costa Mesa, Ca | ${SITE_NAME}`,
   description:
-    "Our PHP offers high-level daytime structure while living at home. Designed for adults who need consistency, focus, and accountability.",
-  path: "/php",
+    "Our IOP provides step-down outpatient support with flexibility to maintain momentum, focus, and long-term stability.",
+  path: "/intensive-outpatient-program-costa-mesa-ca",
 });
 
-export default function PhpPage ()
+export default function IntensiveOutpatientProgramCostaMesaPage ()
 {
   return (
-    <main className="min-h-screen bg-linear-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38] overflow-hidden">
+    <main className="min-h-screen overflow-hidden bg-linear-to-b from-[#0f2f38] via-[#1b4d5c] to-[#0f2f38]">
       <HeroNav />
       <section className="relative px-6 pb-16 pt-32 text-center">
         <h1 className="font-display text-4xl font-light tracking-wide text-white md:text-5xl">
-          Partial Hospitalization Program (PHP)
+          Intensive Outpatient Program In Costa Mesa, Ca
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
-          High-level daytime structure while living at home—built for adults who need consistency, focus,
-          and accountability.
+          Step-down outpatient support with flexibility—designed to maintain momentum, focus, and long-term
+          stability.
         </p>
       </section>
 
@@ -29,21 +29,22 @@ export default function PhpPage ()
         <div className="mx-auto max-w-4xl space-y-8">
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
             <h2 className="font-display text-2xl font-light tracking-wide text-white md:text-3xl">
-              What PHP is
+              What IOP is
             </h2>
             <p className="mt-4 text-white/75 leading-7">
-              PHP is a high-structure outpatient level of care with a consistent daytime schedule. You
-              participate in focused programming while returning home each evening.
+              IOP is a structured outpatient program that supports recovery while you maintain work, family,
+              and other responsibilities. It’s often a step-down from PHP or a starting point when a
+              full-day schedule isn’t required.
             </p>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
             <h2 className="font-display text-2xl font-light tracking-wide text-white md:text-3xl">
-              Who PHP is for
+              Who IOP is for
             </h2>
             <p className="mt-4 text-white/75 leading-7">
-              Adults who need more daytime structure, higher accountability, or a strong step-down plan
-              from inpatient/residential settings.
+              Adults who need consistent accountability and support, but also need flexibility to stay
+              engaged with daily life.
             </p>
           </div>
 
@@ -52,7 +53,7 @@ export default function PhpPage ()
               Next step
             </h2>
             <p className="mt-4 text-white/75 leading-7">
-              Start with admissions and a confidential intake process. Fast verification. Clear steps. No
+              Start with admissions and a confidential intake process. Simple steps. Fast verification. No
               pressure.
             </p>
             <div className="mt-8 flex flex-col items-stretch gap-4 md:flex-row md:items-center">
@@ -81,4 +82,3 @@ export default function PhpPage ()
     </main>
   );
 }
-

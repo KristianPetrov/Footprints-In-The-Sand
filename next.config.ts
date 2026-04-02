@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { getLegacyTopicRedirects } from "./app/lib/topicContent";
 
 const nextConfig: NextConfig = {
   // Enable React strict mode for better development experience
@@ -41,6 +42,17 @@ const nextConfig: NextConfig = {
         destination: "/programs",
         permanent: true,
       },
+      {
+        source: "/php",
+        destination: "/partial-hospitalization-program-costa-mesa-ca",
+        permanent: true,
+      },
+      {
+        source: "/iop",
+        destination: "/intensive-outpatient-program-costa-mesa-ca",
+        permanent: true,
+      },
+      ...getLegacyTopicRedirects(),
     ];
   },
 };

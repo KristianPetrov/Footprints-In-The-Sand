@@ -4,7 +4,7 @@ import { TopicPageShell } from "../../components/TopicPageShell";
 import
   {
     getSubstanceAbusePage,
-    substanceAbuseSlugs,
+    substanceAbuseSlugsForNestedRoutes,
   } from "../../lib/topicContent";
 import { buildPageMetadata, SITE_NAME } from "../../lib/seo";
 
@@ -12,7 +12,7 @@ export const dynamicParams = false;
 
 export function generateStaticParams ()
 {
-  return substanceAbuseSlugs.map((slug) => ({ slug }));
+  return substanceAbuseSlugsForNestedRoutes.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata ({

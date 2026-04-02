@@ -1,5 +1,12 @@
 import type { MetadataRoute } from "next";
-import { mentalHealthSlugs, substanceAbuseSlugs, treatmentApproachSlugs } from "./lib/topicContent";
+import
+  {
+    mentalHealthSlugs,
+    substanceAbuseSeoPathBySlug,
+    substanceAbuseSlugs,
+    treatmentApproachSeoPathBySlug,
+    treatmentApproachSlugs,
+  } from "./lib/topicContent";
 import { SITE_URL } from "./lib/seo";
 
 const baseUrl = SITE_URL;
@@ -28,13 +35,13 @@ export default function sitemap (): MetadataRoute.Sitemap
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/php`,
+      url: `${baseUrl}/partial-hospitalization-program-costa-mesa-ca`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/iop`,
+      url: `${baseUrl}/intensive-outpatient-program-costa-mesa-ca`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
@@ -64,7 +71,7 @@ export default function sitemap (): MetadataRoute.Sitemap
       priority: 0.6,
     },
     ...treatmentApproachSlugs.map((slug) => ({
-      url: `${baseUrl}/treatment-approach/${slug}`,
+      url: `${baseUrl}${treatmentApproachSeoPathBySlug[slug] ?? `/treatment-approach/${slug}`}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.55,
@@ -76,7 +83,7 @@ export default function sitemap (): MetadataRoute.Sitemap
       priority: 0.55,
     })),
     ...substanceAbuseSlugs.map((slug) => ({
-      url: `${baseUrl}/substance-abuse/${slug}`,
+      url: `${baseUrl}${substanceAbuseSeoPathBySlug[slug] ?? `/substance-abuse/${slug}`}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.55,

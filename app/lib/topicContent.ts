@@ -27,7 +27,7 @@ function build (
 const treatmentApproachList: TopicPageContent[] = [
   build(
     "cbt",
-    "Cognitive Behavioral Therapy (CBT)",
+    "Cognitive Behavioral Therapy In Costa Mesa, Ca",
     "CBT is an evidence-based therapy that helps you understand patterns between thoughts, emotions, and behavior—then replace the patterns that keep you stuck with skills that support recovery.",
     "Treatment Approach",
     [
@@ -74,7 +74,7 @@ const treatmentApproachList: TopicPageContent[] = [
   ),
   build(
     "dbt",
-    "Dialectical Behavioral Therapy (DBT)",
+    "Dialectical Behavioral Therapy In Costa Mesa, Ca",
     "DBT is a skills-based therapy that helps you manage intense emotions, tolerate distress without impulsive coping, and build healthier relationships and boundaries.",
     "Treatment Approach",
     [
@@ -538,7 +538,7 @@ export function getMentalHealthPage (slug: string)
 const substanceAbuseList: TopicPageContent[] = [
   build(
     "alcohol-addiction",
-    "Alcohol Addiction",
+    "Alcohol Addiction Treatment In Costa Mesa, Ca",
     "Alcohol addiction (alcohol use disorder) can affect health, mood, relationships, and daily functioning. Evidence-based outpatient care can help you stabilize, build skills, and protect long-term recovery.",
     "Substance Abuse",
     [
@@ -584,7 +584,7 @@ const substanceAbuseList: TopicPageContent[] = [
   ),
   build(
     "fentanyl-addiction",
-    "Fentanyl Addiction",
+    "Fentanyl Addiction Treatment In Costa Mesa, Ca",
     "Fentanyl is a highly potent opioid with elevated overdose risk. Treatment focuses on safety, stabilization, and a relapse-prevention plan strong enough for high-intensity cravings.",
     "Substance Abuse",
     [
@@ -629,7 +629,7 @@ const substanceAbuseList: TopicPageContent[] = [
   ),
   build(
     "heroin-addiction",
-    "Heroin Addiction",
+    "Heroin Addiction Treatment Center In Costa Mesa, Ca",
     "Heroin addiction can quickly create physical dependence and major life disruption. Treatment focuses on stabilization, skills, accountability, and addressing co-occurring mental health needs.",
     "Substance Abuse",
     [
@@ -674,7 +674,7 @@ const substanceAbuseList: TopicPageContent[] = [
   ),
   build(
     "opiate-addiction",
-    "Opiate Addiction",
+    "Opiate Addiction Treatment Center In Costa Mesa, Ca",
     "Opiate addiction (opioid use disorder) can involve prescription pain medications or illicit opioids. Treatment supports stabilization, relapse prevention, and recovery skills that hold up in real life.",
     "Substance Abuse",
     [
@@ -719,7 +719,7 @@ const substanceAbuseList: TopicPageContent[] = [
   ),
   build(
     "xanax-addiction",
-    "Xanax Addiction",
+    "Xanax Addiction Treatment In Costa Mesa, Ca",
     "Xanax (alprazolam) can lead to dependence, and stopping suddenly can be dangerous. Treatment supports safer stabilization and long-term coping skills for anxiety and stress.",
     "Substance Abuse",
     [
@@ -764,7 +764,7 @@ const substanceAbuseList: TopicPageContent[] = [
   ),
   build(
     "benzodiazepine-addiction",
-    "Benzodiazepine Addiction",
+    "Benzodiazepine Addiction Recovery In Costa Mesa, Ca",
     "Benzodiazepines can cause dependence, and withdrawal can be medically significant. Treatment supports stabilization, safer coping strategies, and relapse prevention for long-term recovery.",
     "Substance Abuse",
     [
@@ -809,7 +809,7 @@ const substanceAbuseList: TopicPageContent[] = [
   ),
   build(
     "cocaine-addiction",
-    "Cocaine Addiction",
+    "Cocaine Addiction Recovery In Costa Mesa, Ca",
     "Cocaine addiction can create strong reward/crash cycles that affect mood, sleep, and impulse control. Treatment builds coping skills, relapse prevention, and stable routines that reduce the cycle’s pull.",
     "Substance Abuse",
     [
@@ -854,7 +854,7 @@ const substanceAbuseList: TopicPageContent[] = [
   ),
   build(
     "marijuana-addiction",
-    "Marijuana Addiction",
+    "Marijuana Addiction Treatment In Costa Mesa, Ca",
     "Cannabis can become a problem when it interferes with motivation, relationships, mood, or responsibilities—and feels hard to stop. Treatment supports healthier coping, routine, and long-term balance.",
     "Substance Abuse",
     [
@@ -899,7 +899,7 @@ const substanceAbuseList: TopicPageContent[] = [
   ),
   build(
     "methamphetamine-addiction",
-    "Methamphetamine Addiction",
+    "Methamphetamine Addiction Treatment In Costa Mesa, Ca",
     "Methamphetamine addiction can affect sleep, mood, impulse control, and health. Structured treatment supports stabilization, coping skills, accountability, and long-term recovery planning.",
     "Substance Abuse",
     [
@@ -955,4 +955,55 @@ export function getSubstanceAbusePage (slug: string)
   return substanceAbusePages[slug] ?? null;
 }
 
+/** Root URL paths; legacy `/treatment-approach/*` URLs redirect here. */
+export const treatmentApproachSeoPathBySlug: Record<string, string> = {
+  cbt: "/cognitive-behavioral-therapy-costa-mesa-ca",
+  dbt: "/dialectical-behavioral-therapy-costa-mesa-ca",
+};
 
+/** Root URL paths; legacy `/substance-abuse/*` URLs redirect here. */
+export const substanceAbuseSeoPathBySlug: Record<string, string> = {
+  "alcohol-addiction": "/alcohol-addiction-treatment-costa-mesa-ca",
+  "fentanyl-addiction": "/fentanyl-addiction-treatment-costa-mesa-ca",
+  "heroin-addiction": "/heroin-addiction-treatment-center-costa-mesa-ca",
+  "opiate-addiction": "/opiate-addiction-treatment-center-costa-mesa-ca",
+  "xanax-addiction": "/xanax-addiction-treatment-costa-mesa-ca",
+  "benzodiazepine-addiction": "/benzodiazepine-addiction-recovery-costa-mesa-ca",
+  "cocaine-addiction": "/cocaine-addiction-recovery-costa-mesa-ca",
+  "marijuana-addiction": "/marijuana-addiction-treatment-costa-mesa-ca",
+  "methamphetamine-addiction": "/methamphetamine-addiction-treatment-costa-mesa-ca",
+};
+
+export const treatmentApproachSlugsForNestedRoutes = treatmentApproachSlugs.filter(
+  (slug) => !treatmentApproachSeoPathBySlug[slug]
+);
+
+export const substanceAbuseSlugsForNestedRoutes = substanceAbuseSlugs.filter(
+  (slug) => !substanceAbuseSeoPathBySlug[slug]
+);
+
+type LegacyTopicRedirect = {
+  source: string;
+  destination: string;
+  permanent: true;
+};
+
+export function getLegacyTopicRedirects (): LegacyTopicRedirect[]
+{
+  const out: LegacyTopicRedirect[] = [];
+  for (const [slug, dest] of Object.entries(treatmentApproachSeoPathBySlug)) {
+    out.push({
+      source: `/treatment-approach/${slug}`,
+      destination: dest,
+      permanent: true,
+    });
+  }
+  for (const [slug, dest] of Object.entries(substanceAbuseSeoPathBySlug)) {
+    out.push({
+      source: `/substance-abuse/${slug}`,
+      destination: dest,
+      permanent: true,
+    });
+  }
+  return out;
+}

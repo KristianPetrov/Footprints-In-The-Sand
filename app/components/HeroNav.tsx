@@ -17,8 +17,8 @@ const treatmentApproachMenu = [
   {
     title: "Treatment",
     items: [
-      { href: "/treatment-approach/cbt", label: "Cognitive Behavioral Therapy" },
-      { href: "/treatment-approach/dbt", label: "Dialectical Behavioral Therapy" },
+      { href: "/cognitive-behavioral-therapy-costa-mesa-ca", label: "Cognitive Behavioral Therapy" },
+      { href: "/dialectical-behavioral-therapy-costa-mesa-ca", label: "Dialectical Behavioral Therapy" },
       { href: "/treatment-approach/family-therapy", label: "Family Therapy" },
       { href: "/treatment-approach/group-therapy", label: "Group Therapy" },
       { href: "/treatment-approach/individual-therapy", label: "Individual Therapy" },
@@ -38,15 +38,15 @@ const treatmentApproachMenu = [
   {
     title: "Substance Abuse",
     items: [
-      { href: "/substance-abuse/alcohol-addiction", label: "Alcohol Addiction" },
-      { href: "/substance-abuse/fentanyl-addiction", label: "Fentanyl Addiction" },
-      { href: "/substance-abuse/heroin-addiction", label: "Heroin Addiction" },
-      { href: "/substance-abuse/opiate-addiction", label: "Opiate Addiction" },
-      { href: "/substance-abuse/xanax-addiction", label: "Xanax Addiction" },
-      { href: "/substance-abuse/benzodiazepine-addiction", label: "Benzodiazepine Addiction" },
-      { href: "/substance-abuse/cocaine-addiction", label: "Cocaine Addiction" },
-      { href: "/substance-abuse/marijuana-addiction", label: "Marijuana Addiction" },
-      { href: "/substance-abuse/methamphetamine-addiction", label: "Methamphetamine Addiction" },
+      { href: "/alcohol-addiction-treatment-costa-mesa-ca", label: "Alcohol Addiction" },
+      { href: "/fentanyl-addiction-treatment-costa-mesa-ca", label: "Fentanyl Addiction" },
+      { href: "/heroin-addiction-treatment-center-costa-mesa-ca", label: "Heroin Addiction" },
+      { href: "/opiate-addiction-treatment-center-costa-mesa-ca", label: "Opiate Addiction" },
+      { href: "/xanax-addiction-treatment-costa-mesa-ca", label: "Xanax Addiction" },
+      { href: "/benzodiazepine-addiction-recovery-costa-mesa-ca", label: "Benzodiazepine Addiction" },
+      { href: "/cocaine-addiction-recovery-costa-mesa-ca", label: "Cocaine Addiction" },
+      { href: "/marijuana-addiction-treatment-costa-mesa-ca", label: "Marijuana Addiction" },
+      { href: "/methamphetamine-addiction-treatment-costa-mesa-ca", label: "Methamphetamine Addiction" },
     ],
   },
 ];

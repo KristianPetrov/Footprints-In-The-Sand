@@ -38,7 +38,7 @@ export default function ProgramsPage ()
             </p>
             <div className="mt-8 flex flex-col items-stretch gap-4 md:flex-row md:items-center">
               <Link
-                href="/php"
+                href="/partial-hospitalization-program-costa-mesa-ca"
                 className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#f7c99b] px-8 py-3 text-base font-semibold text-[#1f2a2e] transition hover:-translate-y-0.5 hover:bg-[#f2b87e] md:w-auto"
               >
                 Learn about PHP
@@ -67,7 +67,7 @@ export default function ProgramsPage ()
             </p>
             <div className="mt-8 flex flex-col items-stretch gap-4 md:flex-row md:items-center">
               <Link
-                href="/iop"
+                href="/intensive-outpatient-program-costa-mesa-ca"
                 className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#f7c99b] px-8 py-3 text-base font-semibold text-[#1f2a2e] transition hover:-translate-y-0.5 hover:bg-[#f2b87e] md:w-auto"
               >
                 Learn about IOP
