@@ -12,7 +12,7 @@ export default function Header ()
           src="/transparent-logo-white.png"
           alt="Footprints In The Sand 2 Recovery"
           fill
-          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 90vw, 1680px"
+          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 640px"
           priority
           className="hero-logo-img"
         />
