@@ -9,10 +9,10 @@ export default function Header ()
       </div>
       <div className="hero-logo-imgWrap">
         <Image
-          src="/footprints-logo-no-back.png"
+          src="/transparent-logo-white.png"
           alt="Footprints In The Sand 2 Recovery"
           fill
-          sizes="(max-width: 640px) 75vw, (max-width: 1024px) 60vw, 420px"
+          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 90vw, 1680px"
           priority
           className="hero-logo-img"
         />

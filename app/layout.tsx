@@ -87,7 +87,7 @@ const jsonLd = {
   name: LEGAL_NAME,
   description: homeDescription,
   url: SITE_URL,
-  logo: absoluteUrl("/footprints-logo-no-back.png"),
+  logo: absoluteUrl("/Logo_4.png"),
   image: absoluteUrl("/opengraph-image"),
   telephone: PHONE_E164,
   email: "info@footprintsrecovery.net",

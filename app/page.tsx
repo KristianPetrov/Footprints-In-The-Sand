@@ -33,7 +33,7 @@ export default function Home ()
   return (
     <div className="beach-sky grain-overlay min-h-screen w-full overflow-hidden text-[#1f2a2e]">
       <HeroNav />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-16 pt-24 sm:px-8 lg:px-12 lg:pb-24 lg:pt-32">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-6 pb-10 pt-1 sm:gap-10 sm:px-8 sm:pt-2 lg:gap-12 lg:px-12 lg:pb-14 lg:pt-3">
         <Image
           src="/footprints.svg"
           alt=""
@@ -43,8 +43,10 @@ export default function Home ()
           aria-hidden="true"
         />
 
-        <Header />
-        <GetStartedBanner />
+        <div className="flex flex-col gap-0 sm:gap-1">
+          <Header />
+          <GetStartedBanner />
+        </div>
         <WhoWhy />
         <Program />
         <Location />
