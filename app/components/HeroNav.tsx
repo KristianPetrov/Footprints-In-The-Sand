@@ -8,6 +8,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 const navItems = [
   { href: "/admissions", label: "Admissions" },
   { href: "/programs", label: "Programs" },
+  { href: "/SoundBridge", label: "SoundBridge" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/team", label: "Team" },
