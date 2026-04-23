@@ -68,33 +68,25 @@ function SoundBridgeLogo ()
         <line x1="350" y1="135" x2="350" y2="175" />
         <line x1="360" y1="145" x2="360" y2="165" />
       </g>
-      <g transform="translate(300 242)">
-        <text
-          x={0}
-          y={0}
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fontFamily="Cormorant Garamond, Georgia, serif"
-          fontSize="40"
-          fontWeight="400"
-        >
-          <tspan fill="#1a2744" letterSpacing="6">
-            SOUND
-          </tspan>
-          <tspan fill="#b8935a" letterSpacing="0">
-            {" "}
-          </tspan>
-          <tspan fill="#b8935a" letterSpacing="0">
-            ·
-          </tspan>
-          <tspan fill="#b8935a" letterSpacing="0">
-            {" "}
-          </tspan>
-          <tspan fill="#b8935a" letterSpacing="6">
-            BRIDGE
-          </tspan>
-        </text>
-      </g>
+      <text
+        x="300"
+        y="242"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontFamily="Cormorant Garamond, Georgia, serif"
+        fontSize="38"
+        fontWeight="400"
+      >
+        <tspan fill="#1a2744" letterSpacing="5">
+          SOUND
+        </tspan>
+        <tspan fill="#b8935a" letterSpacing="0" dx="18">
+          ·
+        </tspan>
+        <tspan fill="#b8935a" letterSpacing="5" dx="18">
+          BRIDGE
+        </tspan>
+      </text>
     </svg>
   );
 }
